@@ -18,6 +18,11 @@ class Game{
 public:
 	Game();	// Constructor
 	
+	bool buildGraph(); //After you have created all the Nodes, including Edges, Features and Objects, call this function to build all of the pointers.
+						// Therefore, you do not have to set Edge::node, Feature::feature, Feature::object, or Object::edge.
+						// Instead, just set the "string initial*" parameters to the matching names (NO SPACES in names, node names must be unique.) 
+						// You still need to put every Node* into allNodes.
+	
 	Node* root = 0; // root node needs to be set during initialization because the main loop needs to know where to start.
 	
 	Node* end = 0; // end node also needs to be set during initialization, arrival at the end node is used as a trigger to signify end of game.
@@ -47,5 +52,13 @@ public:
 
 	// If you want, you could add pointers to your classes here to integrate the parser and the database, 
 	 // or you could just write the code so that you act on this interface.
+	
+private:
+	
+	Node* findNode(std::string name);
+	Feature* findFeature(std::string name, Node* n);
+	Object* findObject(std::string name, Node* n);
+	Edge* findEdge(std::string name, Node* n);
+	
 };
 #endif

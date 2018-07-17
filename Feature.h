@@ -22,6 +22,8 @@ public:
 	bool visible= true;
 	Feature* feature = 0;// this is the feature that becomes visible when the user examine() the object
 	Object* object = 0; // this is the object that becomes visible when the user examine() the feature
+	std::string initialFeatureName;
+	std::string initialObjectName;
 	std::string describe();
 	std::string examine();
 	
