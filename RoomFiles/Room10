@@ -1,0 +1,44 @@
+[[RoomName]] [START0]Factory[END0]
+
+[[RoomType]] [START0]Standard[END0]
+
+[[ShortDescription]] [START0]You find yourself on the floor of a factory[END0]
+
+[[LongDescription]] [START0]You find yourself on a factory floor. It sort of stinks and the lighting is awful. Obviously it's not a great place to work[END0]
+		    		    
+
+[[Edges]] [START0]
+[[Edge]] [START1]
+[[EdgeName]] [START2]East[END2]
+[[EdgeShortDescription]] [START2]There is a street running east outside of the factory[END2]
+[[EdgeLongDescription]] [START2]The street running outside of the factory leads back into town to the east. Going this way will take you to the garage[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Garage[END2]
+[END1]
+[END0]
+
+
+[[Features]] [START0]
+[[Feature]] [START1]
+[[FeatureName]] [START2]Belt[END2]
+[[FeatureShortDescription]] [START2]A conveyor belt takes up much of the floor[END2]
+[[FeatureLongDescription]] [START2]A conveyor belt takes up much of the floor. It seems to be producing small balls of light. You can't even begin to guess at what they are[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]None[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Boss[END2]
+[[FeatureShortDescription]] [START2]A man standing on a nearby platform is barking orders at everyone[END2]
+[[FeatureLongDescription]] [START2]A man standing on a nearby platform is barking orders at everyone. He must be the factory's boss. Talking to him will reveal that Cetus likes seashells[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]None[END2]
+[END1]
+[END0]
+
+
+[[Objects]] [START0]
+[END0]

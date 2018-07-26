@@ -5,7 +5,7 @@ CPPFLAGS=--std=c++11
 LDFLAGS=
 LDLIBS=
 
-SRCS=Edge.cpp  Feature.cpp  Game.cpp  Interface.cpp  main.cpp  Node.cpp  Object.cpp
+SRCS=Edge.cpp  Feature.cpp  Game.cpp  Interface.cpp  main.cpp  Node.cpp  Object.cpp  Loop.cpp  Database.cpp
 OBJS=$(subst .cc,.o,$(SRCS))
 
 all: cetus

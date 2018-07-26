@@ -1,0 +1,62 @@
+[[RoomName]] [START0]Ocean[END0]
+
+[[RoomType]] [START0]Standard[END0]
+
+[[ShortDescription]] [START0]The middle of the ocean[END0]
+
+[[LongDescription]] [START0]You are in the middle of the ocean. You are quite tired and the waves are quite rough[END0]
+		    		    
+
+[[Edges]] [START0]
+[[Edge]] [START1]
+[[EdgeName]] [START2]West[END2]
+[[EdgeShortDescription]] [START2]There is an island far to the west[END2]
+[[EdgeLongDescription]] [START2]There is an island to the west. The shopping mall is on it[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Mall[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]South[END2]
+[[EdgeShortDescription]] [START2]There is a strong current to the south of you[END2]
+[[EdgeLongDescription]] [START2]The current to the south will take you to the seafloor[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Seafloor[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]East[END2]
+[[EdgeShortDescription]] [START2]There is land to the east[END2]
+[[EdgeLongDescription]] [START2]There is land to the east. If you head this way it will bring you back to the beach[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Beach[END2]
+[END1]
+[END0]
+
+
+[[Features]] [START0]
+[[Feature]] [START1]
+[[FeatureName]] [START2]Fin[END2]
+[[FeatureShortDescription]] [START2]You see a pointed fin nearby[END2]
+[[FeatureLongDescription]] [START2]You see a pointed fin. Attempting to interact with it in any way will trigger a game over[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetFeature]] [START2]None[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Flotsam[END2]
+[[FeatureShortDescription]] [START2]There is some flotsam floating towards you[END2]
+[[FeatureLongDescription]] [START2]There is some flotsam floating towards you. Examining it reveals the flashlight[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]Flashlight[END2]
+[END1]
+[END0]
+
+
+[[Objects]] [START0]
+[END0]

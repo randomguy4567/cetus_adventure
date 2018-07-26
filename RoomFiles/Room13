@@ -1,0 +1,53 @@
+[[RoomName]] [START0]Camp[END0]
+
+[[RoomType]] [START0]Standard[END0]
+
+[[ShortDescription]] [START0]An ancient war camp[END0]
+
+[[LongDescription]] [START0]You find yourself in an ancient war camp. It stinks badly, lots of people are shouting, and you're fairly certain that the horns blowing aren't a good thing[END0]
+		    		    
+
+[[Edges]] [START0]
+[[Edge]] [START1]
+[[EdgeName]] [START2]South[END2]
+[[EdgeShortDescription]] [START2]There is a strange ripple on the surface of the canyon wall to the south[END2]
+[[EdgeLongDescription]] [START2]There is a strange ripple on the surface of the canyon wall to the south. It will take you back to the beach[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Beach[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]North[END2]
+[[EdgeShortDescription]] [START2]A large, wooden gate looms to the north[END2]
+[[EdgeLongDescription]] [START2]A large, wooden gate looms to the north. Soldiers are marching out of it. This will take you to the battlefield[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Battlefield[END2]
+[END1]
+[END0]
+
+
+[[Features]] [START0]
+[[Feature]] [START1]
+[[FeatureName]] [START2]Commander[END2]
+[[FeatureShortDescription]] [START2]Someone who appears to be the commander stands nearby[END2]
+[[FeatureLongDescription]] [START2]Someone who appears to be the commander stands imperiously over a table, issuing orders. Talking with him after accessing the battlefield's passage reveals the tape object[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]Tape[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Chest[END2]
+[[FeatureShortDescription]] [START2]There is an old chest nearby[END2]
+[[FeatureLongDescription]] [START2]There is an old chest nearby. It is unlocked and made of heavy wood. Opening it reveals the purse object[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]Purse[END2]
+[END1]
+[END0]
+
+
+[[Objects]] [START0]
+[END0]

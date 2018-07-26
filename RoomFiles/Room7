@@ -1,0 +1,53 @@
+[[RoomName]] [START0]Arcade[END0]
+
+[[RoomType]] [START0]Standard[END0]
+
+[[ShortDescription]] [START0]A retro arcade[END0]
+
+[[LongDescription]] [START0]You find yourself in an old arcade. No one seems to be here and only one game is up and running[END0]
+		    		    
+
+[[Edges]] [START0]
+[[Edge]] [START1]
+[[EdgeName]] [START2]Special[END2]
+[[EdgeShortDescription]] [START2]The secret passage to ??? is here[END2]
+[[EdgeLongDescription]] [START2]Entering the Konami Code on Frogger sends you to ??? [Special Edge][END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Unknown[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]East[END2]
+[[EdgeShortDescription]] [START2]The arcade's exit is to the east[END2]
+[[EdgeLongDescription]] [START2]The arcade's exit is to the east. It leads to the mall[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Mall[END2]
+[END1]
+[END0]
+
+
+[[Features]] [START0]
+[[Feature]] [START1]
+[[FeatureName]] [START2]Box[END2]
+[[FeatureShortDescription]] [START2]There is a rusty box on one wall[END2]
+[[FeatureLongDescription]] [START2]The rusty box hanging nearby is barely still clinging to the wall. Opening it reveals the extinguisher object[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]Extinguisher[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Frogger[END2]
+[[FeatureShortDescription]] [START2]The one running game is "Frogger"[END2]
+[[FeatureLongDescription]] [START2]The running Frogger game looks like it would be fun to play. Examining it reveals the Konami Code on the side, which can be used to transport you to ???[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetEdge]] [START2]Special[END2]
+[END1]
+[END0]
+
+
+[[Objects]] [START0]
+[END0]

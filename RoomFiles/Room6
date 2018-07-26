@@ -1,0 +1,71 @@
+[[RoomName]] [START0]Mall[END0]
+
+[[RoomType]] [START0]Standard[END0]
+
+[[ShortDescription]] [START0]An urban shopping mall[END0]
+
+[[LongDescription]] [START0]You find yourself in a shopping mall. You suppose it makes more sense than the spaceship[END0]
+		    		    
+
+[[Edges]] [START0]
+[[Edge]] [START1]
+[[EdgeName]] [START2]Special[END2]
+[[EdgeShortDescription]] [START2]There is a special edge to the dreamworld[END2]
+[[EdgeLongDescription]] [START2]Using the park bench [special edge] after taking the sleeping pills will transport you to the dreamworld[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Dreamworld[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]West[END2]
+[[EdgeShortDescription]] [START2]There is an open door to the west[END2]
+[[EdgeLongDescription]] [START2]There is an open door to the west. It leads to the arcade[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Arcade[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]North[END2]
+[[EdgeShortDescription]] [START2]There is a store entrance to the north[END2]
+[[EdgeLongDescription]] [START2]There is a store entrance to the north. It leads to a Target Store[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Target[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]East[END2]
+[[EdgeShortDescription]] [START2]The ocean is to the west[END2]
+[[EdgeLongDescription]] [START2]The ocean is to the west. Heading this way will take you back out to sea[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Ocean[END2]
+[END1]
+[END0]
+
+
+[[Features]] [START0]
+[[Feature]] [START1]
+[[FeatureName]] [START2]Fountain[END2]
+[[FeatureShortDescription]] [START2]There is a beautiful fountain nearby[END2]
+[[FeatureLongDescription]] [START2]You see a beautifully decorated fountain. Examining it reveals the coins object[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]Coins[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Bench[END2]
+[[FeatureShortDescription]] [START2]You see a plain wooden bench[END2]
+[[FeatureLongDescription]] [START2]There is an ordinary wooden bench next to the fountain. Sleeping here transports you to the dreamworld[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetEdge]] [START2]Special[END2]
+[END1]
+[END0]
+
+
+[[Objects]] [START0]
+[END0]
