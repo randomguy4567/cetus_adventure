@@ -1,12 +1,12 @@
 CC=gcc
 CXX=g++
 RM=rm -f
-CPPFLAGS=--std=c++11
+CPPFLAGS=--std=c++11 -g
 LDFLAGS=
 LDLIBS=
 
 SRCS=Edge.cpp  Feature.cpp  Game.cpp  Interface.cpp  main.cpp  Node.cpp  Object.cpp  Loop.cpp  Database.cpp ParsedCommand.cpp Parser.cpp
-OBJS=$(subst .cc,.o,$(SRCS))
+OBJS=$(subst .cpp,.o,$(SRCS))
 
 all: cetus
 

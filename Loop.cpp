@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <sstream>
 #include <string>
 #include <map>
@@ -7,35 +8,31 @@
 #include "Game.h"
 #include "Loop.h"
 #include "Parser.hpp"
+#include "Tag.hpp"
 
 
 using namespace std;
 
 void buildDictionary(Game* g, std::map<std::string, Tag>& dict){
-	dict = 
-	{
-		{"go",V}, 
-		{"look",V},
-		{"take",V},
-		{"drop",V},
-		{"inventory",V},
-		{"eat",V},
-		{"help",V},
-		{"save",V},
-		{"load",V},
-		{"quit",V}
-	};
 	for (auto* e: g->current->edges){
-		dict[e->name] = E;
+		auto str = e->name;
+		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+		dict[str] = E;
 	}
 	for (auto* f: g->current->features){
-		dict[f->name] = N;
+		auto str = f->name;
+		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+		dict[str] = N;
 	}
 	for (auto* o: g->current->objects){
-		dict[o->name] = N;
+		auto str = o->name;
+		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+		dict[str] = N;
 	}
 	for (auto* o: g->objects){
-		dict[o->name] = N;
+		auto str = o->name;
+		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+		dict[str] = N;
 	}
 	//verifying dictionary conetents
 	cout << "current dictinary: " << endl;
@@ -57,13 +54,6 @@ void loop(Game* g){
 			g->interface.print(g->describe() + "\n\n");
 		}
 		else{
-			
-			
-			
-			
-			
-			
-			
 			string verb, param;
 			//*****This is where the parser is integrated************************************
 			bool useParser = true;
