@@ -7,6 +7,7 @@
 #include "Game.h"
 #include "Loop.h"
 #include "Parser.hpp"
+#include "Tag.hpp"
 
 
 using namespace std;
@@ -14,16 +15,27 @@ using namespace std;
 void buildDictionary(Game* g, std::map<std::string, Tag>& dict){
 	dict = 
 	{
-		{"go",V}, 
-		{"look",V},
-		{"take",V},
-		{"drop",V},
-		{"inventory",V},
-		{"eat",V},
-		{"help",V},
-		{"save",V},
-		{"load",V},
-		{"quit",V}
+		{"attack", V},
+		{"call", V},
+		{"drop", V},
+		{"eat", V},
+		{"go", V},
+		{"help", V},
+		{"inventory", V},
+		{"kick", V},
+		{"listen", V},
+		{"load", V},
+		{"loadgame", V},
+		{"look", V},
+		{"open", V},
+		{"press", V},
+		{"quit", V},
+		{"save", V},
+		{"savegame", V},
+		{"sleep", V},
+		{"take", V},
+		{"talk", V},
+		{"use", V}
 	};
 	for (auto* e: g->current->edges){
 		dict[e->name] = E;
