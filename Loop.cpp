@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <sstream>
 #include <string>
 #include <map>
@@ -14,16 +15,24 @@ using namespace std;
 
 void buildDictionary(Game* g, std::map<std::string, Tag>& dict){
 	for (auto* e: g->current->edges){
-		dict[e->name] = E;
+		auto str = e->name;
+		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+		dict[str] = E;
 	}
 	for (auto* f: g->current->features){
-		dict[f->name] = N;
+		auto str = f->name;
+		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+		dict[str] = N;
 	}
 	for (auto* o: g->current->objects){
-		dict[o->name] = N;
+		auto str = o->name;
+		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+		dict[str] = N;
 	}
 	for (auto* o: g->objects){
-		dict[o->name] = N;
+		auto str = o->name;
+		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+		dict[str] = N;
 	}
 	//verifying dictionary conetents
 	cout << "current dictinary: " << endl;
