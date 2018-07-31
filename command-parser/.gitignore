@@ -1,0 +1,7 @@
+obj/
+*~
+test_dictionary
+test_stack
+test_parser
+parser_demo
+*.swp

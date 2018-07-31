@@ -1,11 +1,48 @@
 #include <sstream>
+#include <string>
+#include <map>
+#include <iostream>
+#include <fstream>
+#include <vector>
 #include "Game.h"
 #include "Loop.h"
+#include "Parser.hpp"
 
 
 using namespace std;
 
-
+void buildDictionary(Game* g, std::map<std::string, Tag>& dict){
+	dict = 
+	{
+		{"go",V}, 
+		{"look",V},
+		{"take",V},
+		{"drop",V},
+		{"inventory",V},
+		{"eat",V},
+		{"help",V},
+		{"save",V},
+		{"load",V},
+		{"quit",V}
+	};
+	for (auto* e: g->current->edges){
+		dict[e->name] = E;
+	}
+	for (auto* f: g->current->features){
+		dict[f->name] = N;
+	}
+	for (auto* o: g->current->objects){
+		dict[o->name] = N;
+	}
+	for (auto* o: g->objects){
+		dict[o->name] = N;
+	}
+	//verifying dictionary conetents
+	cout << "current dictinary: " << endl;
+	for(auto p: dict){
+		cout << p.first << " " << p.second << endl;
+	}
+}
 //This allows us to "play" the demo
 void loop(Game* g){
 	g->interface.print(g->describe() + "\n\n");
@@ -20,10 +57,45 @@ void loop(Game* g){
 			g->interface.print(g->describe() + "\n\n");
 		}
 		else{
-			//*****This is where the parser will be integrated************************************
-			istringstream istr(s);
+			
+			
+			
+			
+			
+			
+			
 			string verb, param;
-			istr >> verb >> param;
+			//*****This is where the parser is integrated************************************
+			bool useParser = true;
+			if(useParser){
+				Parser parser;
+				ParsedCommand parsedCommand;
+				std::map<std::string, Tag> dict;
+				buildDictionary(g, dict);
+				
+				parsedCommand = parser.getParsedCommand( s, dict );
+				std::cout << "Verb: " << parsedCommand.getVerb() << std::endl;
+				std::cout << "Param: " << parsedCommand.getParam() << std::endl;
+				std::cout << "Status: " << parsedCommand.getStatus() << std::endl;
+				
+				verb = parsedCommand.getVerb();
+				param = parsedCommand.getParam();
+				
+			}else{
+				istringstream istr(s);
+
+				istr >> verb >> param;				
+			}
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			//Process output from parser
 			if(verb == "l"){
