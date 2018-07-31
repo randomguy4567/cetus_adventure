@@ -29,6 +29,11 @@ class Parser
 		std::string sanitizeString( const std::string &s );
 	public:
 		/**
+		 * Loads internal dictionary.
+		 */
+		Parser();
+
+		/**
 		 * Returns a ParsedCommand object with verb, param, and
 		 * status after parsing commandString.
 		 */

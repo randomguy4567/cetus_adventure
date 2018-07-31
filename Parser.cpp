@@ -183,20 +183,31 @@ bool Parser::parseTagStack( std::stack<Tag> &tagStack )
  * Determine type of each word in command string and thus add each word Tag to
  * tag stack.  If verb or param is detected, store string in parsedCommand.
  */
-std::stack<Tag> Parser::buildTagStack( ParsedCommand &parsedCommand, 
+std::stack<Tag> Parser::buildTagStack( 
+		ParsedCommand &parsedCommand, 
 		const std::string &s,
 		std::map<std::string,Tag> &dict)
 {
 	std::stack<Tag> tagStack;
-	Tag tag;
 	std::string tok;
 	std::istringstream iss(s);
-	char delim = ' ';
-	while ( std::getline(iss, tok, delim) )
+
+	while ( std::getline(iss, tok, ' ') )
 	{
-		tag = dict[tok];
+		std::map<std::string, Tag>::iterator it;
+		Tag tag;
+
+		if ( 
+		     ((it = dict.find(tok)) == dict.end()) &&
+		     ((it = this->dict.find(tok)) == this->dict.end())
+		   )
+			tag = INV;	
+		else
+			tag = it->second;
+
 		if ( tag == N || tag == V || tag == E )
 			parsedCommand.storeWord( tok, tag );
+
 		tagStack.push( tag );
 	}
 
@@ -220,6 +231,9 @@ std::string Parser::sanitizeString( const std::string &s )
 	return oss.str();
 }
 
+/**
+ * Loads internal dictionary.
+ */
 Parser::Parser()
 {
 	// populate internal dictionary
