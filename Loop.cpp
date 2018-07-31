@@ -13,30 +13,6 @@
 using namespace std;
 
 void buildDictionary(Game* g, std::map<std::string, Tag>& dict){
-	dict = 
-	{
-		{"attack", V},
-		{"call", V},
-		{"drop", V},
-		{"eat", V},
-		{"go", V},
-		{"help", V},
-		{"inventory", V},
-		{"kick", V},
-		{"listen", V},
-		{"load", V},
-		{"loadgame", V},
-		{"look", V},
-		{"open", V},
-		{"press", V},
-		{"quit", V},
-		{"save", V},
-		{"savegame", V},
-		{"sleep", V},
-		{"take", V},
-		{"talk", V},
-		{"use", V}
-	};
 	for (auto* e: g->current->edges){
 		dict[e->name] = E;
 	}
@@ -69,13 +45,6 @@ void loop(Game* g){
 			g->interface.print(g->describe() + "\n\n");
 		}
 		else{
-			
-			
-			
-			
-			
-			
-			
 			string verb, param;
 			//*****This is where the parser is integrated************************************
 			bool useParser = true;

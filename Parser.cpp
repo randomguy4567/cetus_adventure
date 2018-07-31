@@ -3,7 +3,7 @@
  * can call getParsedCommand() and pass in a string and dictionary of
  * valid words and their Tag types and be returned a ParsedCommand object.
  *
- * Last modified: 2018-07-27
+ * Last modified: 2018-07-31
  */
 
 #include "Parser.hpp"
@@ -218,6 +218,42 @@ std::string Parser::sanitizeString( const std::string &s )
 			oss << char(tolower(*i));
 	}
 	return oss.str();
+}
+
+Parser::Parser()
+{
+	// populate internal dictionary
+	this->dict = 
+	{
+		{"a", ART},
+		{"an", ART},
+		{"the", ART},
+		{"at", P},
+		{"on", P},
+		{"to", P},
+		{"with", P},
+		{"attack", V},
+		{"call", V},
+		{"drop", V},
+		{"eat", V},
+		{"go", V},
+		{"help", V},
+		{"inventory", V},
+		{"kick", V},
+		{"listen", V},
+		{"load", V},
+		{"loadgame", V},
+		{"look", V},
+		{"open", V},
+		{"press", V},
+		{"quit", V},
+		{"save", V},
+		{"savegame", V},
+		{"sleep", V},
+		{"take", V},
+		{"talk", V},
+		{"use", V}
+	};
 }
 
 /**
