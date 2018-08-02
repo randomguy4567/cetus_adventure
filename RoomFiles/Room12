@@ -1,0 +1,52 @@
+[[RoomName]] [START0]Dreamworld[END0]
+
+[[RoomType]] [START0]Standard[END0]
+
+[[ShortDescription]] [START0]An endless plain[END0]
+
+[[LongDescription]] [START0]You are on an endless plain. There are no stars or sun[END0]
+		    		    
+
+[[Edges]] [START0]
+[[Edge]] [START1]
+[[EdgeName]] [START2]Special[END2]
+[[EdgeShortDescription]] [START2]There is a special edge to the forest here[END2]
+[[EdgeLongDescription]] [START2]The bed [special edge] leads you to the forest[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Forest[END2]
+[END1]
+[END0]
+
+
+[[Features]] [START0]
+[[Feature]] [START1]
+[[FeatureName]] [START2]Bed[END2]
+[[FeatureShortDescription]] [START2]You see an ornate bed[END2]
+[[FeatureLongDescription]] [START2]You see an ornate bed in the middle of the abyss. Sleeping here secretly transports you to the forest[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetEdge]] [START2]Special[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Television[END2]
+[[FeatureShortDescription]] [START2]You see an old television[END2]
+[[FeatureLongDescription]] [START2]The old television set is playing a segment from Star Wars. You can take the acquire the droid from the this[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]Droid[END2]
+[END1]
+[END0]
+
+
+[[Objects]] [START0]
+[[Object]] [START1]
+[[ObjectName]] [START2]Droid[END2]
+[[ObjectShortDescription]] [START2]The droid is in the tv[END2]
+[[ObjectLongDescription]] [START2]The droid can be grabbed from the tv and can be used to repair the time machine[END2]
+[[ObjectVisible]] [START2]1[END2]
+[[ObjectTargetType]] [START2]None[END2]
+[[ObjectTargetFeature]] [START2]Machine[END2]
+[END1]
+[END0]

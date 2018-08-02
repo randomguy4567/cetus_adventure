@@ -30,3 +30,18 @@ string Node::describe(){
 		s = joinString(s, f->describe());
 	return s;
 }
+
+string Node::examine(){
+	string s = name + "\n----------\n";
+
+	visited = true;
+	s += longDescription;
+
+	for (auto& e: edges)
+		s = joinString(s, e->describe());
+	for (auto& o: objects)
+		s = joinString(s, o->describe());
+	for (auto& f: features)
+		s = joinString(s, f->describe());
+	return s;
+}

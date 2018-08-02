@@ -23,5 +23,6 @@ public:
 	std::vector<Object*> objects;
 	std::vector<Feature*> features;
 	std::string describe();
+	std::string examine();
 };
 #endif

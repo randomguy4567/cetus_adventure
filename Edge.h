@@ -22,6 +22,8 @@ public:
 	bool visible = true;
 	bool passable = true;
 	Node* node = 0;
+	//Just set this to the name of the node you want and forget about the Node*
+	std::string initialNodeName; 
 	std::string describe();
 	std::string examine();
 };

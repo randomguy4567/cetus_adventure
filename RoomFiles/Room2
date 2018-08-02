@@ -1,0 +1,71 @@
+[[RoomName]] [START0]Beach[END0]
+
+[[RoomType]] [START0]Standard[END0]
+
+[[ShortDescription]] [START0]A sunny beach[END0]
+
+[[LongDescription]] [START0]You are now on a sunny beach. It seems very nice here[END0]
+		    		    
+
+[[Edges]] [START0]
+[[Edge]] [START1]
+[[EdgeName]] [START2]South[END2]
+[[EdgeShortDescription]] [START2]There is an elevator to the south[END2]
+[[EdgeLongDescription]] [START2]There is an elevator to the south. It leads to the spaceship[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Spaceship[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]Special[END2]
+[[EdgeShortDescription]] [START2]There is a special path to the camp[END2]
+[[EdgeLongDescription]] [START2]There is a statue [special edge]. It secretly leads to the camp[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Camp[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]East[END2]
+[[EdgeShortDescription]] [START2]There is a path to the east[END2]
+[[EdgeLongDescription]] [START2]There is a path to the east. It leads to the forest[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Forest[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]West[END2]
+[[EdgeShortDescription]] [START2]The ocean to the west[END2]
+[[EdgeLongDescription]] [START2]The ocean is to the west. Going this way takes you out to sea[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Ocean[END2]
+[END1]
+[END0]
+
+
+[[Features]] [START0]
+[[Feature]] [START1]
+[[FeatureName]] [START2]Outcropping[END2]
+[[FeatureShortDescription]] [START2]You see a stone outcropping[END2]
+[[FeatureLongDescription]] [START2]You see a stone outcropping jutting out into the water. It causes the batteries to appear on the seafloor when examined[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetFeature]] [START2]Batteries[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Statue[END2]
+[[FeatureShortDescription]] [START2]A giant pair of stone feet loom over you[END2]
+[[FeatureLongDescription]] [START2]A gaint pair of stone feet loom neaby ominously. Using the chisel on this statue leads to the camp[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]Special[END2]
+[END1]
+[END0]
+
+
+[[Objects]] [START0]
+[END0]

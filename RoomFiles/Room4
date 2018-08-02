@@ -1,0 +1,61 @@
+[[RoomName]] [START0]Forest[END0]
+
+[[RoomType]] [START0]Standard[END0]
+
+[[ShortDescription]] [START0]A peaceful forest grove[END0]
+
+[[LongDescription]] [START0]You are in the forest. It is quite peaceful here[END0]
+		    		    
+
+[[Edges]] [START0]
+[[Edge]] [START1]
+[[EdgeName]] [START2]West[END2]
+[[EdgeShortDescription]] [START2]There is a path to the west[END2]
+[[EdgeLongDescription]] [START2]There is a path to the west. It leads to the beach[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Beach[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]Special[END2]
+[[EdgeShortDescription]] [START2]There is a special edge to the dreamworld[END2]
+[[EdgeLongDescription]] [START2]The pile of leaves secretly [special edge] leads you to the dreamworld[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Dreamworld[END2]
+[END1]
+[END0]
+
+
+[[Features]] [START0]
+[[Feature]] [START1]
+[[FeatureName]] [START2]Leaves[END2]
+[[FeatureShortDescription]] [START2]You see a pile of leaves[END2]
+[[FeatureLongDescription]] [START2]You see a pile of leaves gathered against a nearby bush. Sleeping here secretly transports you to the dreamworld[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetFeature]] [START2]Special[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Trapper[END2]
+[[FeatureShortDescription]] [START2]An old trapper is nearby[END2]
+[[FeatureLongDescription]] [START2]There is an old trapper in the forest, humming to himself as he sits beneath a tree. Talking with him gives you the list of traps. Using the answer sheet gives you the chisel[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]Chisel[END2]
+[END1]
+[END0]
+
+
+[[Objects]] [START0]
+[[Object]] [START1]
+[[ObjectName]] [START2]Chisel[END2]
+[[ObjectShortDescription]] [START2]A chisel lies on the ground[END2]
+[[ObjectLongDescription]] [START2]The trapper will give you the chisel[END2]
+[[ObjectVisible]] [START2]1[END2]
+[[ObjectTargetType]] [START2]None[END2]
+[[ObjectTargetFeature]] [START2]Statue[END2]
+[END1]
+[END0]

@@ -21,6 +21,7 @@ public:
 	bool visited = false;
 	bool visible = true;
 	Edge* edge = 0; // this is the edge that becomes visible or passable when the user activate() the object
+	std::string initialEdgeName;
 	std::string describe();
 	std::string examine();
 	virtual std::string verb(); // this is the word that can be entered into the user interface 
@@ -28,7 +29,7 @@ public:
 	std::string activate(); // when you consume or take an object.
 	void setVerb(std::string verb, std::string response);
 	
-private:
+public:
 	std::string _verb; //this is internal
 	std::string _response; 
 };

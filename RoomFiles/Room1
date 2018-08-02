@@ -1,0 +1,61 @@
+[[RoomName]] [START0]Spaceship[END0]
+
+[[RoomType]] [START0]Start[END0]
+
+[[ShortDescription]] [START0]An eerie spaceship[END0]
+
+[[LongDescription]] [START0]You are now in an eerie spaceship. It seems deserted[END0]
+		    		    
+
+[[Edges]] [START0]
+[[Edge]] [START1]
+[[EdgeName]] [START2]North[END2]
+[[EdgeShortDescription]] [START2]Elevator[END2]
+[[EdgeLongDescription]] [START2]There is an elevator to the north. It leads to the beach[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Beach[END2]
+[END1]
+[END0]
+
+
+[[Features]] [START0]
+[[Feature]] [START1]
+[[FeatureName]] [START2]Machine[END2]
+[[FeatureShortDescription]] [START2]You see a time machine[END2]
+[[FeatureLongDescription]] [START2]You see a time machine. It can be used to send the computer to the past[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetFeature]] [START2]Answer[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Gadget[END2]
+[[FeatureShortDescription]] [START2]There is burnt device of some sort nearby[END2]
+[[FeatureLongDescription]] [START2]Nearby there is a burnt up version of the computer that has gone through the time machine. It has the answer sheet inside of it[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]Answer[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Paper[END2]
+[[FeatureShortDescription]] [START2]A sheet of paper lies nearby[END2]
+[[FeatureLongDescription]] [START2]On a sheet of paper lying on an overturned table are the words "Call Cetus"[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]None[END2]
+[END1]
+[END0]
+
+
+[[Objects]] [START0]
+[[Object]] [START1]
+[[ObjectName]] [START2]Answer[END2]
+[[ObjectShortDescription]] [START2]An answer sheet is on the ground[END2]
+[[ObjectLongDescription]] [START2]The answer to the trapper's TSP instance is inside the gadget. You need to use the key to get to this[END2]
+[[ObjectVisible]] [START2]1[END2]
+[[ObjectTargetType]] [START2]None[END2]
+[[ObjectTargetFeature]] [START2]Trapper[END2]
+[END1]
+[END0]

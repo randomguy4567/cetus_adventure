@@ -1,0 +1,53 @@
+[[RoomName]] [START0]Battlefield[END0]
+
+[[RoomType]] [START0]Standard[END0]
+
+[[ShortDescription]] [START0]A battlefield outside of camp[END0]
+
+[[LongDescription]] [START0]Outside of the camp you find a vast battlefield. The two armies are squaring up to face each other here[END0]
+		    		    
+
+[[Edges]] [START0]
+[[Edge]] [START1]
+[[EdgeName]] [START2]South[END2]
+[[EdgeShortDescription]] [START2]A large, wooden gate looms to the south[END2]
+[[EdgeLongDescription]] [START2]A large, wooden gate looms to the south. Soldiers are marching out of it. This will take you back to camp[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Camp[END2]
+[END1]
+
+[[Edge]] [START1]
+[[EdgeName]] [START2]Special[END2]
+[[EdgeShortDescription]] [START2]There is a special edge to Olympus here[END2]
+[[EdgeLongDescription]] [START2]The river Styx [special edge] secretly twists its way beneath the battlefield, but Charon has a special destination for you. Interacting with the army when you are holding the purse will take you to Olympus[END2]
+[[EdgeVisible]] [START2]1[END2]
+[[EdgePassable]] [START2]1[END2]
+[[EdgeNode]] [START2]Olympus[END2]
+[END1]
+[END0]
+
+
+[[Features]] [START0]
+[[Feature]] [START1]
+[[FeatureName]] [START2]Cave[END2]
+[[FeatureShortDescription]] [START2]To the side of the battlefield, there is a cave[END2]
+[[FeatureLongDescription]] [START2]To the side of the battlefield, there is a cave. It is pitch black and you'll probably need a light. Using the flashlight on this leads to the revelation of the crest object[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetObject]] [START2]Crest[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Army[END2]
+[[FeatureShortDescription]] [START2]The enemy army marches towards you menacingly[END2]
+[[FeatureLongDescription]] [START2]The enemy army marches towards you menacingly. Around you, soldiers form up into position. Interacting with the army in any way when the coin purse is in your inventory leads you to Olympus[END2]
+[[FeatureVisible]] [START2]1[END2]
+[[FeatureTargetType]] [START2]None[END2]
+[[FeatureTargetEdge]] [START2]Olympus[END2]
+[END1]
+[END0]
+
+
+[[Objects]] [START0]
+[END0]
