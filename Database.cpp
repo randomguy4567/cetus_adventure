@@ -274,8 +274,8 @@ int initialize(Game *g, int numRooms) {
                     objQuery = fileParser(2, objI, "ObjectTargetRoom", &temp2);
                     temp2 = 0;
                     string objQuery2 = fileParser(2, objI, "ObjectTargetEdge", &temp2);
-                    // cout << "Object target: Room = " << objQuery << ", Edge = " << objQuery2 << endl;
-                    a->initialEdgeName = objQuery2;
+                    // cout << "Object target: Room = " << objQuery << ", Edge = " << objQuery2 << endl;                  
+                    a->target = objQuery2;
                     
                 }
                 
@@ -302,7 +302,7 @@ int initialize(Game *g, int numRooms) {
                         verbQuery = fileParser(4, objVerb, "VerbResponse", &temp22);
                         // cout << "Verb Response: " << verbQuery << endl;
                         verbResponse = verbQuery;
-                        a->setVerb(verbName,verbResponse);
+                        a->setVerb(verbName,verbResponse, "Need hint response");
                     }
                     counter2++;
                     

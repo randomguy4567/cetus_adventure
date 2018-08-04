@@ -75,7 +75,9 @@ bool closeEnough(std::string toFind, std::string toSearch){
 
 
 
-Game::Game(){}
+Game::Game(){
+	Object::g = this;
+}
 
 bool Game::go(std::string name, bool exact) {
 	assert(current != 0);
@@ -101,20 +103,24 @@ bool Game::go(std::string name, bool exact) {
 		}
 	return false;
 }
+
 string Game::take(std::string name) {
 	assert(current != 0);
 	string n = tolower(name);
 	for (int i = 0; i < current->objects.size(); i++)
 		if(n == tolower(current->objects[i]->name)){
-			objects.push_back(current->objects[i]); // item stored in vector
-			string s = current->objects[i]->name;
-			current->objects[i]->activate();
-			current->objects.erase(current->objects.begin() + i); // erasing object from current node
-																	// because it is now in your inventory
-			return "The " + s + " is in your inventory"; //hardcoded for demo.	
+			if (!current->objects[i]->fixed) {
+				objects.push_back(current->objects[i]); // item stored in vector
+				string s = current->objects[i]->name;
+				if (!current->objects[i]->_verb.size()) current->objects[i]->activate();
+				current->objects.erase(current->objects.begin() + i); // erasing object from current node				
+				return "The " + s + " is in your inventory"; 
+			}
+																	
 		}
 	return "";
-} 	
+} 
+	
 std::string Game::drop(std::string name){
 	assert(current != 0);
 	string n = tolower(name);
@@ -139,10 +145,11 @@ string Game::consume(std::string name) {
 			current->objects[i]->activate();
 			current->objects.erase(current->objects.begin() + i); // erasing object from current node
 																	//NOTE: consume() deletes the object permanently
-			return "You consume the " + s ; //hardcoded for demo.	
+			return "You consume the " + s ; 	
 		}
 	return "";
 } 
+
 string Game::describe(std::string name) {
 	assert(current != 0);
 	if (!name.size())
@@ -177,6 +184,65 @@ string Game::examine(std::string name) {
 	return "";	
 }
 
+string Game::tryVerb(std::string verb, std::string param){
+	Object* targetObj = 0;
+	for (auto* o: objects)
+		if(tolower(o->_verb) == verb){
+			targetObj = o;
+		}
+	if(!targetObj)
+		for (auto* o: current->objects)
+			if(tolower(o->_verb) == verb){
+				targetObj = o;
+			}
+	if(!targetObj)
+		if(verb == "use"){
+			for (auto* o: current->objects)
+				if(tolower(o->name) == param){
+					targetObj = o;
+				}	
+			for (auto* o: objects)
+				if(tolower(o->name) == param){
+					targetObj = o;
+				}						
+		}
+	if (!targetObj)
+		return "";
+	
+	string target = targetObj->target;
+	auto index = target.find('.');
+	string nodeName, subName = target;
+	if(index != string::npos){
+		nodeName = target.substr(0, index);
+		subName = target.substr(index + 1);
+		if(nodeName != tolower(current->name)){
+			return targetObj->_hintResponse;
+		}
+		
+	}
+	for (auto* e: current->edges){
+		if(tolower(e->name) == subName){
+			e->visible = true;
+			e->passable = true;
+			return targetObj->_response + ". " + e->examine();
+		}	
+	}
+	for (auto* f: current->features){
+		if(tolower(f->name) == subName){
+			f->visible = true;
+			return targetObj->_response + ". " + f->examine();
+		}		
+	}
+	for (auto* o: current->objects){
+		if(tolower(o->name) == subName){
+			o->visible = true;
+			return targetObj->_response + ". " + o->examine();
+		}
+	}	
+	return targetObj->_hintResponse;
+}
+
+
 Node* Game::findNode(std::string name){
 	for (auto* n: allNodes)
 		if(tolower(n->name) == tolower(name))
@@ -209,6 +275,9 @@ Edge* Game::findEdge(std::string name, Node* n){
 	return 0;	
 }	
 
+
+
+//
 void Game::printDatabase() {
 	for (auto* n: allNodes){
 		cout << "Node: " << n->name << " " << n->shortDescription << " visited: " 
@@ -225,24 +294,32 @@ void Game::printDatabase() {
 		}
 		for (auto* o: n->objects){
 			cout << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
-				<< " visible: " << o->visible<<  " edge: " << o->edge<< " IeName: " << o->initialEdgeName 
+				<< " visible: " << o->visible << " target: " << o->target 
 				<< " verb: " << o->_verb << " response: " << o->_response << endl;
 		}
 		cout << "\n";
 	}	
 	for (auto* o: allObjects){
-		cout << "allObj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
-		<< " visible: " << o->visible<<  " edge: " << o->edge<< " IeName: " << o->initialEdgeName 
-		<< " verb: " << o->_verb << " response: " << o->_response <<  " Location: " << getObjectLocation(o->name) <<  endl;
+			cout << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
+				<< " visible: " << o->visible << " target: " << o->target 
+				<< " verb: " << o->_verb << " response: " << o->_response <<  " Location: " << getObjectLocation(o->name) <<  endl;
 	}	
 	for (auto* o: objects){
-		cout << "inv: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
-		<< " visible: " << o->visible<<  " edge: " << o->edge<< " IeName: " << o->initialEdgeName 
-		<< " verb: " << o->_verb << " response: " << o->_response << endl;
+			cout << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
+				<< " visible: " << o->visible << " target: " << o->target 
+				<< " verb: " << o->_verb << " response: " << o->_response << endl;
 	}
 }
 
 bool Game::buildGraph(){
+	
+	findFeature("Flotsam", findNode("Ocean"))->initialObjectName="Flashlight";
+	auto* flashlight = findObject("Flashlight", findNode("Ocean"));
+	flashlight->_verb = "light";
+	flashlight->_hintResponse = "The flashlight only lights at the beach";
+	flashlight->_response = "Now you can see in the dark";
+	flashlight->target = "beach.special";
+	findEdge("special", findNode("beach"))->visible = false;
 	for (auto* n: allNodes){
 		for (auto* e: n->edges)
 			e->node = findNode(e->initialNodeName);
@@ -251,7 +328,7 @@ bool Game::buildGraph(){
 			f->object = findObject(f->initialObjectName, n);
 		}
 		for (auto* o: n->objects){
-			o->edge = findEdge(o->initialEdgeName, n);
+			//o->edge = findEdge(o->initialEdgeName, n);
 			if(find(allObjects.begin(), allObjects.end(), o) == allObjects.end())
 				allObjects.push_back(o);
 		}
@@ -268,7 +345,6 @@ std::string Game::inventory(){
 		s += o->name + " ";
 	}
 	return s;
-	
 }
 
 std::string Game::whatToLook(){

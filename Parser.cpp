@@ -3,7 +3,7 @@
  * can call getParsedCommand() and pass in a string and dictionary of
  * valid words and their Tag types and be returned a ParsedCommand object.
  *
- * Last modified: 2018-07-31
+ * Last modified: 2018-08-02
  */
 
 #include "Parser.hpp"
@@ -197,11 +197,16 @@ std::stack<Tag> Parser::buildTagStack(
 		std::map<std::string, Tag>::iterator it;
 		Tag tag;
 
+		// first look in the passed dictionary for tag, if not found,
+		// look in the internal dictionary, if still not found, tag
+		// word as invalid.
 		if ( 
-		     ((it = dict.find(tok)) == dict.end()) &&
-		     ((it = this->dict.find(tok)) == this->dict.end())
+		     ((it = dict.find(tok)) == dict.end()) && 
+		     //((it = this->dict.find(tok)) == this->dict.end())
+		     true
 		   )
 			tag = INV;	
+		// otherwise, get tag
 		else
 			tag = it->second;
 
@@ -279,6 +284,9 @@ ParsedCommand Parser::getParsedCommand( std::string commandString,
 {
 	ParsedCommand parsedCommand;
 	std::stack<Tag> tagStack;
+
+	// merge internal dictionary with external dict
+	dict.insert(this->dict.begin(), this->dict.end());
 
 	/* remove all characters from string at are not alpha nor whitespace */
 	commandString = this->sanitizeString( commandString );

@@ -1,0 +1,16 @@
+This is just a demonstration of a help file, does one of you want to edit it?
+
+It can be found as help.txt
+
+Commands
+--------
+
+go [direction]
+take [object]
+look 
+look [at] [direction, feature, object]
+drop [object]
+use [object]
+help
+cheat
+inventory

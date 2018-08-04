@@ -8,21 +8,17 @@ Feature::Feature(){
 string Feature::describe(){
 	if (!visible)
 		return "";
-	if (visited){
-		visited = true;
-		return shortDescription;
-	}
-	else{
-		visited = true;
-		return longDescription;
-	}
+	return shortDescription;
 }
+
 string Feature::examine(){
 	if (!visible)
 		return "";
-	string s;
+	string s = longDescription;
 	if (feature){
 		feature->visible = true;
+		if (s.size())
+			s = s +". ";
 		s = feature->describe();
 		return s; //added, not sure if correct
 	}
@@ -33,8 +29,7 @@ string Feature::examine(){
 		s += object->describe();
 		return s; //added not sure if correct	
 	}
-	if (s.size())
-		s = s +". ";
-	return s + longDescription;
+
+	return s ;
 }
 

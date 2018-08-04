@@ -13,7 +13,12 @@
 
 using namespace std;
 
-void buildDictionary(Game* g, std::map<std::string, Tag>& dict){
+string stringToLower(string s){
+	std::transform(s.begin(), s.end(), s.begin(), ::tolower);
+	return s;
+}
+
+void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& verbs){
 	for (auto* e: g->current->edges){
 		auto str = e->name;
 		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
@@ -33,9 +38,22 @@ void buildDictionary(Game* g, std::map<std::string, Tag>& dict){
 		auto str = o->name;
 		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
 		dict[str] = N;
+		str = o->_verb;
+
+		str = stringToLower(str);
+		dict[str] = V;
+	}
+	
+	
+	for (auto* o: g->allObjects){
+		cout<<o->name<<endl;
+		if(o->_verb.size())
+			verbs.push_back(o->_verb);
 	}
 
 	dict["cheat"] = V;
+	dict["use"] = V;
+	dict["help"] = V;
 }
 //This allows us to "play" the demo
 void loop(Game* g){
@@ -43,25 +61,27 @@ void loop(Game* g){
 	g->interface.print(g->describe() + "\n\n");
 	while(g->current != g->end){
 		g->interface.print("> ");
-		string s = g->interface.getline();
+		string cmd = g->interface.getline();
 		
-		s = g->preParse(s);
+		cmd = g->preParse(cmd);
 		
 		// This is to allow an Edge name as a command
-		if (g->go(s, true)){
+		if (g->go(cmd, true)){
 			g->interface.print(g->describe() + "\n\n");
 		}
 		else{
 			string verb, param;
+			vector<string> verbs;
 			//*****This is where the parser is integrated************************************
 			bool useParser = true;
-			if(useParser){
+			if(useParser&&cmd.size()){
 				Parser parser;
 				ParsedCommand parsedCommand;
 				dict.clear();
-				buildDictionary(g, dict);
+
+				buildDictionary(g, dict, verbs);
 				
-				parsedCommand = parser.getParsedCommand( s, dict );
+				parsedCommand = parser.getParsedCommand( cmd, dict );
 				std::cout << "Verb: " << parsedCommand.getVerb() << std::endl;
 				std::cout << "Param: " << parsedCommand.getParam() << std::endl;
 				std::cout << "Status: " << parsedCommand.getStatus() << std::endl;
@@ -70,7 +90,7 @@ void loop(Game* g){
 				param = parsedCommand.getParam();
 				
 			}else{
-				istringstream istr(s);
+				istringstream istr(cmd);
 
 				istr >> verb >> param;				
 			}
@@ -84,9 +104,12 @@ void loop(Game* g){
 			
 			
 			
-			
+			string s;
 			//Process output from parser
-			if(verb == "l"){
+			if(!verb.size()){
+				
+			}
+			else if(verb == "l"){
 				s = g->describe(param);
 				if(s.empty()){
 					g->interface.print("You can't look at that.");
@@ -99,7 +122,7 @@ void loop(Game* g){
 					g->interface.print(s + ".\n\n");
 						 	
 			}else if(verb == "examine" || verb == "look"){
-				s = g->examine(param);
+				if (param!="" || cmd=="look") s=g->examine(param);
 				if(s.empty()){
 					g->interface.print("You can't look at that.");
 					s = g->whatToLook();
@@ -134,18 +157,35 @@ void loop(Game* g){
 				else
 					g->interface.print(s + ".\n\n");			 	
 			}else if(verb == "inventory"){
-		
-					g->interface.print(g->inventory() + ".\n\n");			 	
+	
+				g->interface.print(g->inventory() + ".\n\n");			 	
 			}else if(verb == "cheat"){
 		
-					g->printDatabase();	
-						//verifying dictionary conetents
-					cout << "current dictinary: " << endl;
-					for(auto p: dict){
-						cout << p.first << " " << p.second << endl;
-					}		 	
+				g->printDatabase();	
+					//verifying dictionary conetents
+				cout << "current dictionary: " << endl;
+				for(auto p: dict){
+					cout << p.first << " " << p.second << endl;
+				}		 	
+			}else if(verb == "help"){
+				ifstream in ("help.txt");
+				while (in){
+					string s;
+					getline(in, s);
+					if (in){
+						g->interface.print(s + "\n");
+					}
+				}
+				g->interface.print("Additional verbs that can be used on objects: \n");
+				for (auto s: verbs)
+					g->interface.print(s + "\n");
+				g->interface.print("\n");		 	
 			}else{
-				g->interface.print("You don't understand that. \n\n");
+				s = g->tryVerb(verb, param);
+				if (s.empty())
+					g->interface.print("I don't understand that. \n\n");
+				else
+					g->interface.print(s + ".\n\n");
 			}
 			
 		}

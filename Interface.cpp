@@ -4,9 +4,11 @@
 
 using namespace std;
 
-void Interface::print(std::string text){ //whatever text will go on the screen
+//whatever text will go on the screen
+void Interface::print(std::string text){ 
 	cout << text;
-} 
+}
+ 
 std::string Interface::getline() {
 	string s;
 	std::getline(cin, s);

@@ -7,17 +7,12 @@ Edge::Edge(){
 string Edge::describe(){
 	if (!visible)
 		return "";
-	if (visited){
-		visited = true;
-		return shortDescription;
-	}
-	else{
-		visited = true;
-		return longDescription;
-	}
+	return shortDescription;
 }
+
 string Edge::examine(){
 	if (!visible)
 		return "";
+	visited = true;
 	return longDescription;
 }

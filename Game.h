@@ -16,45 +16,66 @@ class Node;
 
 class Game{
 public:
-	Game();	// Constructor
 	
-	bool buildGraph(); //After you have created all the Nodes, including Edges, Features and Objects, call this function to build all of the pointers.
-						// Therefore, you do not have to set Edge::node, Feature::feature, Feature::object, or Object::edge.
-						// Instead, just set the "string initial*" parameters to the matching names (NO SPACES in names, node names must be unique.) 
-						// You still need to put every Node* into allNodes.
+	/* Constructor */
+	Game();	
 	
-	Node* root = 0; // root node needs to be set during initialization because the main loop needs to know where to start.
+	/* After you have created all the Nodes, including Edges, Features and Objects, call this 
+	function to build all of the pointers. Therefore, you do not have to set Edge::node, Feature::feature,
+	Feature::object, or Object::edge. Instead, just set the "string initial*" parameters to the matching 
+	names (NO SPACES in names, node names must be unique.) You still need to put every Node* into allNodes. */
+	bool buildGraph(); 
 	
-	Node* end = 0; // end node also needs to be set during initialization, arrival at the end node is used as a trigger to signify end of game.
+	/* Root node needs to be set during initialization because the main loop needs to know where to start.*/
+	Node* root = 0; 
 	
-	Node* current = 0; // current node changes as the user moves. Parser can use the current node to learn the names of things the user can act on, as 
-						//  well as verbs that are available to act on objects in the current room.
+	/* End node also needs to be set during initialization, arrival at the end node is used as a 
+	trigger to signify end of game.*/
+	Node* end = 0; 
 	
-	std::vector<Node*> allNodes; // This should be filled as the graph is being built by the data structures. This will 
-								  // be convenient for game saves and loads.
+	/* Current node changes as the user moves. Parser can use the current node to learn the names of things
+    the user can act on, as well as verbs that are available to act on objects in the current room.*/
+	Node* current = 0; 
 	
-	std::vector<Object*> allObjects; // This is created by buildGraph(), for convenience during game save/load.
+	/* This should be filled as the graph is being built by the data structures. This will 
+	be convenient for game saves and loads. */
+	std::vector<Node*> allNodes; 
 	
-	std::vector<Object*> objects; // When you call take(), an Object is added to your character's inventory.
+	/* This is created by buildGraph(), for convenience during game save/load.*/
+	std::vector<Object*> allObjects; 
 	
-	Interface interface; // This is where the Ncurses implementation will go. Initially it is just going to be a set of stubs.
+	/* When you call take(), an Object is added to your character's inventory. */
+	std::vector<Object*> objects; 
 	
-	bool go(std::string name , bool exact = false); // You call this to traverse an Edge.
+	/* This is where the Ncurses implementation will go. Initially it is just going to be a set of stubs. */
+	Interface interface; 
 	
-	std::string take(std::string name); // You call this to put an object from the current room into your inventory (objects).
+	/* You call this to traverse an Edge. */
+	bool go(std::string name , bool exact = false); 
 	
-	std::string drop(std::string name); // You call this to drop an object from your inventory 
+	/* You call this to put an object from the current room into your inventory (objects). */
+	std::string take(std::string name); 
 	
-	std::string consume(std::string name); // This activates an object and then destroys it (examples are to eat something or set something 
-									 // off, ' a button or hand grenade')
+	/* Call this to drop an object from your inventory */
+	std::string drop(std::string name); 
 	
-	std::string describe(std::string name = ""); // This is called upon entering a room. It sets the visited flag and so the second call to describe would get
-											 // the short description.
+	/* This activates an object and then destroys it (examples are to eat something or 
+	set something off, ('a button or hand grenade') */
+	std::string consume(std::string name); 
 	
-	std::string examine(std::string name = "");	// Examine() is intended for Features. It follows the link in the feature to potentially 
-											 // reveal additional Features.	
+	/* This is called upon entering a room. It sets the visited flag and so the second call to 
+	describe would get the short description. */ 
+	std::string describe(std::string name = ""); 
 	
-	std::string inventory(); // added to account from the drop() functionality
+	/* Examine() is intended for Features. It follows the link in the feature to potentially 
+	reveal additional Features.	*/
+	std::string examine(std::string name = "");
+	
+	/* If the verb is correct one, activate() it */
+	std::string tryVerb(std::string verb, std::string param);
+	
+	/* Added to account from the drop() functionality */
+	std::string inventory(); 
 	
 	std::string whatToLook();
 	
@@ -62,14 +83,17 @@ public:
 	
 	std::string preParse(std::string rawInput);
 	
-	std::string getObjectLocation(std::string name);// get the current location of any object. The return value 
-													// is the name of a node, inventory, or void
+	/* Get the current location of any object. The return value is the name of a node, inventory, or void.  */
+	std::string getObjectLocation(std::string name);
 	
-	bool setObjectLocation(std::string name, std::string location);// this is the opposite of getObjectLocation
+	/* This is the opposite of getObjectLocation. */
+	bool setObjectLocation(std::string name, std::string location);
+	
+	/*Database dump used for debugging and general information. */
 	void printDatabase();
 
-	// If you want, you could add pointers to your classes here to integrate the parser and the database, 
-	 // or you could just write the code so that you act on this interface
+	/* If you want, you could add pointers to your classes here to integrate the parser and the database, 
+    or you could just write the code so that you act on this interface. */
 	
 private:
 	

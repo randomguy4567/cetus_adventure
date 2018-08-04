@@ -63,7 +63,7 @@
 [[ObjectName]] [START2]Flashlight[END2]
 [[ObjectShortDescription]] [START2]A flashlight bobs nearby[END2]
 [[ObjectLongDescription]] [START2]The flashlight lies hidden in the flotsam[END2]
-[[ObjectVisible]] [START2]1[END2]
+[[ObjectVisible]] [START2]0[END2]
 [[ObjectTargetType]] [START2]None[END2]
 [[ObjectTargetFeature]] [START2]Cave[END2]
 [END1]
