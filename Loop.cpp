@@ -46,7 +46,6 @@ void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& 
 	
 	
 	for (auto* o: g->allObjects){
-		cout<<o->name<<endl;
 		if(o->_verb.size())
 			verbs.push_back(o->_verb);
 	}
