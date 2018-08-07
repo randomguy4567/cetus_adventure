@@ -3,7 +3,7 @@
  * can call getParsedCommand() and pass in a string and dictionary of
  * valid words and their Tag types and be returned a ParsedCommand object.
  *
- * Last modified: 2018-08-02
+ * Last modified: 2018-08-07
  */
 
 #include "Parser.hpp"
@@ -194,24 +194,24 @@ std::stack<Tag> Parser::buildTagStack(
 
 	while ( std::getline(iss, tok, ' ') )
 	{
-		std::map<std::string, Tag>::iterator it;
+		std::map<std::string, Tag>::iterator dict_it;
+		std::map<std::string, std::string>::iterator alias_it;
 		Tag tag;
 
-		// first look in the passed dictionary for tag, if not found,
-		// look in the internal dictionary, if still not found, tag
-		// word as invalid.
-		if ( 
-		     ((it = dict.find(tok)) == dict.end()) && 
-		     //((it = this->dict.find(tok)) == this->dict.end())
-		     true
-		   )
+		// check dictionary for tag, if not found, tag as invalid
+		if ( ((dict_it = dict.find(tok)) == dict.end()) )
 			tag = INV;	
 		// otherwise, get tag
 		else
-			tag = it->second;
+			tag = dict_it->second;
 
+		// if word is noun, verb, or edge, store it in the parsed command
 		if ( tag == N || tag == V || tag == E )
-			parsedCommand.storeWord( tok, tag );
+			// check if word is alias for other word
+			if ( ((alias_it = aliasDict.find(tok)) == aliasDict.end()) )
+				parsedCommand.storeWord( tok, tag );
+			else
+				parsedCommand.storeWord( alias_it->second, tag );
 
 		tagStack.push( tag );
 	}
@@ -255,7 +255,9 @@ Parser::Parser()
 		{"call", V},
 		{"drop", V},
 		{"eat", V},
+		{"examine", V},
 		{"go", V},
+		{"grab", V},
 		{"help", V},
 		{"inventory", V},
 		{"kick", V},
@@ -264,6 +266,7 @@ Parser::Parser()
 		{"loadgame", V},
 		{"look", V},
 		{"open", V},
+		{"pickup", V},
 		{"press", V},
 		{"quit", V},
 		{"save", V},
@@ -272,6 +275,13 @@ Parser::Parser()
 		{"take", V},
 		{"talk", V},
 		{"use", V}
+	};
+
+	this->aliasDict = 
+	{
+		{ "examine", "look" },
+		{ "grab", "take" },
+		{ "pickup", "take" }
 	};
 }
 
