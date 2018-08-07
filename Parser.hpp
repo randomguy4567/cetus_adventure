@@ -3,7 +3,7 @@
  * can call getParsedCommand() and pass in a string and dictionary of
  * valid words and their Tag types and be returned a ParsedCommand object.
  *
- * Last modified: 2018-07-31
+ * Last modified: 2018-08-07
  */
 
 #ifndef PARSER_HPP
@@ -19,6 +19,7 @@ class Parser
 {
 	private:
 		std::map<std::string, Tag> dict;
+		std::map<std::string, std::string> aliasDict;
 		Tag tagReduce( Tag t1, Tag t2 );
 		bool tagStackReduce( std::stack<Tag> &tagStack );
 		bool parseTagStack( std::stack<Tag> &tagStack );
