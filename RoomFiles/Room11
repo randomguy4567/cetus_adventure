@@ -2,16 +2,16 @@
 
 [[RoomType]] [START0]Standard[END0]
 
-[[ShortDescription]] [START0]???[END0]
+[[ShortDescription]] [START0]You find yourself... well it's unknown.[END0]
 
-[[LongDescription]] [START0]You find yourself in a plain, windowless room[END0]
+[[LongDescription]] [START0]You find yourself... well it's unknown. To every side of you there is only an endless black void, although there seems to be some source of dim light that you can't find.[END0]
 		    		    
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]Special[END2]
-[[EdgeShortDescription]] [START2]There is a special edge back to the arcade[END2]
-[[EdgeLongDescription]] [START2]Trying to Go in any direction [special edge only here] lands you back in the arcade[END2]
+[[EdgeName]] [START2]East[END2]
+[[EdgeShortDescription]] [START2]A small hole hovering in the air leads West[END2]
+[[EdgeLongDescription]] [START2]To the East, there is a small hole in the air leading back through the Frogger game.[END2]
 [[EdgeVisible]] [START2]1[END2]
 [[EdgePassable]] [START2]1[END2]
 [[EdgeNode]] [START2]Arcade[END2]
@@ -20,33 +20,73 @@
 
 
 [[Features]] [START0]
-[[Feature]] [START1]
-[[FeatureName]] [START2]Dev[END2]
-[[FeatureShortDescription]] [START2]One of the game developers is sitting against a wall, a computer on his lap[END2]
-[[FeatureLongDescription]] [START2]One of the game developers is sitting against a wall. He looks surprised to see you. Talking to him makes the chisel usable[END2]
-[[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetObject]] [START2]Chisel[END2]
-[END1]
-
-[[Feature]] [START1]
-[[FeatureName]] [START2]Desk[END2]
-[[FeatureShortDescription]] [START2]A desk out of an IKEA catalog is standing nearby[END2]
-[[FeatureLongDescription]] [START2]A desk out of an IKEA catalog is standing nearby. Whoever put it together obviously didn't know what they were doing. Examining it reveals the dev's wallet object[END2]
-[[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetObject]] [START2]Wallet[END2]
-[END1]
 [END0]
 
 
 [[Objects]] [START0]
 [[Object]] [START1]
-[[ObjectName]] [START2]Wallet[END2]
-[[ObjectShortDescription]] [START2]The dev's wallet is nearby[END2]
-[[ObjectLongDescription]] [START2]The dev's wallet is hidden in the desk. It can be used to buy the computer[END2]
+[[ObjectName]] [START2]Dev[END2]
+[[ObjectShortDescription]] [START2]One of the game developers is sitting against a desk, a computer on his lap.[END2]
+[[ObjectLongDescription]] [START2]One of the game developers is sitting against a desk. He badly needs to shave and his baggy eyes are drooping as he looks intently at his computer monitor. He doesn't seem to have noticed you yet.[END2]
 [[ObjectVisible]] [START2]1[END2]
-[[ObjectTargetType]] [START2]None[END2]
-[[ObjectTargetFeature]] [START2]Computer[END2]
+[[ObjectFixed]] [START2]1[END2]
+[[ObjectTargetType]] [START2]Object[END2]
+[[ObjectTargetRoom]] [START2]Unknown[END2]
+[[ObjectTargetObject]] [START2]Dev[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Talk[END4]
+[[VerbResponse]]
+[START4]"Wait, you're...," his eyes grow wide. "Oh ****! OH ****! *** ***** ******* ***** *** ***** *** *******," he swears quite eloquently. "How the hell are you here?"
+
+Nearly as confused as he is, you explain what you happened at the arcade.
+
+"Wait, the Konami Code didn't take you to the pirate ship? But we fixed that bug!" He is on his feet now, pacing rapidly. He stops abruptly. "Umm, one moment." Pulling out his phone,
+the dev frantically dials a number and brings it to his ear, shooting furitive glances at you all the while.
+
+"Scott! That bug we talked about-... No not the OZYMANDIAS one, the arcade one. I thought you fixed the go function for this version?... Well it's still-... I DID use the updated
+files on the GitHub repo for this-... Yeah, the ones in Antonio's repo, the currentGame2-... YOUR GITHUB!!... Yeah, my bad... Yeah. I'll fix it but..."
+
+The dev paces away, still talking about game mechanics over the phone while you stare after him, confused.[END4]
+[END3]
+[END2]
+[END1]
+
+[[Object]] [START1]
+[[ObjectName]] [START2]Desk[END2]
+[[ObjectShortDescription]] [START2]A desk out of an IKEA catalog is standing nearby[END2]
+[[ObjectLongDescription]] [START2]A desk out of an IKEA catalog is standing nearby, but whoever put it together very clearly had no idea what they were doing. On its surface, the piles of receipts, fantasy books, charging cords, unopened bags of snack foods, and random pieces of unopened mail make it obvious that its owner needs to get his life together. A large cat is curled among the bits of debris, taking up the last space of the desk that could possibly be used for actual work.[END2]
+[[ObjectVisible]] [START2]1[END2]
+[[ObjectFixed]] [START2]1[END2]
+[[ObjectTargetType]] [START2]Object[END2]
+[[ObjectTargetRoom]] [START2]Unknown[END2]
+[[ObjectTargetObject]] [START2]Wallet[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Open[END4]
+[[VerbResponse]]
+[START4]You go through the drawers, finding, among other things, markers for a non-existent whiteboard, two small slabs of wood whose purpose you can only guess at, an unopened copy of Plato's Complete Works,
+an unplugged PS4, and... a wallet. That last one might be useful.[END4]
+[END3]
+[END2]
+[END1]
+
+[[Object]] [START1]
+[[ObjectName]] [START2]Wallet[END2]
+[[ObjectShortDescription]] [START2]The dev's wallet is in the open drawer of the desk.[END2]
+[[ObjectLongDescription]] [START2]The dev's wallet doesn't have much in it except for a couple of credit cards and a driver's license. It is quite old and several of the pouches are barely attached by more than a thread.[END2]
+[[ObjectVisible]] [START2]0[END2]
+[[ObjectFixed]] [START2]0[END2]
+[[ObjectTargetType]] [START2]Object[END2]
+[[ObjectTargetRoom]] [START2]Target[END2]
+[[ObjectTargetObject]] [START2]Computer[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Use[END4]
+[[VerbResponse]] [START4]You talk to the cashier, paying her for the old computer sitting on the shelf behind her with the developer's wallet. Spontaneously a giant fissure opens beneath you and swallows you whole, ending the game and deleting the 'Cetus' game files.
+
+I'm kidding, of course. The cashier rings it up and places it on the counter for you.[END4]
+[END3]
+[END2]
 [END1]
 [END0]

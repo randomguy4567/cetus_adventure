@@ -4,58 +4,125 @@
 
 [[ShortDescription]] [START0]A peaceful forest grove[END0]
 
-[[LongDescription]] [START0]You are in the forest. It is quite peaceful here[END0]
+[[LongDescription]] [START0]You are in a clearing in the middle of the forest. The sun is shining, the birds are singing. You half expect to see Bambi strolling through the underbrush nearby.[END0]
 		    		    
 
 [[Edges]] [START0]
 [[Edge]] [START1]
 [[EdgeName]] [START2]West[END2]
 [[EdgeShortDescription]] [START2]There is a path to the west[END2]
-[[EdgeLongDescription]] [START2]There is a path to the west. It leads to the beach[END2]
+[[EdgeLongDescription]] [START2]There is a small, grassy path leading west. You can still see your footsteps from when you used it last.[END2]
 [[EdgeVisible]] [START2]1[END2]
 [[EdgePassable]] [START2]1[END2]
 [[EdgeNode]] [START2]Beach[END2]
-[END1]
-
-[[Edge]] [START1]
-[[EdgeName]] [START2]Special[END2]
-[[EdgeShortDescription]] [START2]There is a special edge to the dreamworld[END2]
-[[EdgeLongDescription]] [START2]The pile of leaves secretly [special edge] leads you to the dreamworld[END2]
-[[EdgeVisible]] [START2]1[END2]
-[[EdgePassable]] [START2]1[END2]
-[[EdgeNode]] [START2]Dreamworld[END2]
 [END1]
 [END0]
 
 
 [[Features]] [START0]
-[[Feature]] [START1]
-[[FeatureName]] [START2]Leaves[END2]
-[[FeatureShortDescription]] [START2]You see a pile of leaves[END2]
-[[FeatureLongDescription]] [START2]You see a pile of leaves gathered against a nearby bush. Sleeping here secretly transports you to the dreamworld[END2]
-[[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetFeature]] [START2]Special[END2]
-[END1]
-
-[[Feature]] [START1]
-[[FeatureName]] [START2]Trapper[END2]
-[[FeatureShortDescription]] [START2]An old trapper is nearby[END2]
-[[FeatureLongDescription]] [START2]There is an old trapper in the forest, humming to himself as he sits beneath a tree. Talking with him gives you the list of traps. Using the answer sheet gives you the chisel[END2]
-[[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetObject]] [START2]Chisel[END2]
-[END1]
 [END0]
 
 
 [[Objects]] [START0]
 [[Object]] [START1]
+[[ObjectName]] [START2]Leaves[END2]
+[[ObjectShortDescription]] [START2]You see a pile of leaves[END2]
+[[ObjectLongDescription]] [START2]You see a small pile of leaves gathered against a nearby bush. Sifting through it, you find a long roll of parchment bearing a long list of locations.[END2]
+[[ObjectVisible]] [START2]1[END2]
+[[ObjectFixed]] [START2]1[END2]
+[[ObjectTargetType]] [START2]Object[END2]
+[[ObjectTargetRoom]] [START2]Forest[END2]
+[[ObjectTargetObject]] [START2]List[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Examine[END4]
+[[VerbResponse]] [START4][END4]
+[END3]
+[END2]
+[END1]
+
+[[Object]] [START1]
+[[ObjectName]] [START2]List[END2]
+[[ObjectShortDescription]] [START2]The list of traps lies among the leaves.[END2]
+[[ObjectLongDescription]] [START2]The list of traps lies among the leaves. Fully unrolled, it is over twenty feet long.[END2]
+[[ObjectVisible]] [START2]0[END2]
+[[ObjectFixed]] [START2]0[END2]
+[[ObjectTargetType]] [START2]Object[END2]
+[[ObjectTargetRoom]] [START2]Spaceship[END2]
+[[ObjectTargetObject]] [START2]Button[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Use[END4]
+[[VerbResponse]] [START4]You crouch down, quickly write out a brute force algorithm, and begin entering the list of traps into the computer.
+Trap 1...
+Trap 2...
+Trap 3...
+Trap 4...
+Trap 5...
+Trap 6...
+Trap 7...
+Trap 8...
+Trap 9...
+Trap 10...
+Trap 11...
+
+Ok, you know what? Let's just say that there is a, um... a sudden crash of thunder outside of the ship. Yes, that'll work. You turn to look at the wall, suddenly wondering how stable this broken-down ship is.
+In the brief second that you've turned your head, gremlins run out of a nearby mousehole, and at an almost unbelievable speed [but actually totally believable, trust me] they take the keyboard, enter in the
+hundreds of thousands of elements without any errors, and sprint away, leaving you to the pleasant surprise that the computer is now running the instance.
+
+You shut the door to the capsule and lock it. After you do so, a small hatch opens in the floor nearby and a control console rises up out of it. On the console is a large, blinking red button.[END4]
+[END3]
+[END2]
+[END1]
+
+[[Object]] [START1]
+[[ObjectName]] [START2]Trapper[END2]
+[[ObjectShortDescription]] [START2]An old trapper is nearby[END2]
+[[ObjectLongDescription]] [START2]There is an old trapper in the forest, humming to himself as he sits beneath a tree. He smiles at you friendily.[END2]
+[[ObjectVisible]] [START2]1[END2]
+[[ObjectFixed]] [START2]1[END2]
+[[ObjectTargetType]] [START2]Object[END2]
+[[ObjectTargetRoom]] [START2]Forest[END2]
+[[ObjectTargetObject]] [START2]Chisel[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Talk[END4]
+[[VerbResponse]]
+[START4]"Hello," the trapper says. "Don't get many visitors 'round these parts any more? You from that island place?" He picks at his teeth while he talks.
+		
+You relate to him the adventures that landed you here, to which he incrementally raises his eyebrow.
+
+"A ship... in the sky... Where you met a god... uh-huh." The nature of his grin makes it very clear that he thinks you're nuts. He chuckles, "Well, I don't suppose your 'sky-ship god' would be able
+to help me with a trapping problem I'm having."
+
+Although it's clear that he's joking about asking for help, you feel a bit offended by his implication that you're insane and press him into revealing the nature of his 'problem'.
+
+Finally, he cracks. "Alright, see the problem is that all my buddies and I, we've set 'bout ten thousand traps in all round this forest. But it takes a while to check 'em all. If you figure out
+the quickest way to get between 'em, it'd save us all a bit o' trouble."
+
+The traveling salesman problem. Really? REALLY? I'm starting to wonder if the game devs are just screwing with you at this point. You let out a deep sigh, your suspension of disbelief stretched
+to the breaking point. You attempt to explain to the the fur-laden trapper the nature of NP-completeness, but his eyes glaze over by the time you reach the part about polynomial time algorithms.
+
+"Uh-huh...," he says, still very clearly thinking you're crazy. "Well if you and your magic sky-ship change your mind, I dropped the list of trap locations somewhere around here. Good luck with... stuff."[END4]
+[END3]
+[END2]
+[END1]
+
+[[Object]] [START1]
 [[ObjectName]] [START2]Chisel[END2]
 [[ObjectShortDescription]] [START2]A chisel lies on the ground[END2]
-[[ObjectLongDescription]] [START2]The trapper will give you the chisel[END2]
-[[ObjectVisible]] [START2]1[END2]
-[[ObjectTargetType]] [START2]None[END2]
+[[ObjectLongDescription]] [START2]The trapper's chisel is rusted and chipped, as is the hammer that goes with it. It's a hard earned (although not totally worthwhile) prize.[END2]
+[[ObjectVisible]] [START2]0[END2]
+[[ObjectFixed]] [START2]0[END2]
+[[ObjectTargetType]] [START2]Feature[END2]
+[[ObjectTargetRoom]] [START2]Beach[END2]
 [[ObjectTargetFeature]] [START2]Statue[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Use[END4]
+[[VerbResponse]] [START4]Drawing on what I'm sure is your impeccable knowledge of nineteenth century English romantic poetry, you chisel the name OZYMANDIAS into the statue's base.
+As you carve the last letter, an eerie shimmer pulses through the air behind the statue, to your north. Growing larger and larger as it pulses ever faster, it soon seems to encompass the entire horizon.[END4]
+[END3]
+[END2]
 [END1]
 [END0]

@@ -2,16 +2,16 @@
 
 [[RoomType]] [START0]Standard[END0]
 
-[[ShortDescription]] [START0]The ocean floor[END0]
+[[ShortDescription]] [START0]A coral-strewn seafloor.[END0]
 
-[[LongDescription]] [START0]You are floating above the surface of the seafloor. Surprisingly, you can still breathe[END0]
-		    		    
+[[LongDescription]] [START0]You are floating above the surface of the seafloor. The light streams down from the surface, reflecting off of the fish swimming nearby. Surprisingly, you are still able to breathe.[END0]
+
 
 [[Edges]] [START0]
 [[Edge]] [START1]
 [[EdgeName]] [START2]North[END2]
-[[EdgeShortDescription]] [START2]There is another current leading north[END2]
-[[EdgeLongDescription]] [START2]There is another current leading north. Heading this way leads to the ocean's surface[END2]
+[[EdgeShortDescription]] [START2]There is another current leading north.[END2]
+[[EdgeLongDescription]] [START2]There is another current leading north. Heading this way leads to the ocean's surface.[END2]
 [[EdgeVisible]] [START2]1[END2]
 [[EdgePassable]] [START2]1[END2]
 [[EdgeNode]] [START2]Ocean[END2]
@@ -22,39 +22,47 @@
 [[Features]] [START0]
 [[Feature]] [START1]
 [[FeatureName]] [START2]Reef[END2]
-[[FeatureShortDescription]] [START2]There is a reef nearby[END2]
-[[FeatureLongDescription]] [START2]The nearby coral reef is quite beautiful, but you can't see much of it. Using the goggles on it will reveal the batteries[END2]
+[[FeatureShortDescription]] [START2]There is a reef nearby.[END2]
+[[FeatureLongDescription]] [START2]The nearby coral reef is quite beautiful. Although it is blurry without any goggles, you can make out a school of small, exotic fish darting around it.[END2]
 [[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetObject]] [START2]Batteries[END2]
 [END1]
 
 [[Feature]] [START1]
 [[FeatureName]] [START2]Glimmer[END2]
-[[FeatureShortDescription]] [START2]There is something shiny in the sand[END2]
-[[FeatureLongDescription]] [START2]Using the goggles on the glimmer in the sand reveals the seashell[END2]
+[[FeatureShortDescription]] [START2]There is a glimmer from something shiny nestled the sand.[END2]
+[[FeatureLongDescription]] [START2]There is a glimmer from something shiny nestled the sand. It seems quite large, but you can't quite tell what it is. Maybe if you could see better...[END2]
 [[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetObject]] [START2]Seashell[END2]
 [END1]
 [END0]
 
 
 [[Objects]] [START0]
 [[Object]] [START1]
-[[ObjectName]] [START2]Batteries[END2]
-[[ObjectShortDescription]] [START2]A bag of batteries is hidden among the coral[END2]
-[[ObjectLongDescription]] [START2]Batteries appear among the coral when the outcropping is visited[END2]
-[[ObjectVisible]] [START2]1[END2]
-[[ObjectTargetType]] [START2]None[END2]
-[[ObjectTargetObject]] [START2]Flashlight[END2]
-[END1]
-
-[[Object]] [START1]
 [[ObjectName]] [START2]Seashell[END2]
 [[ObjectShortDescription]] [START2]There is a seashell on the ground[END2]
-[[ObjectLongDescription]] [START2]Using the goggles reveals the seashell object[END2]
-[[ObjectTargetType]] [START2]None[END2]
+[[ObjectLongDescription]] [START2]The seashell is exceptionally beautiful. It is totally intact and contains myriad patterns of swirling color.[END2]
+[[ObjectVisible]] [START2]0[END2]
+[[ObjectFixed]] [START2]0[END2]
+[[ObjectTargetType]] [START2]Feature[END2]
+[[ObjectTargetRoom]] [START2]Olympus[END2]
 [[ObjectTargetFeature]] [START2]Cetus[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Use[END4]
+[[VerbResponse]] [START4]You present the beautiful seashell to Cetus, sure that he will now listen to you.
+
+"Oh, I-I didn't expect you to actually find... Actually, I've, um, I-I've realized that I am actually far too busy to, uh, fix reality right now," he lies badly. "Maybe come back later?"
+
+You don't move, and the great and noble deity, king of the gods, shifts uneasily on his throne, trying unsuccessfully to pretend that you aren't there.
+
+He sighs. "Ok, fine. Look, just... just don't tell anyone alright but I, um, well... I sort of don't really know how to fix reality, that is. It's not my fault!" He adds quickly. "I'm not really
+used to being a god, you see. I'm just a sea monster. Sometimes Poseidon will tell me to go stop by a city, scare some people, eat a sacrifice, some such thing. I'm very good at it, too! I just,
+you know... it was just wrong place, wrong time. Zeus was visiting and I happened to be nearby, and I DIDN'T touch it, but reality... it, um... well somehow it fell and broke and next thing I know
+I'm wedged into this throne and being called king of the gods." By this point, the leviathan whale is in tears (which shouldn't be possible, but you're on Olympus, listening to a
+whale whining about breaking reality, so maybe this isn't the inaccuracy you should be worried about, eh?).
+
+"Please, just help me, ok?" He begs. You assure him that you will do your best, mostly to stop the mammoth-sized teardrops that you have been dodging.[END4]
+[END3]
+[END2]
 [END1]
 [END0]

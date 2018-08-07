@@ -4,14 +4,14 @@
 
 [[ShortDescription]] [START0]An eerie spaceship[END0]
 
-[[LongDescription]] [START0]You are now in an eerie spaceship. It seems deserted[END0]
+[[LongDescription]] [START0]You begin in an eerie spaceship. It seems deserted, but you can here scratching coming from behind one of the walls.[END0]
 		    		    
 
 [[Edges]] [START0]
 [[Edge]] [START1]
 [[EdgeName]] [START2]North[END2]
-[[EdgeShortDescription]] [START2]Elevator[END2]
-[[EdgeLongDescription]] [START2]There is an elevator to the north. It leads to the beach[END2]
+[[EdgeShortDescription]] [START2]An elevator lies to the north.[END2]
+[[EdgeLongDescription]] [START2]To the north lies an elevator. The outer doors have been nearly broken off of their hinges and you question exactly how safe it is.[END2]
 [[EdgeVisible]] [START2]1[END2]
 [[EdgePassable]] [START2]1[END2]
 [[EdgeNode]] [START2]Beach[END2]
@@ -21,21 +21,38 @@
 
 [[Features]] [START0]
 [[Feature]] [START1]
-[[FeatureName]] [START2]Machine[END2]
-[[FeatureShortDescription]] [START2]You see a time machine[END2]
-[[FeatureLongDescription]] [START2]You see a time machine. It can be used to send the computer to the past[END2]
+[[FeatureName]] [START2]Fire[END2]
+[[FeatureShortDescription]] [START2]There is a large fire between you and a wall of the spaceship.[END2]
+[[FeatureLongDescription]] [START2]There is a large fire between you and a wall of the spaceship. Behind it you can make out the words 'WELLS' PROPRIETARY TIME MACHINE, Not For Use On Organic Materials'[END2]
 [[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetFeature]] [START2]Answer[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Hatch[END2]
+[[FeatureShortDescription]] [START2]The hatch to the time machine chamber seems broken.[END2]
+[[FeatureLongDescription]] [START2]The hatch to the time machine chamber seems broken, but there is light coming from behind it. Maybe if you found a way to fix it...[END2]
+[[FeatureVisible]] [START2]0[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Machine[END2]
+[[FeatureShortDescription]] [START2]The time machine's chamber seems mostly empty, minus a canister in the center.[END2]
+[[FeatureLongDescription]] [START2]The machine on the other side of the repaired hatch seems to consist only of a large empty chamber with an open canister in the center.[END2]
+[[FeatureVisible]] [START2]0[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Capsule[END2]
+[[FeatureShortDescription]] [START2]In the center of the time machine's chamber, the capsule contains a computer awaiting a program to execute.[END2]
+[[FeatureLongDescription]] [START2]In the center of the time machine's chamber, the capsule contains a computer awaiting a program to execute. You are so very close now.[END2]
+[[FeatureVisible]] [START2]0[END2]
 [END1]
 
 [[Feature]] [START1]
 [[FeatureName]] [START2]Gadget[END2]
-[[FeatureShortDescription]] [START2]There is burnt device of some sort nearby[END2]
-[[FeatureLongDescription]] [START2]Nearby there is a burnt up version of the computer that has gone through the time machine. It has the answer sheet inside of it[END2]
+[[FeatureShortDescription]] [START2]There is burnt gadget of some sort nearby.[END2]
+[[FeatureLongDescription]] [START2]Nearby there is a burnt up gadget of some sort. Melted gobs of plastic and metal have practically glued it to the floor.[END2]
 [[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetObject]] [START2]Answer[END2]
 [END1]
 
 [[Feature]] [START1]
@@ -43,19 +60,78 @@
 [[FeatureShortDescription]] [START2]A sheet of paper lies nearby[END2]
 [[FeatureLongDescription]] [START2]On a sheet of paper lying on an overturned table are the words "Call Cetus"[END2]
 [[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetObject]] [START2]None[END2]
 [END1]
 [END0]
 
 
 [[Objects]] [START0]
 [[Object]] [START1]
+[[ObjectName]] [START2]Button[END2]
+[[ObjectShortDescription]] [START2]The button in the time machine's chamber glows red.[END2]
+[[ObjectLongDescription]] [START2]The button in the time machine's chamber glows red. It's practically begging you to press it.[END2]
+[[ObjectVisible]] [START2]0[END2]
+[[ObjectFixed]] [START2]1[END2]
+[[ObjectTargetType]] [START2]Object[END2]
+[[ObjectTargetRoom]] [START2]Spaceship[END2]
+[[ObjectTargetObject]] [START2]Compartment[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Press[END4]
+[[VerbResponse]] [START4]Slowly, you put your hand on the giant, glowing button. After a moment spent intensely watching the canister, you push down. A small whirring noise starts up and the canister
+starts to vibrate slowly... The whirring noise grows louder and louder until it is an ear-splitting noise that you imagine is what it sounds like to slam gears together at very high speeds.
+The entire room has started to shake and the lights begin to flicker.
+
+You know... In retrospect, trying to use a piece of super-advanced, reality-distorting technology on a spaceship where everything else is broken probably wasn't the best idea. Maybe run. NOW!
+
+You sprint towards the exit, stumbling as the shaking reaches the intensity of a rather large earthquake. You throw yourself through the doors and put your hands over your head. As you are cowering
+in fear (sorry, but I call them as I see them), you realize that your nose is only a few inches away from the burnt gadget that you saw earlier. In spite of the fact that you might die at any
+moment, you are observant enough to notice a small hatch in the side of the gadget that you had previously missed. It might be something to investigate should you survive.
+
+Suddenly, the shaking stops. A friendly 'Ding!' comes from the time machine, sounding very much like a cooking timer you would find at an elderly relative's house. Hesitantly, you get up and peer through
+the still quite shiny door. The computer is gone, vanished into the distant past.[END4]
+[END3]
+[END2]
+[END1]
+
+[[Object]] [START1]
+[[ObjectName]] [START2]Compartment[END2]
+[[ObjectShortDescription]] [START2]There is a compartment that you missed before on the side of the burnt gadget.[END2]
+[[ObjectLongDescription]] [START2]There is a compartment that you missed before on the side of the burnt gadget. Maybe there is something interesting inside of it?
+After all of that, it'd sure be disappointing if there wasn't.[END2]
+[[ObjectVisible]] [START2]0[END2]
+[[ObjectFixed]] [START2]1[END2]
+[[ObjectTargetType]] [START2]Object[END2]
+[[ObjectTargetRoom]] [START2]Spaceship[END2]
+[[ObjectTargetObject]] [START2]Answer[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Open[END4]
+[[VerbResponse]] [START4]You pry open the latch to the hidden compartment. Despite the fact that it seems nearly welded shut, you somehow manage to get it open. Inside of it is a small sheet of paper, containing
+lines and lines of writing. Upon closer inspection, you are shocked to find that it is a reordered version of the trapper's list. The answer to the trapper's traveling salesman problem! Surprised, you glance
+back at the burnt gadget and realize that it does look vaguely like that old computer that you just sent through the time machine, having finally run to completion. How and why it ended up outside of the
+chamber you cannot begin to guess, but I can guarantee that it is a riveting story of it's own. [pre-order the DLC now to find out the computer's tragic story, only $19.99 at select stores][END4]
+[END3]
+[END2]
+[END1]
+
+[[Object]] [START1]
 [[ObjectName]] [START2]Answer[END2]
-[[ObjectShortDescription]] [START2]An answer sheet is on the ground[END2]
-[[ObjectLongDescription]] [START2]The answer to the trapper's TSP instance is inside the gadget. You need to use the key to get to this[END2]
-[[ObjectVisible]] [START2]1[END2]
-[[ObjectTargetType]] [START2]None[END2]
+[[ObjectShortDescription]] [START2]An answer sheet is folded inside the hidden compartment.[END2]
+[[ObjectLongDescription]] [START2]The answer to the trapper's TSP instance lies nestled inside of the hidden compartment in the time-traveling computer.[END2]
+[[ObjectVisible]] [START2]0[END2]
+[[ObjectFixed]] [START2]0[END2]
+[[ObjectTargetType]] [START2]Feature[END2]
+[[ObjectTargetRoom]] [START2]Forest[END2]
 [[ObjectTargetFeature]] [START2]Trapper[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Use[END4]
+[[VerbResponse]] [START4]You give the answer sheet to the trapper, a triumphant smile on your face. He looks at the sheet, then looks back to you, surprised.
+"Well... huh?" He scratches at his long beard thoughtfully. "I'm sure that I would have figured it out sooner or later [highly doubtful], but I suppose I should
+do something to thank you. One mo'"
+He digs around in his shabby pack until eventually pulling out a rusty chisel. He tosses it off to the side as he re-ties the straps on his pack.
+"There, you're welcome to that. Don't righly know why I had it anyway."[END4]
+[END3]
+[END2]
 [END1]
 [END0]

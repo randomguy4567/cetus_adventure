@@ -4,14 +4,14 @@
 
 [[ShortDescription]] [START0]The middle of the ocean[END0]
 
-[[LongDescription]] [START0]You are in the middle of the ocean. You are quite tired and the waves are quite rough[END0]
+[[LongDescription]] [START0]You are in the middle of the ocean. You are quite tired and the waves are quite rough.[END0]
 		    		    
 
 [[Edges]] [START0]
 [[Edge]] [START1]
 [[EdgeName]] [START2]West[END2]
 [[EdgeShortDescription]] [START2]There is an island far to the west[END2]
-[[EdgeLongDescription]] [START2]There is an island to the west. The shopping mall is on it[END2]
+[[EdgeLongDescription]] [START2]Far to the west, there is a small island. You can see a grouping of buildings on it.[END2]
 [[EdgeVisible]] [START2]1[END2]
 [[EdgePassable]] [START2]1[END2]
 [[EdgeNode]] [START2]Mall[END2]
@@ -19,8 +19,8 @@
 
 [[Edge]] [START1]
 [[EdgeName]] [START2]South[END2]
-[[EdgeShortDescription]] [START2]There is a strong current to the south of you[END2]
-[[EdgeLongDescription]] [START2]The current to the south will take you to the seafloor[END2]
+[[EdgeShortDescription]] [START2]There is a strong current to the south of you.[END2]
+[[EdgeLongDescription]] [START2]You can feel a current pulling you to the south. It takes a steady effort to stay in place.[END2]
 [[EdgeVisible]] [START2]1[END2]
 [[EdgePassable]] [START2]1[END2]
 [[EdgeNode]] [START2]Seafloor[END2]
@@ -28,8 +28,8 @@
 
 [[Edge]] [START1]
 [[EdgeName]] [START2]East[END2]
-[[EdgeShortDescription]] [START2]There is land to the east[END2]
-[[EdgeLongDescription]] [START2]There is land to the east. If you head this way it will bring you back to the beach[END2]
+[[EdgeShortDescription]] [START2]There is land to the east.[END2]
+[[EdgeLongDescription]] [START2]There is land to the east. Even from here you can see the silouette of the giant stone feet holding watch over the beach.[END2]
 [[EdgeVisible]] [START2]1[END2]
 [[EdgePassable]] [START2]1[END2]
 [[EdgeNode]] [START2]Beach[END2]
@@ -41,30 +41,57 @@
 [[Feature]] [START1]
 [[FeatureName]] [START2]Fin[END2]
 [[FeatureShortDescription]] [START2]You see a pointed fin nearby[END2]
-[[FeatureLongDescription]] [START2]You see a pointed fin. Attempting to interact with it in any way will trigger a game over[END2]
+[[FeatureLongDescription]] [START2]You see a pointed fin to the north. Maybe swim the other way.[END2]
 [[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetFeature]] [START2]None[END2]
-[END1]
-
-[[Feature]] [START1]
-[[FeatureName]] [START2]Flotsam[END2]
-[[FeatureShortDescription]] [START2]There is some flotsam floating towards you[END2]
-[[FeatureLongDescription]] [START2]There is some flotsam floating towards you. Examining it reveals the flashlight[END2]
-[[FeatureVisible]] [START2]1[END2]
-[[FeatureTargetType]] [START2]None[END2]
-[[FeatureTargetObject]] [START2]Flashlight[END2]
 [END1]
 [END0]
 
 
 [[Objects]] [START0]
 [[Object]] [START1]
+[[ObjectName]] [START2]Flotsam[END2]
+[[ObjectShortDescription]] [START2]There is some flotsam floating towards you.[END2]
+[[ObjectLongDescription]] [START2]A bunch of seaweed and plastic is floating nearby, thankfully in the opposite direction of the shark. Among the other non-biodegradable knicknacks that will continue to float around the planet for decades, contributing to the slow decline of Earth's environment, is a flashlight. Despite the fact that it has probably been floating out here for a long time, I'd bet that it will somehow still work.[END2]
+[[ObjectVisible]] [START2]1[END2]
+[[ObjectFixed]] [START2]1[END2]
+[[ObjectTargetType]] [START2]Object[END2]
+[[ObjectTargetRoom]] [START2]Ocean[END2]
+[[ObjectTargetObject]] [START2]Flashlight[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Examine[END4]
+[[VerbResponse]] [START4][END4]
+[END3]
+[END2]
+[END1]
+
+[[Object]] [START1]
 [[ObjectName]] [START2]Flashlight[END2]
 [[ObjectShortDescription]] [START2]A flashlight bobs nearby[END2]
-[[ObjectLongDescription]] [START2]The flashlight lies hidden in the flotsam[END2]
+[[ObjectLongDescription]] [START2]The flashlight lies hidden among the flotsam. It seems remarkably old, and yet when you switch it on, it seems to work just fine.[END2]
 [[ObjectVisible]] [START2]0[END2]
-[[ObjectTargetType]] [START2]None[END2]
-[[ObjectTargetFeature]] [START2]Cave[END2]
+[[ObjectFixed]] [START2]0[END2]
+[[ObjectTargetType]] [START2]Object[END2]
+[[ObjectTargetRoom]] [START2]Battlefield[END2]
+[[ObjectTargetObject]] [START2]Sword[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Use[END4]
+[[VerbResponse]] [START4]Dodging around the many angry-looking soldiers, you slip into the cave and flick on the flashlight. Because this is a video game, the fact that you
+found it bobbing in the ocean amidst a pile of trash does not at all affect its functionality, and it throws a beam of light over the stalactites. Able to now examine the
+cave in greater detail, you realize that there is a passage in the back of the cave, leading who knows where. Either because you are feeling somewhat adventurous or because
+you haven't forgotton that there are about to be quite a lot of drawn swords on the battlefield behind you in a moment, you sneak farther into the cave.
+
+The passage is long, dark, narrow, and gently looping to one side. After what seems like ages, it begins to open up into another cave not unlike the first, with the minor exception
+that this one's opening seems mostly hidden by a large rock. You think that you can squeeze through it, and decide to do so, popping out of what from the outsied looks like solid
+rock mere feet above the enemy army's wall. Unfortunately your foot gets caught in a small crevice. You manage to pop it out, but the momentum sends you tumbling several feet... and
+right into the commander of the enemy army! Fortunately, he seems to be as surprised as you are. Even more fortunately, it just so happens that he was standing right at the edge of
+the wall. I say 'was' because, well... he's much closer at the moment. Impulsively, you try to reach out a hand to stop him, but manage only to snag his sword, wrenching it from
+his grasp as he tumbles away.
+
+By some miraculous twist of fate, you manage to escape back through the tunnel unnoticed. Unsurprisingly, you're not thinking clearly after having inadvertently murdered someone and
+manage to drop both the flashlight and sword as you are stumbling out of the cave back on the battlefield. Although you can't seem to find the flashlight, the sword is hard to miss.[END4]
+[END3]
+[END2]
 [END1]
 [END0]

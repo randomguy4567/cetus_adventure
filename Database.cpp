@@ -75,7 +75,6 @@ int initialize(Game *g, int numRooms) {
         else if(roomType == "End")
             g->end = n;
         
-        
         // Print short description
         target = "ShortDescription";
         minpos = 0;
@@ -202,21 +201,22 @@ int initialize(Game *g, int numRooms) {
                 // cout << "Feature Visible?: " << featQuery << endl;
                 f->visible = atoi(featQuery.c_str());
                 
-                // Print feature target
+                // Print feature target (UNUSED)
                 temp2 = 0;
                 featQuery = fileParser(2, featI, "FeatureTargetType", &temp2);
                 // f->targetType = featQuery;
                 if (featQuery == "Feature") {
                     temp2 = 0;
                     featQuery = fileParser(2, featI, "FeatureTargetFeature", &temp2);
-                    // cout << "Feature Target: " << featQuery << endl;
-                    f->initialFeatureName = featQuery;
+                    cout << "Feature Target: " << featQuery << endl;
+                    // f->initialFeatureName = featQuery;
                 } else if (featQuery == "Object") {
                     temp2 = 0;
                     featQuery = fileParser(2, featI, "FeatureTargetObject", &temp2);
-                    // cout << "Feature Target: " << featQuery << endl;
-                    f->initialObjectName = featQuery;
+                    cout << "Feature Target: " << featQuery << endl;
+                    // f->initialObjectName = featQuery;
                 }
+                
                 n->features.push_back(f);
             }
             // cout << endl;
@@ -265,18 +265,38 @@ int initialize(Game *g, int numRooms) {
                 // cout << "Object Visible?: " << objQuery << endl;
                 a->visible = atoi(objQuery.c_str());
                 
+                // Print object fixed nature
+                temp2 = 0;
+                objQuery = fileParser(2, objI, "ObjectFixed", &temp2);
+                // cout << "Object Fixed?: " << objQuery << endl;
+                a->fixed = atoi(objQuery.c_str());
+                
                 // Print object target
                 temp2 = 0;
                 objQuery = fileParser(2, objI, "ObjectTargetType", &temp2);
+                // cout << "Object target type: " << objQuery << endl;
                 // a->targetType = objQuery;
                 if(objQuery == "Edge") {
                     temp2 = 0;
                     objQuery = fileParser(2, objI, "ObjectTargetRoom", &temp2);
                     temp2 = 0;
                     string objQuery2 = fileParser(2, objI, "ObjectTargetEdge", &temp2);
-                    // cout << "Object target: Room = " << objQuery << ", Edge = " << objQuery2 << endl;                  
-                    a->target = objQuery2;
-                    
+                    // cout << "Object target: Room = " << objQuery << ", Edge = " << objQuery2 << endl;
+                    a->target = objQuery + "." + objQuery2;
+                } else if(objQuery == "Feature") {
+                    temp2 = 0;
+                    objQuery = fileParser(2, objI, "ObjectTargetRoom", &temp2);
+                    temp2 = 0;
+                    string objQuery2 = fileParser(2, objI, "ObjectTargetFeature", &temp2);
+                    // cout << "Object target: Room = " << objQuery << ", Feature = " << objQuery2 << endl;
+                    a->target = objQuery + "." + objQuery2;
+                } else if(objQuery == "Object") {
+                    temp2 = 0;
+                    objQuery = fileParser(2, objI, "ObjectTargetRoom", &temp2);
+                    temp2 = 0;
+                    string objQuery2 = fileParser(2, objI, "ObjectTargetObject", &temp2);
+                    // cout << "Object target: Room = " << objQuery << ", Object = " << objQuery2 << endl;
+                    a->target = objQuery + "." + objQuery2;
                 }
                 
                 // Get object verbs
@@ -348,17 +368,17 @@ bool saveGame(Game *g) {
         for(auto* e: n->edges) {
             storageString1 += "[[Edge]] : [START2]\n";
             
-            storageString1 += "[[Visible]] : [START3]" + e->name + "[END3]\n";
+            storageString1 += "[[EdgeName]] : [START3]" + e->name + "[END3]\n";
             
-            storageString1 += "[[Visible]] : [START3]";
+            storageString1 += "[[EdgeVisible]] : [START3]";
             storageString1.append(to_string((int) e->visible));
             storageString1 += "[END3]\n";
             
-            storageString1 += "[[Passable]] : [START3]";
+            storageString1 += "[[EdgePassable]] : [START3]";
             storageString1.append(to_string((int) e->passable));
             storageString1 += "[END3]\n";
             
-            storageString1 += "[[Visited]] : [START3]";
+            storageString1 += "[[EdgeVisited]] : [START3]";
             storageString1.append(to_string((int) e->visited));
             storageString1 += "[END3]\n";
             
@@ -367,13 +387,13 @@ bool saveGame(Game *g) {
         for(auto* f: n->features) {
             storageString1 += "[[Feature]] : [START2]\n";
             
-            storageString1 += "[[Visible]] : [START3]" + f->name + "[END3]\n";
+            storageString1 += "[[FeatureName]] : [START3]" + f->name + "[END3]\n";
             
-            storageString1 += "[[Visible]] : [START3]";
+            storageString1 += "[[FeatureVisible]] : [START3]";
             storageString1.append(to_string((int) f->visible));
             storageString1 += "[END3]\n";
             
-            storageString1 += "[[Visited]] : [START3]";
+            storageString1 += "[[FeatureVisited]] : [START3]";
             storageString1.append(to_string((int) f->visited));
             storageString1 += "[END3]\n";
             
@@ -407,17 +427,17 @@ bool saveGame(Game *g) {
     for(auto* o: g->allObjects) {
         // cout << "Object Name: " << o->name << endl;
         storageString1 = "[[Object]] : [START1]\n";
-        storageString1 += "[[Name]] : [START2]" + o->name + "[END2]\n";
+        storageString1 += "[[ObjectName]] : [START2]" + o->name + "[END2]\n";
         
-        storageString1 += "[[Visible]] : [START3]";
+        storageString1 += "[[ObjectVisible]] : [START2]";
         storageString1.append(to_string((int) o->visible));
-        storageString1 += "[END3]\n";
+        storageString1 += "[END2]\n";
         
-        storageString1 += "[[Visited]] : [START3]";
+        storageString1 += "[[ObjectVisited]] : [START2]";
         storageString1.append(to_string((int) o->visited));
-        storageString1 += "[END3]\n";
+        storageString1 += "[END2]\n";
         
-        storageString1 += "[[Location]] : [START2]" + g->getObjectLocation(o->name) + "[END2]\n";
+        storageString1 += "[[ObjectLocation]] : [START2]" + g->getObjectLocation(o->name) + "[END2]\n";
         storageString1 += "[END1]\n";
         
         // TEST
@@ -435,4 +455,165 @@ bool saveGame(Game *g) {
     outFile << storageString0;
     
     outFile.close();
+}
+
+bool loadGame(Game *g, int numRooms) {
+    
+    ifstream inFile;
+    inFile.open("savegame");
+    
+    string saveContents = "";
+    char c;
+    while(inFile.get(c))
+        saveContents = saveContents + c;
+    
+    int minpos = 0;
+    string roomsString = fileParser(0, saveContents, "Nodes", &minpos);
+    
+    // TEST
+    // cout << roomsString << endl;
+    
+    string roomContents = "";
+    Node *n;
+    minpos = 0;
+    
+    // TEST
+    // cout << "Good so far" << endl;
+    int temp = 0;
+    for(int i = 1; i < numRooms + 1; i++) {
+        roomContents = fileParser(1, roomsString, "Node", &minpos);
+        
+        // TEST
+        // cout << roomContents << endl;
+        
+        temp = 0;
+        string roomName = fileParser(2, roomContents, "NodeName", &temp);
+        
+        // TEST
+        // cout << "Room Name: " << roomName << endl;
+        
+        // TEST
+        // cout << "Still Good" << endl;
+        
+        for(auto* i: g->allNodes){
+            if(i->name == roomName) {
+                n = i;
+            }
+            // TEST
+            // cout << "Scanning nodes" << endl;
+        }
+        assert(n != 0);
+        
+        temp = 0;
+        bool roomVisited = atoi(fileParser(2, roomContents, "NodeVisited", &temp).c_str());
+        n->visited = roomVisited;
+        
+        // TEST
+        // cout  << "Room: " << roomName << ", Visited: " << roomVisited << endl;
+        
+        string edgeContents = "";
+        int minpos2 = 0;
+        do {
+            edgeContents = fileParser(2, roomContents, "Edge", &minpos2);
+            if(edgeContents != "") {
+                temp = 0;
+                string edgeName = fileParser(3, edgeContents, "EdgeName", &temp);
+                Edge *e;
+                for(auto* i: n->edges) {
+                    if(i->name == edgeName)
+                        e = i;
+                }
+                assert(e != 0);
+                
+                temp = 0;
+                bool edgeVisible = atoi(fileParser(3, edgeContents, "EdgeVisible", &temp).c_str());
+                temp = 0;
+                bool edgePassable = atoi(fileParser(3, edgeContents, "EdgePassable", &temp).c_str());
+                temp = 0;
+                bool edgeVisited = atoi(fileParser(3, edgeContents, "EdgeVisited", &temp).c_str());
+                
+                // TEST
+                // cout  << "Edge: " << edgeName << ", Visible: " << edgeVisible << ", Visited: " << edgeVisited << ", Passable: " << edgePassable << endl;
+                
+                e->visible = edgeVisible;
+                e->passable = edgePassable;
+                e->visited = edgeVisited;
+            }
+        }while(edgeContents != "");
+        
+        string featContents = "";
+        minpos2 = 0;
+        do {
+            featContents = fileParser(2, roomContents, "Feature", &minpos2);
+            if(featContents != "") {
+                temp = 0;
+                string featName = fileParser(3, featContents, "FeatureName", &temp);
+                Feature *f;
+                for(auto* i: n->features) {
+                    if(i->name == featName)
+                        f = i;
+                }
+                assert(f != 0);
+                
+                temp = 0;
+                bool featVisible = atoi(fileParser(3, featContents, "FeatureVisible", &temp).c_str());
+                temp = 0;
+                bool featVisited = atoi(fileParser(3, featContents, "FeatureVisited", &temp).c_str());
+                
+                // TEST
+                // cout  << "Feature: " << featName << ", Visible: " << featVisible << ", Visited: " << featVisited << endl;
+                
+                f->visible = featVisible;
+                f->visited = featVisited;
+            }
+        }while(featContents != "");
+    }
+    
+    minpos = 0;
+    string objectsString = fileParser(0, saveContents, "Objects", &minpos);
+    
+    // TEST
+    // cout << objectsString << endl;
+    
+    string objContents = "";
+    minpos = 0;
+    do {
+        // TEST
+        // cout << "Starting Object Read" << endl;
+        objContents = fileParser(1, objectsString, "Object", &minpos);
+        
+        // TEST
+        // cout << "Min Pos: " << minpos << endl;
+        
+        if(objContents != "") {
+            temp = 0;
+            string objName = fileParser(2, objContents,"ObjectName", &temp);
+            
+            Object *o;
+            for(auto* i: g->allObjects){
+                if(i->name == objName)
+                    o = i;
+            }
+            assert(o != 0);
+            
+            temp = 0;
+            bool objVisible = atoi(fileParser(2, objContents, "ObjectVisible", &temp).c_str());
+            temp = 0;
+            bool objVisited = atoi(fileParser(2, objContents, "ObjectVisited", &temp).c_str());
+            temp = 0;
+            string objLoc = fileParser(2, objContents,"ObjectLocation", &temp);
+            
+            // TEST
+            // cout  << "Object: " << objName << ", Visible: " << objVisible << ", Visited: " << objVisited << ", Location: " << objLoc << endl;
+            
+            o->visible = objVisible;
+            o->visited = objVisited;
+            
+            // TEST
+            // cout << "Assigning Location" << endl;
+            
+            g->setObjectLocation(objName, objLoc);
+        }
+    }while(objContents != "");
+    return 0;
 }

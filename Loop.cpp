@@ -47,7 +47,8 @@ void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& 
 	
 	for (auto* o: g->allObjects){
 		if(o->_verb.size())
-			verbs.push_back(o->_verb);
+			if(find(verbs.begin(), verbs.end(), o->_verb) == verbs.end())
+				verbs.push_back(o->_verb);
 	}
 
 	dict["cheat"] = V;

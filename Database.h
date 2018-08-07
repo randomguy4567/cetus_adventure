@@ -5,5 +5,6 @@
 
 int initialize(Game *g, int numRooms);
 bool saveGame(Game *g);
+bool loadGame(Game *g, int numRooms);
 
 #endif

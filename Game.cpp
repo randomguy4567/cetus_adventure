@@ -276,9 +276,8 @@ Edge* Game::findEdge(std::string name, Node* n){
 }	
 
 
-
-//
 void Game::printDatabase() {
+	cout << "\nALL NODES IN SYSTEM: \n";
 	for (auto* n: allNodes){
 		cout << "Node: " << n->name << " " << n->shortDescription << " visited: " 
 			<< n->visited << endl;
@@ -294,25 +293,27 @@ void Game::printDatabase() {
 		}
 		for (auto* o: n->objects){
 			cout << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
-				<< " visible: " << o->visible << " target: " << o->target 
-				<< " verb: " << o->_verb << " response: " << o->_response << endl;
+				<< " visible: " << o->visible << " fixed: " << o->fixed<< " target: " << o->target 
+				<< " verb: " << o->_verb << " response: " << o->_response.size() << " chars " << " hintResponse: " << o->_hintResponse.size() << " chars " << endl;
 		}
 		cout << "\n";
 	}	
+	cout << "\nALL OBJECTS IN SYSTEM: \n";
 	for (auto* o: allObjects){
 			cout << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
-				<< " visible: " << o->visible << " target: " << o->target 
-				<< " verb: " << o->_verb << " response: " << o->_response <<  " Location: " << getObjectLocation(o->name) <<  endl;
-	}	
+				<< " visible: " << o->visible << " fixed: " << o->fixed<< " target: " << o->target 
+				<< " verb: " << o->_verb << " response: " << o->_response.size() << " chars " << " hintResponse: " << o->_hintResponse.size() << " chars Location: " << getObjectLocation(o->name) <<  endl;
+	}
+	cout << "\nALL OBJECTS IN INVENTORY: \n";	
 	for (auto* o: objects){
 			cout << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
-				<< " visible: " << o->visible << " target: " << o->target 
-				<< " verb: " << o->_verb << " response: " << o->_response << endl;
+				<< " visible: " << o->visible << " fixed: " << o->fixed<< " target: " << o->target 
+				<< " verb: " << o->_verb << " response: " << o->_response.size() << " chars " << " hintResponse: " << o->_hintResponse.size() << " chars Location: " << getObjectLocation(o->name) <<  endl;
 	}
 }
 
 bool Game::buildGraph(){
-	
+	/*
 	findFeature("Flotsam", findNode("Ocean"))->initialObjectName="Flashlight";
 	auto* flashlight = findObject("Flashlight", findNode("Ocean"));
 	flashlight->_verb = "light";
@@ -320,6 +321,8 @@ bool Game::buildGraph(){
 	flashlight->_response = "Now you can see in the dark";
 	flashlight->target = "beach.special";
 	findEdge("special", findNode("beach"))->visible = false;
+	*/
+
 	for (auto* n: allNodes){
 		for (auto* e: n->edges)
 			e->node = findNode(e->initialNodeName);
@@ -333,6 +336,7 @@ bool Game::buildGraph(){
 				allObjects.push_back(o);
 		}
 	}
+	printDatabase();
 }
 
 // FIX Incomplete
@@ -368,12 +372,6 @@ std::string Game::whereToGo(){
 			itemsToLookFor.push_back(e->name);
 	return combineWords(itemsToLookFor);	
 }
-
-
-
-
-
-
 
 std::string Game::preParse(std::string rawInput){
 	string s = rawInput;
