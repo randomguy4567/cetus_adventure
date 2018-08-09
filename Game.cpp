@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <assert.h>
 #include <iostream>
+#include <fstream>
 #include "Game.h"
 
 using namespace std;
@@ -213,10 +214,14 @@ string Game::tryVerb(std::string verb, std::string param){
 	auto index = target.find('.');
 	string nodeName, subName = target;
 	if(index != string::npos){
-		nodeName = target.substr(0, index);
-		subName = target.substr(index + 1);
+		nodeName = tolower(target.substr(0, index));
+		subName = tolower(target.substr(index + 1));
+		cout << nodeName << " " << subName << " " << current->name << endl;
 		if(nodeName != tolower(current->name)){
-			return targetObj->_hintResponse;
+			if(targetObj->_hintResponse.empty())
+				return "You can't " + verb + " the object " + param + " here. I wanted to give you a hint, but there is no hintResponse in my database";  
+			else
+				return targetObj->_hintResponse;		
 		}
 		
 	}
@@ -239,7 +244,10 @@ string Game::tryVerb(std::string verb, std::string param){
 			return targetObj->_response + ". " + o->examine();
 		}
 	}	
-	return targetObj->_hintResponse;
+	if(targetObj->_hintResponse.empty())
+		return "You can't " + verb + " the object " + param + " here. I wanted to give you a hint, but there is no hintResponse in my database";  
+	else
+		return targetObj->_hintResponse;
 }
 
 
@@ -310,6 +318,22 @@ void Game::printDatabase() {
 				<< " visible: " << o->visible << " fixed: " << o->fixed<< " target: " << o->target 
 				<< " verb: " << o->_verb << " response: " << o->_response.size() << " chars " << " hintResponse: " << o->_hintResponse.size() << " chars Location: " << getObjectLocation(o->name) <<  endl;
 	}
+	
+	ofstream out("graph.txt");
+	out << "digraph cetus {\nrankdir=LR;\nsize=\"8,5\"\n";
+	
+	for (auto* n: allNodes){
+		for (auto* e: n->edges){
+			out << "\t" << n->name << " -> " << e->node->name << "  [ label = \"" << e->name << "\" ]; \n";
+		}
+	}
+	out << "}\n";
+}
+
+void stripTrailingPeriod(string &s){
+	if(s.size())
+		if(s[s.size() - 1] == '.')
+			s.resize(s.size() - 1);
 }
 
 bool Game::buildGraph(){
@@ -324,13 +348,23 @@ bool Game::buildGraph(){
 	*/
 
 	for (auto* n: allNodes){
-		for (auto* e: n->edges)
+		stripTrailingPeriod(n->shortDescription);
+		stripTrailingPeriod(n->longDescription);
+		for (auto* e: n->edges){
+			stripTrailingPeriod(e->shortDescription);
+			stripTrailingPeriod(e->longDescription);
 			e->node = findNode(e->initialNodeName);
+		}
 		for (auto* f: n->features){
+			stripTrailingPeriod(f->shortDescription);
+			stripTrailingPeriod(f->longDescription);
 			f->feature = findFeature(f->initialFeatureName, n);
 			f->object = findObject(f->initialObjectName, n);
 		}
 		for (auto* o: n->objects){
+			stripTrailingPeriod(o->shortDescription);
+			stripTrailingPeriod(o->longDescription);
+
 			//o->edge = findEdge(o->initialEdgeName, n);
 			if(find(allObjects.begin(), allObjects.end(), o) == allObjects.end())
 				allObjects.push_back(o);
@@ -338,6 +372,7 @@ bool Game::buildGraph(){
 	}
 	printDatabase();
 }
+
 
 // FIX Incomplete
 std::string Game::inventory(){

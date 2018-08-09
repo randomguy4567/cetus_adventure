@@ -58,7 +58,7 @@ void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& 
 //This allows us to "play" the demo
 void loop(Game* g){
 	std::map<std::string, Tag> dict;
-	g->interface.print(g->describe() + "\n\n");
+	g->interface.print(g->describe() + ".\n\n");
 	while(g->current != g->end){
 		g->interface.print("> ");
 		string cmd = g->interface.getline();
@@ -67,7 +67,7 @@ void loop(Game* g){
 		
 		// This is to allow an Edge name as a command
 		if (g->go(cmd, true)){
-			g->interface.print(g->describe() + "\n\n");
+			g->interface.print(g->describe() + ".\n\n");
 		}
 		else{
 			string verb, param;
@@ -141,7 +141,7 @@ void loop(Game* g){
 					g->interface.print("\n\n");				
 				}
 				else
-					g->interface.print(g->describe() + "\n\n");
+					g->interface.print(g->describe() + ".\n\n");
 				
 			}else if(verb == "take"){
 				s = g->take(param);
