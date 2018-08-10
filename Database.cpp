@@ -180,7 +180,7 @@ int initialize(Game *g, int numRooms) {
                 // Print feature name
                 int temp2 = 0;
                 string featQuery = fileParser(2, featI, "FeatureName", &temp2);
-                // cout << "Feature Name: " << featQuery << endl;
+                cout << "Feature Name: " << featQuery << endl;
                 f->name = featQuery;
                 
                 // Print feature short description
@@ -204,17 +204,17 @@ int initialize(Game *g, int numRooms) {
                 // Print feature target (UNUSED)
                 temp2 = 0;
                 featQuery = fileParser(2, featI, "FeatureTargetType", &temp2);
-                // f->targetType = featQuery;
+                
                 if (featQuery == "Feature") {
                     temp2 = 0;
-                    featQuery = fileParser(2, featI, "FeatureTargetFeature", &temp2);
-                    cout << "Feature Target: " << featQuery << endl;
-                    // f->initialFeatureName = featQuery;
+                    string featQuery2 = fileParser(2, featI, "FeatureTargetFeature", &temp2);
+                    // cout << "Feature Target: " << featQuery2 << endl;
+                    f->initialFeatureName = featQuery2;
                 } else if (featQuery == "Object") {
                     temp2 = 0;
-                    featQuery = fileParser(2, featI, "FeatureTargetObject", &temp2);
-                    cout << "Feature Target: " << featQuery << endl;
-                    // f->initialObjectName = featQuery;
+                    string featQuery2 = fileParser(2, featI, "FeatureTargetObject", &temp2);
+                    // cout << "Feature Target: " << featQuery2 << endl;
+                    f->initialObjectName = featQuery2;
                 }
                 
                 n->features.push_back(f);

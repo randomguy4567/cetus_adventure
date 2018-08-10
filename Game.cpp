@@ -174,14 +174,34 @@ string Game::examine(std::string name) {
 		return current->examine();
 	string n = tolower(name);
 	for (auto& e: current->edges)
-		if(closeEnough(n, e->name) || closeEnough(n, e->shortDescription))  
-			return e->examine();
+		if(closeEnough(n, e->name) )  
+			if (!e->examine().empty()) 
+				return e->examine();
 	for (auto& o: current->objects)
-		if(closeEnough(n, o->name) || closeEnough(n, o->shortDescription))
-			return o->examine();
+		if(closeEnough(n, o->name))
+			if(!o->examine().empty())
+				return o->examine();
 	for (auto& f: current->features)
-		if(closeEnough(n, f->name) || closeEnough(n, f->shortDescription))
-			return f->examine();
+		if(closeEnough(n, f->name))
+			if(!f->examine().empty())	
+				return f->examine(); 
+			
+			
+			
+	for (auto& e: current->edges)
+		if(closeEnough(n, e->shortDescription))  
+			if (!e->examine().empty()) 
+				return e->examine();
+	for (auto& o: current->objects)
+		if(closeEnough(n, o->shortDescription))
+			if(!o->examine().empty())
+				return o->examine();
+	for (auto& f: current->features)
+		if(closeEnough(n, f->shortDescription))
+			if(!f->examine().empty())	
+				return f->examine();
+	
+
 	return "";	
 }
 
@@ -216,7 +236,7 @@ string Game::tryVerb(std::string verb, std::string param){
 	if(index != string::npos){
 		nodeName = tolower(target.substr(0, index));
 		subName = tolower(target.substr(index + 1));
-		cout << nodeName << " " << subName << " " << current->name << endl;
+		
 		if(nodeName != tolower(current->name)){
 			if(targetObj->_hintResponse.empty())
 				return "You can't " + verb + " the object " + param + " here. I wanted to give you a hint, but there is no hintResponse in my database";  

@@ -23,7 +23,7 @@
 [[Feature]] [START1]
 [[FeatureName]] [START2]Fire[END2]
 [[FeatureShortDescription]] [START2]There is a large fire between you and a wall of the spaceship.[END2]
-[[FeatureLongDescription]] [START2]There is a large fire between you and a wall of the spaceship. Behind it you can make out the words 'WELLS' PROPRIETARY TIME MACHINE, Not For Use On Organic Materials'[END2]
+[[FeatureLongDescription]] [START2]There is a large fire between you and a wall of the spaceship. Behind it you can make out the words 'WELLS' PROPRIETARY TIME MACHINE, Not For Use On Organic Materials'.[END2]
 [[FeatureVisible]] [START2]1[END2]
 [END1]
 
@@ -57,7 +57,7 @@
 
 [[Feature]] [START1]
 [[FeatureName]] [START2]Paper[END2]
-[[FeatureShortDescription]] [START2]A sheet of paper lies nearby[END2]
+[[FeatureShortDescription]] [START2]A sheet of paper lies nearby.[END2]
 [[FeatureLongDescription]] [START2]On a sheet of paper lying on an overturned table are the words "Call Cetus"[END2]
 [[FeatureVisible]] [START2]1[END2]
 [END1]
