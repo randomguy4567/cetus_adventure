@@ -19,21 +19,28 @@ string stringToLower(string s){
 }
 
 void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& verbs){
-	for (auto* e: g->current->edges){
-		auto str = e->name;
-		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
-		dict[str] = E;
-	}
-	for (auto* f: g->current->features){
-		auto str = f->name;
-		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
-		dict[str] = N;
-	}
-	for (auto* o: g->current->objects){
-		auto str = o->name;
-		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
-		dict[str] = N;
-	}
+	for (auto* e: g->current->edges)
+		if (e->visible)
+		{
+			auto str = e->name;
+			std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+			dict[str] = E;
+		}
+	for (auto* f: g->current->features)
+		if (f->visible)
+		{
+			auto str = f->name;
+			std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+			dict[str] = N;
+		}
+	for (auto* o: g->current->objects)
+		if (o->visible)
+		{
+			auto str = o->name;
+			std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+			dict[str] = N;
+		}
+	// Inventory
 	for (auto* o: g->objects){
 		auto str = o->name;
 		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
@@ -45,6 +52,7 @@ void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& 
 	}
 	
 	
+	// Verbs for "help"
 	for (auto* o: g->allObjects){
 		if(o->_verb.size())
 			if(find(verbs.begin(), verbs.end(), o->_verb) == verbs.end())

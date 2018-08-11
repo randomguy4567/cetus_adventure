@@ -168,6 +168,7 @@ string Game::describe(std::string name) {
 	return "";
 } 
 
+// Had to decouple conditional statments to fix a bug
 string Game::examine(std::string name) {
 	assert(current != 0);
 	if (!name.size())
@@ -200,8 +201,6 @@ string Game::examine(std::string name) {
 		if(closeEnough(n, f->shortDescription))
 			if(!f->examine().empty())	
 				return f->examine();
-	
-
 	return "";	
 }
 
@@ -239,7 +238,8 @@ string Game::tryVerb(std::string verb, std::string param){
 		
 		if(nodeName != tolower(current->name)){
 			if(targetObj->_hintResponse.empty())
-				return "You can't " + verb + " the object " + param + " here. I wanted to give you a hint, but there is no hintResponse in my database";  
+				return "You can't " + verb + " the object " + param 
+					+ " here. I wanted to give you a hint, but there is no hintResponse in my database. You must be in the " + nodeName;  
 			else
 				return targetObj->_hintResponse;		
 		}
@@ -303,7 +303,7 @@ Edge* Game::findEdge(std::string name, Node* n){
 	return 0;	
 }	
 
-
+// "cheat"
 void Game::printDatabase() {
 	cout << "\nALL NODES IN SYSTEM: \n";
 	for (auto* n: allNodes){
@@ -338,17 +338,53 @@ void Game::printDatabase() {
 				<< " visible: " << o->visible << " fixed: " << o->fixed<< " target: " << o->target 
 				<< " verb: " << o->_verb << " response: " << o->_response.size() << " chars " << " hintResponse: " << o->_hintResponse.size() << " chars Location: " << getObjectLocation(o->name) <<  endl;
 	}
+	ofstream legendOut("legend.txt");
+	legendOut << "\
+digraph legend {\n\
+subgraph cluster {\n\
+	rankdir=LR;\n\
+	label =\"Legend\";\n\
+	\"Node\" [shape=oval fontsize=27 fontcolor=blue];\n\
+	Feature [shape=box fontsize=18 fontcolor=orange];\n\
+	Object [shape=octagon fontsize=18 fontcolor=purple];\n\
+	Target [shape=invhouse fontsize=18 fontcolor=red];\n\
+}\n\
+}\n\
+";
 	
 	ofstream out("graph.txt");
-	out << "digraph cetus {\nrankdir=LR;\nsize=\"8,5\"\n";
+	out << "digraph cetus {\nrankdir=LR;\n\n";//size=\"8,5\"
 	
 	for (auto* n: allNodes){
+
+		out << "\t" << n->name << " [shape=oval fontsize=18 fontcolor=blue];\n";
 		for (auto* e: n->edges){
-			out << "\t" << n->name << " -> " << e->node->name << "  [ label = \"" << e->name << "\" ]; \n";
+			out << "\t" << n->name << " -> " << e->node->name << "  [ label = \"" << e->name << "\" fontsize=16 fontcolor=green]; \n";
+		}
+		for (auto* f: n->features ){
+			out << "\t" << f->name << " [shape=box fontsize=12 fontcolor=orange];\n";
+			out << "\t" << n->name << " -> " << f->name << " \n";
+			if(f->initialFeatureName.size())
+				out << "\t\t" << f->name << " -> " << f->initialFeatureName << " \n";
+			if(f->initialObjectName.size())
+				out << "\t\t" << f->name << " -> " << f->initialObjectName << " \n";			
+		}
+		for (auto* o: n->objects ){
+			out << "\t" << o->name << " [shape=octagon fontsize=12 fontcolor=purple];\n";
+			out << "\t" << n->name << " -> " << o->name << " \n";
+			if(o->target.size()){
+				string s = o->target;
+				auto found = s.find(".");
+				if(found != string::npos)
+					s.replace(found, 1, ".");
+				out << "\t\t" << o->name << " -> \"" << s << "\" \n";
+				out << "\t\"" << s << "\" [shape=invhouse fontsize=12 fontcolor=red];\n";
+			}			
 		}
 	}
 	out << "}\n";
 }
+
 
 void stripTrailingPeriod(string &s){
 	if(s.size())
@@ -358,6 +394,8 @@ void stripTrailingPeriod(string &s){
 
 bool Game::buildGraph(){
 	/*
+	Demonstration for Pat 
+	
 	findFeature("Flotsam", findNode("Ocean"))->initialObjectName="Flashlight";
 	auto* flashlight = findObject("Flashlight", findNode("Ocean"));
 	flashlight->_verb = "light";
@@ -390,7 +428,7 @@ bool Game::buildGraph(){
 				allObjects.push_back(o);
 		}
 	}
-	printDatabase();
+	//printDatabase();
 }
 
 
