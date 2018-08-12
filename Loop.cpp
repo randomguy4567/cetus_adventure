@@ -63,7 +63,7 @@ void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& 
 	dict["use"] = V;
 	dict["help"] = V;
 }
-//This allows us to "play" the demo
+// This allows us to "play" the game
 void loop(Game* g){
 	std::map<std::string, Tag> dict;
 	g->interface.print(g->describe() + ".\n\n");

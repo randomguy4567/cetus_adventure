@@ -33,6 +33,7 @@
 [[Verb]] [START3]
 [[VerbName]] [START4]Examine[END4]
 [[VerbResponse]] [START4][END4]
+[[VerbHint]] [START4]I wonder what's playing on the television. Go take a look.[END4]
 [END3]
 [END2]
 [END1]
@@ -55,6 +56,7 @@
 [[VerbResponse]]
 [START4]You climb onto the bed. It isn't too hard or soft, and soon you find yourself drifting away. A while later, you open your eyes. The door that you entered from is back. You're still not
 sure whether or not you're actually dreaming, but at the very least you now have a way out of the room.[END4]
+[[VerbHint]] [START4]It's a comfortable bed, try sleeping in it.[END4]
 [END3]
 [END2]
 [END1]
@@ -64,7 +66,7 @@ sure whether or not you're actually dreaming, but at the very least you now have
 [[ObjectShortDescription]] [START2]The droid is in the tv, interfacing with the Death Star.[END2]
 [[ObjectLongDescription]] [START2]The droid whirrs happily as you look at it. It's head spins around and several instruments are produced from various compartments.[END2]
 [[ObjectVisible]] [START2]0[END2]
-[[ObjectFixed]] [START2]1[END2]
+[[ObjectFixed]] [START2]0[END2]
 [[ObjectTargetType]] [START2]Feature[END2]
 [[ObjectTargetRoom]] [START2]Spaceship[END2]
 [[ObjectTargetFeature]] [START2]Machine[END2]
@@ -73,6 +75,7 @@ sure whether or not you're actually dreaming, but at the very least you now have
 [[VerbName]] [START4]Use[END4]
 [[VerbResponse]] [START4]You take the small droid out of your pack and place it on the floor beside the broken hatch. It whirrs away towards the door and within minutes the hatch has been repaired and freshly polished.
 Pushing open the hatch, you find a small chamber off to the side of the spaceship's main deck, it seems entirely empty minus a small container at the center.[END4]
+[[VerbHint]] [START4]The droid's tools are whirring in anticipation. You better find it something to fix.[END4]
 [END3]
 [END2]
 [END1]

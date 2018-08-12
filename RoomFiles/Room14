@@ -67,6 +67,7 @@ he stretches out his hand. "The payment, please."
 You reach for your bag but remember that you dropped it during the madness on the battlefield. You attempt to apologize, but Charon holds up his hand. "No payment, no service. Come back when you have it."
 He points towards a series of winding tunnels that seem to appear from nowhere. Vaguely wondering about how easy it was to get out of dying, you make your way up to the surface, finding yourself back upon
 the battlefield, your bag lying several feet near the cavern.[END4]
+[[VerbHint]] [START4]Everyone around you looks like they're gearing up to attack the army. You should join them.[END4]
 [END3]
 [END2]
 [END1]
@@ -104,6 +105,7 @@ table and opens the lid.
 It's a roll of duct tape. Duct tape decorated with hearts and stars which probably once belonged to the arts-and-crafts supplies of a small child.
 
 The commander smiles. "I see you are dumbfounded by its beauty. Take your time to admire it. As I mentioned, it is now yours." He turns and walks away, leaving you to stare incredulously at the roll of tape.[END4]
+[[VerbHint]] [START4]Anyone who saw this gold-handled sword would doubtless believe you to be a great conqueror. Go find somewhere to brag about it![END4]
 [END3]
 [END2]
 [END1]

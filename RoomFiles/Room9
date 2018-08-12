@@ -56,6 +56,7 @@
 The music... well, it seems like a mix of gospel, heavy metal, and reggae. It sounds slightly better than you might expect, but not by much. After about twenty minutes, they ask you what you think.
 You complement them on their... ingenuity. They seem extraordinarily pleased with the praise. The lead singer fishes around in a nearby bag, tossing out random, broken objects whose use you couldn't
 begin to guess at, before finally pulling out a pair of goggles, which he places on the table for you to take as a token of their appreciation.[END4]
+[[VerbHint]] [START4]These guys seem to really like their music. I bet they would love for an audience to listen to it.[END4]
 [END3]
 [END2]
 [END1]
@@ -74,6 +75,7 @@ begin to guess at, before finally pulling out a pair of goggles, which he places
 [[VerbName]] [START4]Use[END4]
 [[VerbResponse]] [START4]You put the goggles on, and feel more than a little overwhelmed at the sheer beauty of the reef below you. There are fish of every kind darting around the coral and even a turtle gliding gracefully by.
 Glancing over to where you had noticed the glimmer in the sand, you now see that it is a pile of seashells, each one of which is beautifully patterned and perfectly preserved.[END4]
+[[VerbHint]] [START4]The goggles are intended for use underwater.[END4]
 [END3]
 [END2]
 [END1]

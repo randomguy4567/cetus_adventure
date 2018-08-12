@@ -48,6 +48,7 @@ the dev frantically dials a number and brings it to his ear, shooting furitive g
 files on the GitHub repo for this-... Yeah, the ones in Antonio's repo, the currentGame2-... YOUR GITHUB!!... Yeah, my bad... Yeah. I'll fix it but..."
 
 The dev paces away, still talking about game mechanics over the phone while you stare after him, confused.[END4]
+[[VerbHint]] [START4]I mean... I guess you could talk to the dev?[END4]
 [END3]
 [END2]
 [END1]
@@ -67,6 +68,7 @@ The dev paces away, still talking about game mechanics over the phone while you 
 [[VerbResponse]]
 [START4]You go through the drawers, finding, among other things, markers for a non-existent whiteboard, two small slabs of wood whose purpose you can only guess at, an unopened copy of Plato's Complete Works,
 an unplugged PS4, and... a wallet. That last one might be useful.[END4]
+[[VerbHint]] [START4]There are some unlocked drawers that you could look through.[END4]
 [END3]
 [END2]
 [END1]
@@ -86,6 +88,7 @@ an unplugged PS4, and... a wallet. That last one might be useful.[END4]
 [[VerbResponse]] [START4]You talk to the cashier, paying her for the old computer sitting on the shelf behind her with the developer's wallet. Spontaneously a giant fissure opens beneath you and swallows you whole, ending the game and deleting the 'Cetus' game files.
 
 I'm kidding, of course. The cashier rings it up and places it on the counter for you.[END4]
+[[VerbHint]] [START4]Quick, find something to buy before the dev notices it's gone![END4]
 [END3]
 [END2]
 [END1]

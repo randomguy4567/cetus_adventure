@@ -58,6 +58,7 @@
 [[Verb]] [START3]
 [[VerbName]] [START4]Examine[END4]
 [[VerbResponse]] [START4][END4]
+[[VerbHint]] [START4]You should look at the flotsam more closely, you'll find something interesting.[END4]
 [END3]
 [END2]
 [END1]
@@ -91,6 +92,7 @@ his grasp as he tumbles away.
 
 By some miraculous twist of fate, you manage to escape back through the tunnel unnoticed. Unsurprisingly, you're not thinking clearly after having inadvertently murdered someone and
 manage to drop both the flashlight and sword as you are stumbling out of the cave back on the battlefield. Although you can't seem to find the flashlight, the sword is hard to miss.[END4]
+[[VerbHint]] [START4]Try to find someplace dark in order to use this.[END4]
 [END3]
 [END2]
 [END1]

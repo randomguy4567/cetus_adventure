@@ -31,7 +31,7 @@ public:
 	virtual std::string verb(); // this is the word that can be entered into the user interface 
 								// to activate the object (i.e, take or eat). Can be polymorphic.
 	std::string activate(); // when you consume or take an object.
-	void setVerb(std::string verb, std::string response, std::string _hintResponse);
+	void setVerb(std::string verb, std::string response, std::string hintResponse);
 	std::string _verb; 
 	std::string _response; 
 	std::string _hintResponse;

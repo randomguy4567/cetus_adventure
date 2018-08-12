@@ -50,6 +50,7 @@
 [[VerbName]] [START4]Examine[END4]
 [[VerbResponse]]
 [START4][END4]
+[[VerbHint]] [START4]The shelves seems empty, but maybe you missed something.[END4]
 [END3]
 [END2]
 [END1]
@@ -71,6 +72,7 @@
 [[VerbName]] [START4]Drop[END4]
 [[VerbResponse]] [START4]You place the computer in the container in the center of the chamber. Oddly, there is even an outlet there for it, allowing you to turn it on for the first time.
 If you want to program it, you can probably do so now.[END4]
+[[VerbHint]] [START4]The computer doesn't have any power. Try dropping this somewhere with an outlet.[END4]
 [END3]
 [END2]
 [END1]
@@ -91,6 +93,7 @@ If you want to program it, you can probably do so now.[END4]
 January 7, 1984... That could be a problem. You manage to stumble over to the nearby bench before collapsing into unconsciousness. What feels like mere moments later, you open your eyes and sit up,
 feeling wide awake. You stretch and stand up, but as you look to the south you notice a small, wooden door standing in the middle of the street. It doesn't seem to be attached to anything, so it
 couldn't lead to anywhere... Could it?[END4]
+[[VerbHint]] [START4]You should find somewhere to sleep before taking these unless you want to fall asleep on the ground.[END4]
 [END3]
 [END2]
 [END1]

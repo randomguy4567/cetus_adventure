@@ -207,12 +207,12 @@ string Game::examine(std::string name) {
 string Game::tryVerb(std::string verb, std::string param){
 	Object* targetObj = 0;
 	for (auto* o: objects)
-		if(tolower(o->_verb) == verb){
+		if(tolower(o->_verb) == verb && tolower(o->name) == param){
 			targetObj = o;
 		}
 	if(!targetObj)
 		for (auto* o: current->objects)
-			if(tolower(o->_verb) == verb){
+			if(tolower(o->_verb) == verb && tolower(o->name) == param){
 				targetObj = o;
 			}
 	if(!targetObj)
@@ -239,7 +239,7 @@ string Game::tryVerb(std::string verb, std::string param){
 		if(nodeName != tolower(current->name)){
 			if(targetObj->_hintResponse.empty())
 				return "You can't " + verb + " the object " + param 
-					+ " here. I wanted to give you a hint, but there is no hintResponse in my database. You must be in the " + nodeName;  
+					+ " here. You must be in the " + nodeName;  //  I wanted to give you a hint, but there is no hintResponse in my database.
 			else
 				return targetObj->_hintResponse;		
 		}
@@ -265,7 +265,7 @@ string Game::tryVerb(std::string verb, std::string param){
 		}
 	}	
 	if(targetObj->_hintResponse.empty())
-		return "You can't " + verb + " the object " + param + " here. I wanted to give you a hint, but there is no hintResponse in my database";  
+		return "You can't " + verb + " the object " + param + " here."; // I wanted to give you a hint, but there is no hintResponse in my database";  
 	else
 		return targetObj->_hintResponse;
 }
@@ -526,7 +526,6 @@ bool Game::setObjectLocation(std::string name, std::string location){
 	for(auto* n: allNodes){
 		if(location == tolower(n->name)){
 			n->objects.push_back(objectToPlace);
-
 			return true;
 		}
 	}

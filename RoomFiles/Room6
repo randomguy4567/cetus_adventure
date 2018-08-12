@@ -67,6 +67,7 @@
 [[Verb]] [START3]
 [[VerbName]] [START4]Examine[END4]
 [[VerbResponse]] [START4][END4]
+[[VerbHint]] [START4]Try looking in the fountain.[END4]
 [END3]
 [END2]
 [END1]
@@ -94,6 +95,7 @@ Up, Up, Down, Down, Left, Right, Left, Right, B, A...
 The game screen suddenly goes dark. Considering how much you were enjoying the game, this is quite annoying. Your irritation is put on hold for a moment, however, when you notice that, unlike all of the broken
 games around you, the screen before you isn't reflecting the dim, electric lights of the Arcade. Curious, you try to tap on the screen with your hand, only to find empty air. Peering closer, you realize that far
 beyond where the screen should end, there is a faint light.[END4]
+[[VerbHint]] [START4]An arcade would be a great place to use the coins.[END4]
 [END3]
 [END2]
 [END1]

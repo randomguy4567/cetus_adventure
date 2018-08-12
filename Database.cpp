@@ -180,7 +180,7 @@ int initialize(Game *g, int numRooms) {
                 // Print feature name
                 int temp2 = 0;
                 string featQuery = fileParser(2, featI, "FeatureName", &temp2);
-                cout << "Feature Name: " << featQuery << endl;
+                // cout << "Feature Name: " << featQuery << endl;
                 f->name = featQuery;
                 
                 // Print feature short description
@@ -306,7 +306,7 @@ int initialize(Game *g, int numRooms) {
                 int counter2 = 0;
                 int minp2 = 0;
                 string objVerb;
-                string verbName, verbResponse;
+                string verbName, verbResponse, verbHint;
                 do {
                     
                     objVerb = fileParser(3, objQuery, "Verb", &minp2);
@@ -322,7 +322,12 @@ int initialize(Game *g, int numRooms) {
                         verbQuery = fileParser(4, objVerb, "VerbResponse", &temp22);
                         // cout << "Verb Response: " << verbQuery << endl;
                         verbResponse = verbQuery;
-                        a->setVerb(verbName,verbResponse, "Need hint response");
+                        
+                        temp22 = 0;
+                        verbQuery = fileParser(4, objVerb, "VerbHint", &temp22);
+                        // cout << "Verb Response: " << verbQuery << endl;
+                        verbHint = verbQuery;
+                        a->setVerb(verbName,verbResponse,verbHint);
                     }
                     counter2++;
                     
