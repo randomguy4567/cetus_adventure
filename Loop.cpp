@@ -9,6 +9,7 @@
 #include "Loop.h"
 #include "Parser.hpp"
 #include "Tag.hpp"
+#include "Database.h"
 
 
 using namespace std;
@@ -62,6 +63,8 @@ void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& 
 	dict["cheat"] = V;
 	dict["use"] = V;
 	dict["help"] = V;
+	dict["save"] = V;
+	dict["load"] = V;
 }
 // This allows us to "play" the game
 void loop(Game* g){
@@ -188,6 +191,22 @@ void loop(Game* g){
 				for (auto s: verbs)
 					g->interface.print(s + "\n");
 				g->interface.print("\n");		 	
+			}else if(verb == "save"){
+				if(saveGame(g))
+					g->interface.print("The game has been saved!\n");
+				else
+					g->interface.print("The game was not able to be saved.\n");							 	
+			}else if(verb == "load"){
+				if(loadGame(g, numberOfRooms)){
+					g->interface.print("The game has been loaded from a saved state.\n");
+					g->interface.print(g->describe() + ".\n\n");
+				}
+				else
+					g->interface.print("The game was not able to be loaded.\n");							 	
+			}else if(verb == "quit"){
+
+				g->interface.print("Quitting the game.\n");	
+				return;						 	
 			}else{
 				s = g->tryVerb(verb, param);
 				if (s.empty())

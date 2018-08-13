@@ -2,6 +2,7 @@
 #define DATABASE_H
 #include "Game.h"
 
+const int numberOfRooms = 16;
 
 int initialize(Game *g, int numRooms);
 bool saveGame(Game *g);

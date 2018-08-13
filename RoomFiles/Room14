@@ -20,7 +20,7 @@
 [[Edge]] [START1]
 [[EdgeName]] [START2]North[END2]
 [[EdgeShortDescription]] [START2]A ferry sits waiting for you on the river Styx to the north.[END2]
-[[EdgeLongDescription]] [START2]The river Styx secretly twists its way beneath the battlefield to the north, but Charon has a special destination for you. His ferry waits for you.[END2]
+[[EdgeLongDescription]] [START2]The river Styx secretly twists its way beneath the battlefield to the north, a ferry bobbing on its waters.[END2]
 [[EdgeVisible]] [START2]1[END2]
 [[EdgePassable]] [START2]1[END2]
 [[EdgeNode]] [START2]Olympus[END2]
@@ -34,6 +34,13 @@
 [[FeatureShortDescription]] [START2]To the side of the battlefield, there is a cave.[END2]
 [[FeatureLongDescription]] [START2]To the side of the battlefield, there is a cave. It is pitch black and you'll probably need a light if you want to explore if further.[END2]
 [[FeatureVisible]] [START2]1[END2]
+[END1]
+
+[[Feature]] [START1]
+[[FeatureName]] [START2]Charon[END2]
+[[FeatureShortDescription]] [START2]In the winding tunnels beneath the battlefield, Charon waits for you.[END2]
+[[FeatureLongDescription]] [START2]In the winding tunnels beneath the battlefield, Charon waits for you. He has a special destination in mind, but you need the proper coin to make use of his service.[END2]
+[[FeatureVisible]] [START2]0[END2]
 [END1]
 [END0]
 
