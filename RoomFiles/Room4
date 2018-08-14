@@ -66,9 +66,7 @@ Trap 9...
 Trap 10...
 Trap 11...
 
-Ok, you know what? Let's just say that there is a, um... a sudden crash of thunder outside of the ship. Yes, that'll work. You turn to look at the wall, suddenly wondering how stable this broken-down ship is.
-In the brief second that you've turned your head, gremlins run out of a nearby mousehole, and at an almost unbelievable speed [but actually totally believable, trust me] they take the keyboard, enter in the
-hundreds of thousands of elements without any errors, and sprint away, leaving you to the pleasant surprise that the computer is now running the instance.
+Ok, you know what? Let's just say that there is a, um... a sudden crash of thunder outside of the ship. Yes, that'll work. You turn to look at the wall, suddenly wondering how stable this broken-down ship is. In the brief second that you've turned your head, gremlins run out of a nearby mousehole, and at an almost unbelievable speed [but actually totally believable, trust me] they take the keyboard, enter in the hundreds of thousands of elements without any errors, and sprint away, leaving you to the pleasant surprise that the computer is now running the instance.
 
 You shut the door to the capsule and lock it. After you do so, a small hatch opens in the floor nearby and a control console rises up out of it. On the console is a large, blinking red button.[END4]
 [[VerbHint]] [START4]You need to input this into a computer, preferably one that's plugged in.[END4]
@@ -93,16 +91,13 @@ You shut the door to the capsule and lock it. After you do so, a small hatch ope
 		
 You relate to him the adventures that landed you here, to which he incrementally raises his eyebrow.
 
-"A ship... in the sky... Where you met a god... uh-huh." The nature of his grin makes it very clear that he thinks you're nuts. He chuckles, "Well, I don't suppose your 'sky-ship god' would be able
-to help me with a trapping problem I'm having."
+"A ship... in the sky... Where you met a god... uh-huh." The nature of his grin makes it very clear that he thinks you're nuts. He chuckles, "Well, I don't suppose your 'sky-ship god' would be able to help me with a trapping problem I'm having."
 
 Although it's clear that he's joking about asking for help, you feel a bit offended by his implication that you're insane and press him into revealing the nature of his 'problem'.
 
-Finally, he cracks. "Alright, see the problem is that all my buddies and I, we've set 'bout ten thousand traps in all round this forest. But it takes a while to check 'em all. If you figure out
-the quickest way to get between 'em, it'd save us all a bit o' trouble."
+Finally, he cracks. "Alright, see the problem is that all my buddies and I, we've set 'bout ten thousand traps in all round this forest. But it takes a while to check 'em all. If you figure out the quickest way to get between 'em, it'd save us all a bit o' trouble."
 
-The traveling salesman problem. Really? REALLY? I'm starting to wonder if the game devs are just screwing with you at this point. You let out a deep sigh, your suspension of disbelief stretched
-to the breaking point. You attempt to explain to the the fur-laden trapper the nature of NP-completeness, but his eyes glaze over by the time you reach the part about polynomial time algorithms.
+The traveling salesman problem. Really? REALLY? I'm starting to wonder if the game devs are just screwing with you at this point. You let out a deep sigh, your suspension of disbelief stretched to the breaking point. You attempt to explain to the the fur-laden trapper the nature of NP-completeness, but his eyes glaze over by the time you reach the part about polynomial time algorithms.
 
 "Uh-huh...," he says, still very clearly thinking you're crazy. "Well if you and your magic sky-ship change your mind, I dropped the list of trap locations somewhere around here. Good luck with... stuff."[END4]
 [[VerbHint]] [START4]Don't be shy, try talking to the trapper.[END4]
@@ -122,8 +117,7 @@ to the breaking point. You attempt to explain to the the fur-laden trapper the n
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]
-[[VerbResponse]] [START4]Drawing on what I'm sure is your impeccable knowledge of nineteenth century English romantic poetry, you chisel the name OZYMANDIAS into the statue's base.
-As you carve the last letter, an eerie shimmer pulses through the air behind the statue, to your north. Growing larger and larger as it pulses ever faster, it soon seems to encompass the entire horizon.[END4]
+[[VerbResponse]] [START4]Drawing on what I'm sure is your impeccable knowledge of nineteenth century English romantic poetry, you chisel the name OZYMANDIAS into the statue's base. As you carve the last letter, an eerie shimmer pulses through the air behind the statue, to your north. Growing larger and larger as it pulses ever faster, it soon seems to encompass the entire horizon.[END4]
 [[VerbHint]] [START4]Look for a patch of soft stone to use this on.[END4]
 [END3]
 [END2]

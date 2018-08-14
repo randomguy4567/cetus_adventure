@@ -71,6 +71,7 @@
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]
 [[VerbResponse]] [START4]You make your way through the hidden turns and passages beneath the battlefield, finally arriving before Charon. You offer him the ancient purse, and from it he takes two ancient coins.
+
 "This will do," he says, shrunken eyes gleaming with a sudden passion, pulling the coins into the depths of his ragged robe. "Cetus awaits," he announces, sweeping his hand in a bowing gesture to his ferry.[END4]
 [[VerbHint]] [START4]The coins in the purse all went out of print thousands of years ago, but I'm sure someone will want them.[END4]
 [END3]
@@ -90,15 +91,14 @@
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]
 [[VerbResponse]] [START4]You look at the tape.
-You look at reality.
-You look back at the tape.
-Slowly, you begin to tape the pieces of reality back together, half expecting something terrible to happen. With each piece that you haphazardly click back into place, a low rumble echoes up
-from below the clouds. After a few minutes, you've managed to fit everything back together, with one final strip, you circle the shattered globe a couple of times.
-A large earthquake wracks Olympus, sending you to your knees.
 
-"That actually worked?!?" Cetus shouts over the din. "I can't believe it, but thank you! I think I can manage to make sure that you get back to your own place in reality, but you should hurry." He
-waves an awkward fin, a look of what you assume is concentration passing over the gigantic eye facing you. To the north, a pillar of mist winds its way up from the clouds below to form a shimmering
-tunnel. "I'd say I hope we meet again, but my job is normally crashing ships and generally causing problems for you lot, so... maybe not."[END4]
+You look at reality.
+
+You look back at the tape.
+
+Slowly, you begin to tape the pieces of reality back together, half expecting something terrible to happen. With each piece that you haphazardly click back into place, a low rumble echoes up from below the clouds. After a few minutes, you've managed to fit everything back together, with one final strip, you circle the shattered globe a couple of times. A large earthquake wracks Olympus, sending you to your knees.
+
+"That actually worked?!?" Cetus shouts over the din. "I can't believe it, but thank you! I think I can manage to make sure that you get back to your own place in reality, but you should hurry." He waves an awkward fin, a look of what you assume is concentration passing over the gigantic eye facing you. To the north, a pillar of mist winds its way up from the clouds below to form a shimmering tunnel. "I'd say I hope we meet again, but my job is normally crashing ships and generally causing problems for you lot, so... maybe not."[END4]
 [[VerbHint]] [START4]Anything can be fixed with enough duct tape! Find something broken.[END4]
 [END3]
 [END2]

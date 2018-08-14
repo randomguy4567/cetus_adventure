@@ -52,8 +52,7 @@
 [[Verb]] [START3]
 [[VerbName]] [START4]Open[END4]
 [[VerbResponse]]
-[START4]Carefully, you reach up and try to open the box's door. It doesn't budge, its many layers of rust holding it in place. You try again, harder this time. Still nothing. Finally, you pull
-with all your might. The door flies off the box, clanging loudly as it bounces across an abandoned row of games. Inside, you find an unused fire extinguisher. It looks surprisingly new.[END4]
+[START4]Carefully, you reach up and try to open the box's door. It doesn't budge, its many layers of rust holding it in place. You try again, harder this time. Still nothing. Finally, you pull with all your might. The door flies off the box, clanging loudly as it bounces across an abandoned row of games. Inside, you find an unused fire extinguisher. It looks surprisingly new.[END4]
 [[VerbHint]] [START4]The door of the box might be rusted, but you could probably pry it open.[END4]
 [END3]
 [END2]
@@ -71,9 +70,7 @@ with all your might. The door flies off the box, clanging loudly as it bounces a
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]
-[[VerbResponse]] [START4]You empty the extinguisher on the flames. Although the fire is far to large to fully contain, you do manage to clear a path through it. To the wall beyond. Beneath the colorful 'WELLS' PROPRIETARY
-TIME MACHINE, Not For Use On Organic Materials' label, you can now see a hatch leading to an adjacent chamber. Unfortunately, it seems that whatever catastrophe caused the fire also severely damaged
-the hatch, and it now is twisted on its hinges, its opening mechanism long since broken.[END4]
+[[VerbResponse]] [START4]You empty the extinguisher on the flames. Although the fire is far to large to fully contain, you do manage to clear a path through it. To the wall beyond. Beneath the colorful 'WELLS' PROPRIETARY TIME MACHINE, Not For Use On Organic Materials' label, you can now see a hatch leading to an adjacent chamber. Unfortunately, it seems that whatever catastrophe caused the fire also severely damaged the hatch, and it now is twisted on its hinges, its opening mechanism long since broken.[END4]
 [[VerbHint]] [START4]It's a fire extinguisher... emphasis on 'fire'?[END4]
 [END3]
 [END2]
