@@ -251,6 +251,7 @@ Parser::Parser()
 		{"on", P},
 		{"to", P},
 		{"with", P},
+		{"tv", N },
 		{"attack", V},
 		{"call", V},
 		{"drop", V},
@@ -281,7 +282,8 @@ Parser::Parser()
 	{
 		{ "examine", "look" },
 		{ "grab", "take" },
-		{ "pickup", "take" }
+		{ "pickup", "take" },
+		{ "tv", "television"}
 	};
 }
 
