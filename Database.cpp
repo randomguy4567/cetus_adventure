@@ -350,13 +350,18 @@ int initialize(Game *g, int numRooms) {
 
 
 bool saveGame(Game *g) {
-    string storageString0 = "[[Nodes]] : [START0]\n";
     remove("savefile");
     ofstream outFile;
     outFile.open("savegame");
     
-    // TEST
-    // cout << storageString0;
+    string storageString0 = "[[Current]] : [START0]";
+    storageString0 += g->current->name;
+    storageString0 += "[END0]\n";
+    
+    outFile << storageString0;
+    
+    
+    storageString0 = "[[Nodes]] : [START0]\n";
     
     outFile << storageString0;
     
@@ -460,6 +465,8 @@ bool saveGame(Game *g) {
     outFile << storageString0;
     
     outFile.close();
+    
+    return true;
 }
 
 bool loadGame(Game *g, int numRooms) {
@@ -473,6 +480,14 @@ bool loadGame(Game *g, int numRooms) {
         saveContents = saveContents + c;
     
     int minpos = 0;
+    string currentString = fileParser(0, saveContents, "Current", &minpos);
+    
+    for(auto* n: g->allNodes) {
+        if(n->name == currentString)
+            g->current = n;
+    }
+    
+    minpos = 0;
     string roomsString = fileParser(0, saveContents, "Nodes", &minpos);
     
     // TEST
@@ -620,5 +635,5 @@ bool loadGame(Game *g, int numRooms) {
             g->setObjectLocation(objName, objLoc);
         }
     }while(objContents != "");
-    return 0;
+    return true;
 }
