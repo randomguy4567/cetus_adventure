@@ -20,7 +20,7 @@ depend: .depend
 	$(CXX) $(CPPFLAGS) -MM $^>>./.depend;
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) cetus savegame
 
 distclean: clean
 	$(RM) *~ .depend
