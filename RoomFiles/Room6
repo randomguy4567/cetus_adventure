@@ -37,8 +37,8 @@
 
 [[Edge]] [START1]
 [[EdgeName]] [START2]East[END2]
-[[EdgeShortDescription]] [START2]The ocean is to the west.[END2]
-[[EdgeLongDescription]] [START2]The ocean is to the west. Now that the thin fog has cleared, you can faintly make out the beach and the elevator shaft rising above it.[END2]
+[[EdgeShortDescription]] [START2]The ocean is to the east.[END2]
+[[EdgeLongDescription]] [START2]The ocean is to the east. Now that the thin fog has cleared, you can faintly make out the beach and the elevator shaft rising above it.[END2]
 [[EdgeVisible]] [START2]1[END2]
 [[EdgePassable]] [START2]1[END2]
 [[EdgeNode]] [START2]Ocean[END2]
@@ -87,14 +87,11 @@
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]
-[[VerbResponse]] [START4]You use your coins to play the frogger game. It is just as fun as you remember it. After thirty minutes or so, you're nearing the end of your quarters. Happening to glance down at the
-controls, you notice the Konami Code graffitied near the start button. Shrugging, you decide to enter it.
+[[VerbResponse]] [START4]You use your coins to play the frogger game. It is just as fun as you remember it. After thirty minutes or so, you're nearing the end of your quarters. Happening to glance down at the controls, you notice the Konami Code graffitied near the start button. Shrugging, you decide to enter it.
 
 Up, Up, Down, Down, Left, Right, Left, Right, B, A...
 
-The game screen suddenly goes dark. Considering how much you were enjoying the game, this is quite annoying. Your irritation is put on hold for a moment, however, when you notice that, unlike all of the broken
-games around you, the screen before you isn't reflecting the dim, electric lights of the Arcade. Curious, you try to tap on the screen with your hand, only to find empty air. Peering closer, you realize that far
-beyond where the screen should end, there is a faint light.[END4]
+The game screen suddenly goes dark. Considering how much you were enjoying the game, this is quite annoying. Your irritation is put on hold for a moment, however, when you notice that, unlike all of the broken games around you, the screen before you isn't reflecting the dim, electric lights of the Arcade. Curious, you try to tap on the screen with your hand, only to find empty air. Peering closer, you realize that far beyond where the screen should end, there is a faint light.[END4]
 [[VerbHint]] [START4]An arcade would be a great place to use the coins.[END4]
 [END3]
 [END2]

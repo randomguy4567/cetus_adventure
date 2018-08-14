@@ -1,0 +1,15 @@
+Edge.o: Edge.cpp Edge.h Object.h Feature.h Node.h Game.h Interface.h
+Feature.o: Feature.cpp Feature.h Edge.h Object.h Node.h Game.h \
+ Interface.h
+Game.o: Game.cpp Game.h Edge.h Object.h Feature.h Node.h Interface.h
+Interface.o: Interface.cpp Interface.h
+main.o: main.cpp Game.h Edge.h Object.h Feature.h Node.h Interface.h \
+ Loop.h Database.h
+Node.o: Node.cpp Node.h Edge.h Object.h Feature.h Game.h Interface.h
+Object.o: Object.cpp Object.h Edge.h Feature.h Node.h Game.h Interface.h
+Loop.o: Loop.cpp Game.h Edge.h Object.h Feature.h Node.h Interface.h \
+ Loop.h Parser.hpp ParsedCommand.hpp Tag.hpp Database.h
+Database.o: Database.cpp Database.h Game.h Edge.h Object.h Feature.h \
+ Node.h Interface.h
+ParsedCommand.o: ParsedCommand.cpp ParsedCommand.hpp Tag.hpp
+Parser.o: Parser.cpp Parser.hpp ParsedCommand.hpp Tag.hpp

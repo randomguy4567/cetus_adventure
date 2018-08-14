@@ -77,18 +77,13 @@
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Press[END4]
-[[VerbResponse]] [START4]Slowly, you put your hand on the giant, glowing button. After a moment spent intensely watching the canister, you push down. A small whirring noise starts up and the canister
-starts to vibrate slowly... The whirring noise grows louder and louder until it is an ear-splitting noise that you imagine is what it sounds like to slam gears together at very high speeds.
-The entire room has started to shake and the lights begin to flicker.
+[[VerbResponse]] [START4]Slowly, you put your hand on the giant, glowing button. After a moment spent intensely watching the canister, you push down. A small whirring noise starts up and the canister starts to vibrate slowly... The whirring noise grows louder and louder until it is an ear-splitting noise that you imagine is what it sounds like to slam gears together at very high speeds. The entire room has started to shake and the lights begin to flicker.
 
 You know... In retrospect, trying to use a piece of super-advanced, reality-distorting technology on a spaceship where everything else is broken probably wasn't the best idea. Maybe run. NOW!
 
-You sprint towards the exit, stumbling as the shaking reaches the intensity of a rather large earthquake. You throw yourself through the doors and put your hands over your head. As you are cowering
-in fear (sorry, but I call them as I see them), you realize that your nose is only a few inches away from the burnt gadget that you saw earlier. In spite of the fact that you might die at any
-moment, you are observant enough to notice a small hatch in the side of the gadget that you had previously missed. It might be something to investigate should you survive.
+You sprint towards the exit, stumbling as the shaking reaches the intensity of a rather large earthquake. You throw yourself through the doors and put your hands over your head. As you are cowering in fear (sorry, but I call them as I see them), you realize that your nose is only a few inches away from the burnt gadget that you saw earlier. In spite of the fact that you might die at any moment, you are observant enough to notice a small hatch in the side of the gadget that you had previously missed. It might be something to investigate should you survive.
 
-Suddenly, the shaking stops. A friendly 'Ding!' comes from the time machine, sounding very much like a cooking timer you would find at an elderly relative's house. Hesitantly, you get up and peer through
-the still quite shiny door. The computer is gone, vanished into the distant past.[END4]
+Suddenly, the shaking stops. A friendly 'Ding!' comes from the time machine, sounding very much like a cooking timer you would find at an elderly relative's house. Hesitantly, you get up and peer through the still quite shiny door. The computer is gone, vanished into the distant past.[END4]
 [[VerbHint]] [START4]Press it![END4]
 [END3]
 [END2]
@@ -97,8 +92,7 @@ the still quite shiny door. The computer is gone, vanished into the distant past
 [[Object]] [START1]
 [[ObjectName]] [START2]Compartment[END2]
 [[ObjectShortDescription]] [START2]There is a compartment that you missed before on the side of the burnt gadget.[END2]
-[[ObjectLongDescription]] [START2]There is a compartment that you missed before on the side of the burnt gadget. Maybe there is something interesting inside of it?
-After all of that, it'd sure be disappointing if there wasn't.[END2]
+[[ObjectLongDescription]] [START2]There is a compartment that you missed before on the side of the burnt gadget. Maybe there is something interesting inside of it? After all of that, it'd sure be disappointing if there wasn't.[END2]
 [[ObjectVisible]] [START2]0[END2]
 [[ObjectFixed]] [START2]1[END2]
 [[ObjectTargetType]] [START2]Object[END2]
@@ -107,10 +101,7 @@ After all of that, it'd sure be disappointing if there wasn't.[END2]
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Open[END4]
-[[VerbResponse]] [START4]You pry open the latch to the hidden compartment. Despite the fact that it seems nearly welded shut, you somehow manage to get it open. Inside of it is a small sheet of paper, containing
-lines and lines of writing. Upon closer inspection, you are shocked to find that it is a reordered version of the trapper's list. The answer to the trapper's traveling salesman problem! Surprised, you glance
-back at the burnt gadget and realize that it does look vaguely like that old computer that you just sent through the time machine, having finally run to completion. How and why it ended up outside of the
-chamber you cannot begin to guess, but I can guarantee that it is a riveting story of it's own. [pre-order the DLC now to find out the computer's tragic story, only $19.99 at select stores][END4]
+[[VerbResponse]] [START4]You pry open the latch to the hidden compartment. Despite the fact that it seems nearly welded shut, you somehow manage to get it open. Inside of it is a small sheet of paper, containing lines and lines of writing. Upon closer inspection, you are shocked to find that it is a reordered version of the trapper's list. The answer to the trapper's traveling salesman problem! Surprised, you glance back at the burnt gadget and realize that it does look vaguely like that old computer that you just sent through the time machine, having finally run to completion. How and why it ended up outside of the chamber you cannot begin to guess, but I can guarantee that it is a riveting story of it's own. [pre-order the DLC now to find out the computer's tragic story, only $19.99 at select stores][END4]
 [[VerbHint]] [START4]The latch almost looks welded closed, but you might be able to open it.[END4]
 [END3]
 [END2]
@@ -129,10 +120,8 @@ chamber you cannot begin to guess, but I can guarantee that it is a riveting sto
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]
 [[VerbResponse]] [START4]You give the answer sheet to the trapper, a triumphant smile on your face. He looks at the sheet, then looks back to you, surprised.
-"Well... huh?" He scratches at his long beard thoughtfully. "I'm sure that I would have figured it out sooner or later [highly doubtful], but I suppose I should
-do something to thank you. One mo'"
-He digs around in his shabby pack until eventually pulling out a rusty chisel. He tosses it off to the side as he re-ties the straps on his pack.
-"There, you're welcome to that. Don't righly know why I had it anyway."[END4]
+"Well... huh?" He scratches at his long beard thoughtfully. "I'm sure that I would have figured it out sooner or later [highly doubtful], but I suppose I should do something to thank you. One mo'"
+He digs around in his shabby pack until eventually pulling out a rusty chisel. He tosses it off to the side as he re-ties the straps on his pack. "There, you're welcome to that. Don't righly know why I had it anyway."[END4]
 [[VerbHint]] [START4]This was what the trapper wanted. He's in the forest.[END4]
 [END3]
 [END2]

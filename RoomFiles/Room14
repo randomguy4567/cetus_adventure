@@ -59,21 +59,13 @@
 [[Verb]] [START3]
 [[VerbName]] [START4]Attack[END4]
 [[VerbResponse]]
-[START4]A passing captain puts a sword in your hands and directs you to the front lines. Your bag accidentally slips from your hand as you are moved forward and it is lost to the crowds. As the trumpets
-sound, you charge towards the enemy army along with thousands of others, their war cries echoing in your ears. You feel a rush of adrenaline and you feel truly alive. You then proceed to trip and skewer
-yourself on your sword. The mix of bleeding out and being trampled by an army doesn't do wonders for your health.
+[START4]A passing captain puts a sword in your hands and directs you to the front lines. Your bag accidentally slips from your hand as you are moved forward and it is lost to the crowds. As the trumpets sound, you charge towards the enemy army along with thousands of others, their war cries echoing in your ears. You feel a rush of adrenaline and you feel truly alive. You then proceed to trip and skewer yourself on your sword. The mix of bleeding out and being trampled by an army doesn't do wonders for your health.
 
-The next thing you know, you find yourself in a grim cavern, dark waters lapping at the shores nearby, flickering torches hung about the walls, throwing dancing shadows into the fog above the water.
-From deep within the fog bank comes a slow, repetetive sloshing of water. Slowly a figure emerges, cloaked in tattered rags and paddling an old, rickety ferry towards the bank of the river. He comes
-ashore and dismounts.
+The next thing you know, you find yourself in a grim cavern, dark waters lapping at the shores nearby, flickering torches hung about the walls, throwing dancing shadows into the fog above the water. From deep within the fog bank comes a slow, repetetive sloshing of water. Slowly a figure emerges, cloaked in tattered rags and paddling an old, rickety ferry towards the bank of the river. He comes ashore and dismounts.
 
-"Hello," he says, turning a skeletal grin towards you. "I'm Charon, ferryman of souls. Normally, I'd be here to take you to Hades." His grin lengthens as the color leaves your face. He seems to savor your
-worries for a moment. He sighs begrudgingly. "Unfortunately, I have a different destination for you. Olympus. Those are the orders from above, anyway. Consider yourself a most fortunate soul. But first..."
-he stretches out his hand. "The payment, please."
+"Hello," he says, turning a skeletal grin towards you. "I'm Charon, ferryman of souls. Normally, I'd be here to take you to Hades." His grin lengthens as the color leaves your face. He seems to savor your worries for a moment. He sighs begrudgingly. "Unfortunately, I have a different destination for you. Olympus. Those are the orders from above, anyway. Consider yourself a most fortunate soul. But first..." he stretches out his hand. "The payment, please."
 
-You reach for your bag but remember that you dropped it during the madness on the battlefield. You attempt to apologize, but Charon holds up his hand. "No payment, no service. Come back when you have it."
-He points towards a series of winding tunnels that seem to appear from nowhere. Vaguely wondering about how easy it was to get out of dying, you make your way up to the surface, finding yourself back upon
-the battlefield, your bag lying several feet near the cavern.[END4]
+You reach for your bag but remember that you dropped it during the madness on the battlefield. You attempt to apologize, but Charon holds up his hand. "No payment, no service. Come back when you have it." He points towards a series of winding tunnels that seem to appear from nowhere. Vaguely wondering about how easy it was to get out of dying, you make your way up to the surface, finding yourself back upon the battlefield, your bag lying several feet near the cavern.[END4]
 [[VerbHint]] [START4]Everyone around you looks like they're gearing up to attack the army. You should join them.[END4]
 [END3]
 [END2]
@@ -91,23 +83,17 @@ the battlefield, your bag lying several feet near the cavern.[END4]
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]
-[[VerbResponse]] [START4]You walk up to the commander of the war camp. He barely glances at you before waving for a squadron of guards to escort you away. You quickly pull out the sword. Two dozen other swords are
-suddenly very close to your throat. Thinking that there was probably a safer way to do this, you quickly explain the sword's origin to the commander, along with telling him of the existence of the tunnel to the
-enemy encampment. A nearby soldier snorts his contempt and moves to end your story quickly.
+[[VerbResponse]] [START4]You walk up to the commander of the war camp. He barely glances at you before waving for a squadron of guards to escort you away. You quickly pull out the sword. Two dozen other swords are suddenly very close to your throat. Thinking that there was probably a safer way to do this, you quickly explain the sword's origin to the commander, along with telling him of the existence of the tunnel to the enemy encampment. A nearby soldier snorts his contempt and moves to end your story quickly.
 
-"Wait," the commander says, suddenly interested in your presence. "Let us see if this stranger is telling the truth. If not, do what you will." He turns and barks an order at one of the nearby men, who runs off
-toward the battlefield to confirm your story.
+"Wait," the commander says, suddenly interested in your presence. "Let us see if this stranger is telling the truth. If not, do what you will." He turns and barks an order at one of the nearby men, who runs off toward the battlefield to confirm your story.
 
-You wait somewhat uneasily, still surrounded by quite a few more swords than you feel comfortable with. After what seems like far too long, the scout runs back into camp breathless. He nods. Suddenly, the blades are
-away and several officers are patting you on the back.
+You wait somewhat uneasily, still surrounded by quite a few more swords than you feel comfortable with. After what seems like far too long, the scout runs back into camp breathless. He nods. Suddenly, the blades are away and several officers are patting you on the back.
 
 After a quick conversation and several more runners to and from the battlefield, the commander motions you away from the crowd, and you join him a little way away from the crowd.
 
-"I must say, I'm impressed," the commander says. You remind him that both your discovery and the death of the enemy general were complete accidents. He chuckles. "I'd rather have a half-dozen men as lucky
-as you are than half an army of brave idiots." Walking over to a small tent, he motions you to wait as he goes inside. Moments later, the commander emerges with a small box.
+"I must say, I'm impressed," the commander says. You remind him that both your discovery and the death of the enemy general were complete accidents. He chuckles. "I'd rather have a half-dozen men as lucky as you are than half an army of brave idiots." Walking over to a small tent, he motions you to wait as he goes inside. Moments later, the commander emerges with a small box.
 
-"A while ago, my men found an artifact made of material unlike any that we have ever seen, covered with fantastic runes A tool of the gods, we believe. Consider it payment for your service." He places the box on the
-table and opens the lid.
+"A while ago, my men found an artifact made of material unlike any that we have ever seen, covered with fantastic runes A tool of the gods, we believe. Consider it payment for your service." He places the box on the table and opens the lid.
 
 It's a roll of duct tape. Duct tape decorated with hearts and stars which probably once belonged to the arts-and-crafts supplies of a small child.
 

@@ -54,8 +54,7 @@
 [[Verb]] [START3]
 [[VerbName]] [START4]Sleep[END4]
 [[VerbResponse]]
-[START4]You climb onto the bed. It isn't too hard or soft, and soon you find yourself drifting away. A while later, you open your eyes. The door that you entered from is back. You're still not
-sure whether or not you're actually dreaming, but at the very least you now have a way out of the room.[END4]
+[START4]You climb onto the bed. It isn't too hard or soft, and soon you find yourself drifting away. A while later, you open your eyes. The door that you entered from is back. You're still not sure whether or not you're actually dreaming, but at the very least you now have a way out of the room.[END4]
 [[VerbHint]] [START4]It's a comfortable bed, try sleeping in it.[END4]
 [END3]
 [END2]
@@ -73,8 +72,7 @@ sure whether or not you're actually dreaming, but at the very least you now have
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]
-[[VerbResponse]] [START4]You take the small droid out of your pack and place it on the floor beside the broken hatch. It whirrs away towards the door and within minutes the hatch has been repaired and freshly polished.
-Pushing open the hatch, you find a small chamber off to the side of the spaceship's main deck, it seems entirely empty minus a small container at the center.[END4]
+[[VerbResponse]] [START4]You take the small droid out of your pack and place it on the floor beside the broken hatch. It whirrs away towards the door and within minutes the hatch has been repaired and freshly polished. Pushing open the hatch, you find a small chamber off to the side of the spaceship's main deck, it seems entirely empty minus a small container at the center.[END4]
 [[VerbHint]] [START4]The droid's tools are whirring in anticipation. You better find it something to fix.[END4]
 [END3]
 [END2]
