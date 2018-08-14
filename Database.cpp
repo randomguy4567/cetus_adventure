@@ -473,6 +473,8 @@ bool loadGame(Game *g, int numRooms) {
     
     ifstream inFile;
     inFile.open("savegame");
+    if(!inFile.good())
+      return false;
     
     string saveContents = "";
     char c;
