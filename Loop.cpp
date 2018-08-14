@@ -19,6 +19,43 @@ string stringToLower(string s){
 	return s;
 }
 
+void buildFullDict(Game* g, std::map<std::string, Tag>& dict, vector<string>& verbs){
+	for (auto* n: g->allNodes){
+		for (auto* e: n->edges){
+			dict[stringToLower(e->name)] = E;
+			dict[stringToLower(e->nameAlt)] = E;
+		}
+		for (auto* f: n->features){
+			dict[stringToLower(f->name)] = N;
+		}
+	}
+	// add all verbs
+	for (auto* o: g->allObjects){
+		dict[stringToLower(o->name)] = N;	
+		dict[stringToLower(o->_verb)] = V;
+	}	
+	
+	dict["cheat"] = V;
+	dict["use"] = V;
+	dict["help"] = V;
+	dict["save"] = V;
+	dict["load"] = V;
+	dict["savegame"] = V;
+	dict["loadgame"] = V;
+	dict["go"] = V;
+	dict["look"] = V;
+	dict["inventory"] = V;	
+	dict["take"] = V;
+	
+	// Verbs for "help"
+	for (auto* o: g->allObjects){
+		if(o->_verb.size())
+			if(find(verbs.begin(), verbs.end(), o->_verb) == verbs.end())
+				verbs.push_back(o->_verb);
+	}
+	
+}
+
 void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& verbs){
 	for (auto* e: g->current->edges)
 		if (e->visible)
@@ -34,15 +71,9 @@ void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& 
 			std::transform(str.begin(), str.end(), str.begin(), ::tolower);
 			dict[str] = N;
 		}
-	for (auto* o: g->current->objects)
-		if (o->visible)
-		{
-			auto str = o->name;
-			std::transform(str.begin(), str.end(), str.begin(), ::tolower);
-			dict[str] = N;
-		}
-	// Inventory
-	for (auto* o: g->objects){
+
+	// add all verbs
+	for (auto* o: g->allObjects){
 		auto str = o->name;
 		std::transform(str.begin(), str.end(), str.begin(), ::tolower);
 		dict[str] = N;
@@ -65,10 +96,24 @@ void buildDictionary(Game* g, std::map<std::string, Tag>& dict, vector<string>& 
 	dict["help"] = V;
 	dict["save"] = V;
 	dict["load"] = V;
+	dict["savegame"] = V;
+	dict["loadgame"] = V;
+	
+	// Verbs for "help"
+	for (auto* o: g->allObjects){
+		if(o->_verb.size())
+			if(find(verbs.begin(), verbs.end(), o->_verb) == verbs.end())
+				verbs.push_back(o->_verb);
+	}	
 }
 // This allows us to "play" the game
 void loop(Game* g){
 	std::map<std::string, Tag> dict;
+	vector<string> verbs;
+	buildFullDict(g, dict, verbs);
+	
+	g->interface.setDict(dict);
+	
 	g->interface.print(g->describe() + ".\n\n");
 	while(g->current != g->end){
 		g->interface.print("> ");
@@ -78,11 +123,15 @@ void loop(Game* g){
 		
 		// This is to allow an Edge name as a command
 		if (g->go(cmd, true)){
+			//buildDictionary(g, dict, verbs);
+			g->interface.setDict(dict);
 			g->interface.print(g->describe() + ".\n\n");
+		} else if (cmd.empty()){
+			
 		}
 		else{
 			string verb, param;
-			vector<string> verbs;
+
 			//*****This is where the parser is integrated************************************
 			bool useParser = true;
 			if(useParser&&cmd.size()){
@@ -90,13 +139,23 @@ void loop(Game* g){
 				ParsedCommand parsedCommand;
 				dict.clear();
 
-				buildDictionary(g, dict, verbs);
+				//buildDictionary(g, dict, verbs);
 				
-				parsedCommand = parser.getParsedCommand( cmd, dict );
-				std::cout << "Verb: " << parsedCommand.getVerb() << std::endl;
-				std::cout << "Param: " << parsedCommand.getParam() << std::endl;
-				std::cout << "Status: " << parsedCommand.getStatus() << std::endl;
 				
+				std::map<std::string, Tag> dictParser;
+				vector<string> parserVerbs;
+				buildFullDict(g, dictParser, parserVerbs);
+/*
+				g->interface.setDict(dictParser);
+				g->interface.print("Current dictionary: \n");
+				for(auto p: dictParser)
+					g->interface.print(p.first +" ");*/
+				parsedCommand = parser.getParsedCommand( cmd, dictParser );
+/*				g->interface.print("\n");
+				g->interface.print( "Verb: " + parsedCommand.getVerb() + "\n");
+				g->interface.print( "Param: " + parsedCommand.getParam() + "\n");
+				g->interface.print( "Status: " + string(parsedCommand.getStatus()?"True":"False") + "\n");
+*/				
 				verb = parsedCommand.getVerb();
 				param = parsedCommand.getParam();
 				
@@ -106,19 +165,11 @@ void loop(Game* g){
 				istr >> verb >> param;				
 			}
 
-			
-			
-			
-			
-			
-			
-			
-			
-			
+		
 			string s;
 			//Process output from parser
 			if(!verb.size()){
-				
+				g->interface.print("I don’t understand that.\n\n");
 			}
 			else if(verb == "l"){
 				s = g->describe(param);
@@ -133,7 +184,8 @@ void loop(Game* g){
 					g->interface.print(s + ".\n\n");
 						 	
 			}else if(verb == "examine" || verb == "look"){
-				if (param!="" || cmd=="look") s=g->examine(param);
+				if (param!="" || cmd=="look") 
+					s=g->examine(param);
 				if(s.empty()){
 					g->interface.print("You can't look at that.");
 					s = g->whatToLook();
@@ -173,11 +225,13 @@ void loop(Game* g){
 			}else if(verb == "cheat"){
 		
 				g->printDatabase();	
-					//verifying dictionary conetents
-				cout << "current dictionary: " << endl;
+				//verifying dictionary conetents
+				buildFullDict(g, dict, verbs);
+				g->interface.print("Current dictionary: \n");
 				for(auto p: dict){
-					cout << p.first << " " << p.second << endl;
-				}		 	
+					g->interface.print(p.first +" ");
+				}	
+				g->interface.print("\n");	 	
 			}else if(verb == "help"){
 				ifstream in ("help.txt");
 				while (in){
@@ -191,12 +245,12 @@ void loop(Game* g){
 				for (auto s: verbs)
 					g->interface.print(s + "\n");
 				g->interface.print("\n");		 	
-			}else if(verb == "save"){
+			}else if(verb == "save" || verb == "savegame"){
 				if(saveGame(g))
 					g->interface.print("The game has been saved!\n");
 				else
 					g->interface.print("The game was not able to be saved.\n");							 	
-			}else if(verb == "load"){
+			}else if(verb == "load" || verb == "loadgame"){
 				if(loadGame(g, numberOfRooms)){
 					g->interface.print("The game has been loaded from a saved state.\n");
 					g->interface.print(g->describe() + ".\n\n");
@@ -210,7 +264,7 @@ void loop(Game* g){
 			}else{
 				s = g->tryVerb(verb, param);
 				if (s.empty())
-					g->interface.print("I don't understand that. \n\n");
+					g->interface.print("You can't "+ verb +" "+ param +"\n\n");
 				else
 					g->interface.print(s + ".\n\n");
 			}

@@ -2,6 +2,7 @@
 #include <assert.h>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include "Game.h"
 
 using namespace std;
@@ -84,7 +85,7 @@ bool Game::go(std::string name, bool exact) {
 	assert(current != 0);
 	string n = tolower(name);
 	for (auto& e: current->edges)
-		if(n == tolower(e->name)){
+		if(n == tolower(e->name) || n == tolower(e->nameAlt)){
 			if (!e->passable)
 				return false;
 			assert(e->node != 0);
@@ -249,19 +250,19 @@ string Game::tryVerb(std::string verb, std::string param){
 		if(tolower(e->name) == subName){
 			e->visible = true;
 			e->passable = true;
-			return targetObj->_response + ". " + e->examine();
+			return targetObj->_response;
 		}	
 	}
 	for (auto* f: current->features){
 		if(tolower(f->name) == subName){
 			f->visible = true;
-			return targetObj->_response + ". " + f->examine();
+			return targetObj->_response;
 		}		
 	}
 	for (auto* o: current->objects){
 		if(tolower(o->name) == subName){
 			o->visible = true;
-			return targetObj->_response + ". " + o->examine();
+			return targetObj->_response ;
 		}
 	}	
 	if(targetObj->_hintResponse.empty())
@@ -305,39 +306,55 @@ Edge* Game::findEdge(std::string name, Node* n){
 
 // "cheat"
 void Game::printDatabase() {
-	cout << "\nALL NODES IN SYSTEM: \n";
+	ofstream ostr("database.txt");
+	ostr << "\nALL NODES IN SYSTEM: \n";
 	for (auto* n: allNodes){
-		cout << "Node: " << n->name << " " << n->shortDescription << " visited: " 
+		ostr << "Node: " << n->name << " " << n->shortDescription << " visited: " 
 			<< n->visited << endl;
 		for (auto* e: n->edges){
-			cout << "  Edge: " << e->name << " " << e->shortDescription << " visited: " << e->visited 
+			ostr << "  Edge: " << e->name << " " << e->shortDescription << " visited: " << e->visited 
 				<< " visible: " << e->visible<< " passable: " << e->passable<< " node: " << e->node
 				<< " InName: " << e->initialNodeName<< endl;
 		}
 		for (auto* f: n->features){
-			cout << "  Feat: " << f->name << " " << f->shortDescription << " visited: " << f->visited 
+			ostr << "  Feat: " << f->name << " " << f->shortDescription << " visited: " << f->visited 
 				<< " visible: " << f->visible<< " Ifname: " << f->initialFeatureName << " " << f->feature 
 				<< " IoName: " << f->initialObjectName<< " " << f->object << endl;
 		}
 		for (auto* o: n->objects){
-			cout << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
+			ostr << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
 				<< " visible: " << o->visible << " fixed: " << o->fixed<< " target: " << o->target 
 				<< " verb: " << o->_verb << " response: " << o->_response.size() << " chars " << " hintResponse: " << o->_hintResponse.size() << " chars " << endl;
 		}
-		cout << "\n";
+		ostr << "\n";
 	}	
-	cout << "\nALL OBJECTS IN SYSTEM: \n";
+	ostr << "\nALL OBJECTS IN SYSTEM: \n";
 	for (auto* o: allObjects){
-			cout << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
+			ostr << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
 				<< " visible: " << o->visible << " fixed: " << o->fixed<< " target: " << o->target 
 				<< " verb: " << o->_verb << " response: " << o->_response.size() << " chars " << " hintResponse: " << o->_hintResponse.size() << " chars Location: " << getObjectLocation(o->name) <<  endl;
 	}
-	cout << "\nALL OBJECTS IN INVENTORY: \n";	
+	ostr << "\nALL OBJECTS IN INVENTORY: \n";	
 	for (auto* o: objects){
-			cout << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
+			ostr << "  Obj: " << o->name << " " << o->shortDescription << " visited: " << o->visited 
 				<< " visible: " << o->visible << " fixed: " << o->fixed<< " target: " << o->target 
 				<< " verb: " << o->_verb << " response: " << o->_response.size() << " chars " << " hintResponse: " << o->_hintResponse.size() << " chars Location: " << getObjectLocation(o->name) <<  endl;
 	}
+	
+	interface.print("Database written to database.txt. Input for graphviz written to graph.txt. \n\n");
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// Build the graph
 	ofstream legendOut("legend.txt");
 	legendOut << "\
 digraph legend {\n\
@@ -409,6 +426,11 @@ bool Game::buildGraph(){
 		stripTrailingPeriod(n->shortDescription);
 		stripTrailingPeriod(n->longDescription);
 		for (auto* e: n->edges){
+			auto index = e->name.find('/');
+			if(index != string::npos){
+				e->nameAlt = e->name.substr(index + 1);				
+				e->name = e->name.substr(0, index);	
+			}		
 			stripTrailingPeriod(e->shortDescription);
 			stripTrailingPeriod(e->longDescription);
 			e->node = findNode(e->initialNodeName);

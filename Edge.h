@@ -16,6 +16,7 @@ class Edge{
 public:
 	Edge();
 	std::string name;
+	std::string nameAlt;
 	std::string shortDescription;
 	std::string longDescription;
 	bool visited = false;
