@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]North[END2]
+[[EdgeName]] [START2]North/Elevator[END2]
 [[EdgeShortDescription]] [START2]An elevator lies to the north.[END2]
 [[EdgeLongDescription]] [START2]To the north lies an elevator. The outer doors have been nearly broken off of their hinges and you question exactly how safe it is.[END2]
 [[EdgeVisible]] [START2]1[END2]
