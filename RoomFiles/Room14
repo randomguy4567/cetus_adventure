@@ -74,7 +74,7 @@ You reach for your bag but remember that you dropped it during the madness on th
 [[Object]] [START1]
 [[ObjectName]] [START2]Sword[END2]
 [[ObjectShortDescription]] [START2]The enemy commander's sword glistens in the sunlight.[END2]
-[[ObjectLongDescription]] [START2]he enemy commander's sword glistens in the sunlight. I'd wager that the leaders in the camp would reward you for finding it.[END2]
+[[ObjectLongDescription]] [START2]The enemy commander's sword glistens in the sunlight. I'd wager that the leaders in the camp would reward you for finding it.[END2]
 [[ObjectVisible]] [START2]0[END2]
 [[ObjectFixed]] [START2]0[END2]
 [[ObjectTargetType]] [START2]Object[END2]

@@ -80,6 +80,7 @@ use sword
 take tape
 go north
 go north
+talk cetus
 use seashell
 use tape
 go north

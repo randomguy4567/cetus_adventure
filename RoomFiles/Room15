@@ -30,13 +30,6 @@
 
 [[Features]] [START0]
 [[Feature]] [START1]
-[[FeatureName]] [START2]Cetus[END2]
-[[FeatureShortDescription]] [START2]Cetus, a giant anthropomorphic whale, is on a nearby throne.[END2]
-[[FeatureLongDescription]] [START2]Cetus, a giant intelligent whale, sits on a nearby throne. I say sits, but perhaps "is squashed awkwardly in" is a better description. Although it is difficult to tell, it seems like he is trying to ignore you for some reason.[END2]
-[[FeatureVisible]] [START2]1[END2]
-[END1]
-
-[[Feature]] [START1]
 [[FeatureName]] [START2]Reality[END2]
 [[FeatureShortDescription]] [START2]A fragmented ball of reality lies on the ground nearby.[END2]
 [[FeatureLongDescription]] [START2]Reality is broken into about a dozen large pieces nearby you. This is probably a bad thing. As you approach, the pieces seem to change their shape in odd ways.[END2]
@@ -46,4 +39,31 @@
 
 
 [[Objects]] [START0]
+[[Object]] [START1]
+[[ObjectName]] [START2]Cetus[END2]
+[[ObjectShortDescription]] [START2]Cetus, a giant anthropomorphic whale, is on a nearby throne.[END2]
+[[ObjectLongDescription]] [START2]Cetus, a giant intelligent whale, sits on a nearby throne. I say sits, but perhaps "is squashed awkwardly in" is a better description. Although it is difficult to tell, it seems like he is trying to ignore you for some reason.[END2]
+[[ObjectVisible]] [START2]0[END2]
+[[ObjectFixed]] [START2]0[END2]
+[[ObjectTargetType]] [START2]Feature[END2]
+[[ObjectTargetRoom]] [START2]Olympus[END2]
+[[ObjectTargetFeature]] [START2]Reality[END2]
+[[ObjectVerbs]] [START2]
+[[Verb]] [START3]
+[[VerbName]] [START4]Talk[END4]
+[[VerbResponse]] [START4]You walk over to Cetus. In what I'm sure he imagines is a subtle glance, one of the giant eyes swivels towards you for a moment before quickly looking away.
+
+"Excuse me," you say. The whale shifts in the throne, trying to twist away from you.
+
+You wave, trying again to catch his attention. He pointedly ignores you. Finally, you grab a nearby pebble and chuck it at the irritating deity.
+
+"Ouch!" He cries in a startlingly human-sounding voice. "Alright, alright already! What do you want?"
+
+You ask him the obvious questions: Where are you? How did you get here? Why is he now a whale? Why is reality broken and can he fix it?
+
+The large god seems to squirm in his throne. "Well, yes. About that, I... um..." He stutters, rubbing at his neck with a giant fin. "L-Look, I'm the god here, and I don't see why I should have to answer any of these questions or why I should be bothered to fix everything. Which I could very easily do! Maybe if you gave me something in ret -- I-I mean, you should, erm, know your place mortal! Thou must find a pleasing offering before Cetus will hear your request!" He declares with what appears to be a fumbling attempt at appearing appropriately regal.[END4]
+[[VerbHint]] [START4]Cetus is trying to ignore you, but after all you've been through, I'd say you deserve at least a decent conversation.[END4]
+[END3]
+[END2]
+[END1]
 [END0]
