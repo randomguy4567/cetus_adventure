@@ -124,7 +124,7 @@ void loop(Game* g){
 		// This is to allow an Edge name as a command
 		if (g->go(cmd, true)){
 			//buildDictionary(g, dict, verbs);
-			g->interface.setDict(dict);
+			//g->interface.setDict(dict);
 			g->interface.print(g->describe() + ".\n\n");
 		} else if (cmd.empty()){
 			
@@ -169,7 +169,7 @@ void loop(Game* g){
 			string s;
 			//Process output from parser
 			if(!verb.size()){
-				g->interface.print("I don’t understand that.\n\n");
+				g->interface.print("I don't understand that.\n\n");
 			}
 			else if(verb == "l"){
 				s = g->describe(param);
