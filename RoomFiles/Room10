@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]East[END2]
+[[EdgeName]] [START2]East/Street[END2]
 [[EdgeShortDescription]] [START2]There is a street running east outside of the factory to the east.[END2]
 [[EdgeLongDescription]] [START2]The street running outside of the factory leads back into town to the east. Even from here you can faintly hear the band's loud music echoing from the garage.[END2]
 [[EdgeVisible]] [START2]1[END2]

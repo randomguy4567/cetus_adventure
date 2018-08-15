@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]South[END2]
+[[EdgeName]] [START2]South/Ripple[END2]
 [[EdgeShortDescription]] [START2]There is a strange ripple on the surface of the canyon wall to the south[END2]
 [[EdgeLongDescription]] [START2]There is a strange ripple on the surface of the canyon wall to the south. Through it, you can vaguely make out the beach that you came from.[END2]
 [[EdgeVisible]] [START2]1[END2]
@@ -18,7 +18,7 @@
 [END1]
 
 [[Edge]] [START1]
-[[EdgeName]] [START2]North[END2]
+[[EdgeName]] [START2]North/Gate[END2]
 [[EdgeShortDescription]] [START2]A large, wooden gate looms to the north[END2]
 [[EdgeLongDescription]] [START2]A large, wooden gate looms to the north. Soldiers are marching out of it, looking worryingly determined.[END2]
 [[EdgeVisible]] [START2]1[END2]

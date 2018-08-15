@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]West[END2]
+[[EdgeName]] [START2]West/Hole[END2]
 [[EdgeShortDescription]] [START2]There is a hole in place of the screen of the Frogger game.[END2]
 [[EdgeLongDescription]] [START2]Where the Frogger game once had its screen, a hole leads into an odd room. You're fairly certain that you could squeeze through it if you put your mind to it.[END2]
 [[EdgeVisible]] [START2]0[END2]
@@ -18,7 +18,7 @@
 [END1]
 
 [[Edge]] [START1]
-[[EdgeName]] [START2]East[END2]
+[[EdgeName]] [START2]East/Exit[END2]
 [[EdgeShortDescription]] [START2]The arcade's exit is to the east.[END2]
 [[EdgeLongDescription]] [START2]The arcade's exit is to the east. You can hear the trickling of the fountain coming through the open door.[END2]
 [[EdgeVisible]] [START2]1[END2]

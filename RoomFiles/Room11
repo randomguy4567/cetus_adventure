@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]East[END2]
+[[EdgeName]] [START2]East/Hole[END2]
 [[EdgeShortDescription]] [START2]A small hole hovering in the air leads West[END2]
 [[EdgeLongDescription]] [START2]To the East, there is a small hole in the air leading back through the Frogger game.[END2]
 [[EdgeVisible]] [START2]1[END2]

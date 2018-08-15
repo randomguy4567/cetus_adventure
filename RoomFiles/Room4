@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]West[END2]
+[[EdgeName]] [START2]West/Path[END2]
 [[EdgeShortDescription]] [START2]There is a path to the west[END2]
 [[EdgeLongDescription]] [START2]There is a small, grassy path leading west. You can still see your footsteps from when you used it last.[END2]
 [[EdgeVisible]] [START2]1[END2]

@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]North[END2]
+[[EdgeName]] [START2]North/Current[END2]
 [[EdgeShortDescription]] [START2]There is another current leading north.[END2]
 [[EdgeLongDescription]] [START2]There is another current leading north. Heading this way leads to the ocean's surface.[END2]
 [[EdgeVisible]] [START2]1[END2]

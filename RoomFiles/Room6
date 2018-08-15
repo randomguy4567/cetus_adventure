@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]South[END2]
+[[EdgeName]] [START2]South/Door[END2]
 [[EdgeShortDescription]] [START2]There is a mysterious door leading to the south.[END2]
 [[EdgeLongDescription]] [START2]There is a mysterious door leading to the south. You could have sworn that it wasn't there before, but now seems difficult to miss.[END2]
 [[EdgeVisible]] [START2]0[END2]
@@ -18,16 +18,16 @@
 [END1]
 
 [[Edge]] [START1]
-[[EdgeName]] [START2]West[END2]
-[[EdgeShortDescription]] [START2]There is an open door to the west.[END2]
-[[EdgeLongDescription]] [START2]There is an open door to the west. From inside the building, you can see a dim square of light.[END2]
+[[EdgeName]] [START2]West/Alley[END2]
+[[EdgeShortDescription]] [START2]There is an alley to the west.[END2]
+[[EdgeLongDescription]] [START2]There is an alley to the west. From inside one of the buildings bordering it, you can see a dim light emanating.[END2]
 [[EdgeVisible]] [START2]1[END2]
 [[EdgePassable]] [START2]1[END2]
 [[EdgeNode]] [START2]Arcade[END2]
 [END1]
 
 [[Edge]] [START1]
-[[EdgeName]] [START2]North[END2]
+[[EdgeName]] [START2]North/Entrance[END2]
 [[EdgeShortDescription]] [START2]There is a store entrance to the north.[END2]
 [[EdgeLongDescription]] [START2]There is an entrance to a Target store to the north. It is cheerily lit and the automatic sliding doors are standing open.[END2]
 [[EdgeVisible]] [START2]1[END2]
@@ -36,7 +36,7 @@
 [END1]
 
 [[Edge]] [START1]
-[[EdgeName]] [START2]East[END2]
+[[EdgeName]] [START2]East/Ocean[END2]
 [[EdgeShortDescription]] [START2]The ocean is to the east.[END2]
 [[EdgeLongDescription]] [START2]The ocean is to the east. Now that the thin fog has cleared, you can faintly make out the beach and the elevator shaft rising above it.[END2]
 [[EdgeVisible]] [START2]1[END2]

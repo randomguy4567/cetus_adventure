@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]North[END2]
+[[EdgeName]] [START2]North/Door[END2]
 [[EdgeShortDescription]] [START2]A back door is to the north.[END2]
 [[EdgeLongDescription]] [START2]There is a back door hidden among the aisles.[END2]
 [[EdgeVisible]] [START2]1[END2]
@@ -18,7 +18,7 @@
 [END1]
 
 [[Edge]] [START1]
-[[EdgeName]] [START2]South[END2]
+[[EdgeName]] [START2]South/Exit[END2]
 [[EdgeShortDescription]] [START2]The store's exit is to the south.[END2]
 [[EdgeLongDescription]] [START2]The store's exit is to the south. The sliding door seems to be permanently opened.[END2]
 [[EdgeVisible]] [START2]1[END2]

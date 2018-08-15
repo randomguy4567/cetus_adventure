@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]South[END2]
+[[EdgeName]] [START2]South/Gate[END2]
 [[EdgeShortDescription]] [START2]A large, wooden gate looms to the south.[END2]
 [[EdgeLongDescription]] [START2]The large, wooden gate back to camp looms to the south. Soldiers are marching out of it.[END2]
 [[EdgeVisible]] [START2]1[END2]
@@ -18,7 +18,7 @@
 [END1]
 
 [[Edge]] [START1]
-[[EdgeName]] [START2]North[END2]
+[[EdgeName]] [START2]North/Ferry[END2]
 [[EdgeShortDescription]] [START2]A ferry sits waiting for you on the river Styx to the north.[END2]
 [[EdgeLongDescription]] [START2]The river Styx secretly twists its way beneath the battlefield to the north, a ferry bobbing on its waters.[END2]
 [[EdgeVisible]] [START2]1[END2]

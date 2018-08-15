@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]North[END2]
+[[EdgeName]] [START2]North/Door[END2]
 [[EdgeShortDescription]] [START2]There is a door to the north.[END2]
 [[EdgeLongDescription]] [START2]The door to the north seems just like the one that led you here: old, ominous, and not there a short while ago.[END2]
 [[EdgeVisible]] [START2]0[END2]

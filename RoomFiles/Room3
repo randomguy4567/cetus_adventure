@@ -9,7 +9,7 @@
 
 [[Edges]] [START0]
 [[Edge]] [START1]
-[[EdgeName]] [START2]West[END2]
+[[EdgeName]] [START2]West/Island[END2]
 [[EdgeShortDescription]] [START2]There is an island far to the west[END2]
 [[EdgeLongDescription]] [START2]Far to the west, there is a small island. You can see a grouping of buildings on it.[END2]
 [[EdgeVisible]] [START2]1[END2]
@@ -18,7 +18,7 @@
 [END1]
 
 [[Edge]] [START1]
-[[EdgeName]] [START2]South[END2]
+[[EdgeName]] [START2]South/Current[END2]
 [[EdgeShortDescription]] [START2]There is a strong current to the south of you.[END2]
 [[EdgeLongDescription]] [START2]You can feel a current pulling you to the south. It takes a steady effort to stay in place.[END2]
 [[EdgeVisible]] [START2]1[END2]
@@ -27,7 +27,7 @@
 [END1]
 
 [[Edge]] [START1]
-[[EdgeName]] [START2]East[END2]
+[[EdgeName]] [START2]East/Land[END2]
 [[EdgeShortDescription]] [START2]There is land to the east.[END2]
 [[EdgeLongDescription]] [START2]There is land to the east. Even from here you can see the silouette of the giant stone feet holding watch over the beach.[END2]
 [[EdgeVisible]] [START2]1[END2]
