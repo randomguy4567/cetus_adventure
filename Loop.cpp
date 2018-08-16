@@ -245,7 +245,17 @@ void loop(Game* g){
 				for (auto s: verbs)
 					g->interface.print(s + "\n");
 				g->interface.print("\n");		 	
-			}else if(verb == "save" || verb == "savegame"){
+            }else if(verb == "call" && param == "cetus"){
+                ifstream in ("callCetus.txt");
+                while (in){
+                    string s;
+                    getline(in, s);
+                    if (in){
+                        g->interface.print(s + "\n");
+                    }
+                }
+                g->interface.print("\n");
+            }else if(verb == "save" || verb == "savegame"){
 				if(saveGame(g))
 					g->interface.print("The game has been saved!\n");
 				else
