@@ -48,6 +48,7 @@
 [[ObjectTargetType]] [START2]Feature[END2]
 [[ObjectTargetRoom]] [START2]Olympus[END2]
 [[ObjectTargetFeature]] [START2]Reality[END2]
+[[ObjectDependentFeature]] [START2][END2]
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Talk[END4]

@@ -84,6 +84,7 @@
 [[ObjectTargetType]] [START2]Edge[END2]
 [[ObjectTargetRoom]] [START2]Arcade[END2]
 [[ObjectTargetEdge]] [START2]West[END2]
+[[ObjectDependentFeature]] [START2][END2]
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]

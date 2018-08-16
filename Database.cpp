@@ -299,6 +299,12 @@ int initialize(Game *g, int numRooms) {
                     a->target = objQuery + "." + objQuery2;
                 }
                 
+                // Get object dependency
+                temp2 = 0;
+                objQuery = fileParser(2, objI, "ObjectDependentFeature", &temp2);
+                // cout << "Object target type: " << objQuery << endl;
+                a->dependentOnStr = objQuery;
+                
                 // Get object verbs
                 temp2 = 0;
                 objQuery = fileParser(2, objI, "ObjectVerbs", &temp2);

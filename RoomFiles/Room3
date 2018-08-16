@@ -75,6 +75,7 @@
 [[ObjectTargetType]] [START2]Object[END2]
 [[ObjectTargetRoom]] [START2]Battlefield[END2]
 [[ObjectTargetObject]] [START2]Sword[END2]
+[[ObjectDependentFeature]] [START2][END2]
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]

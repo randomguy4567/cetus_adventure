@@ -39,6 +39,7 @@
 [[ObjectTargetType]] [START2]Object[END2]
 [[ObjectTargetRoom]] [START2]Factory[END2]
 [[ObjectTargetObject]] [START2]Boss[END2]
+[[ObjectDependentFeature]] [START2][END2]
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Talk[END4]

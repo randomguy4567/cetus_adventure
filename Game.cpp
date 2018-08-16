@@ -111,7 +111,7 @@ string Game::take(std::string name) {
 	string n = tolower(name);
 	for (int i = 0; i < current->objects.size(); i++)
 		if(n == tolower(current->objects[i]->name)){
-			if (!current->objects[i]->fixed) {
+			if (!current->objects[i]->fixed && current->objects[i]->visible) {
 				objects.push_back(current->objects[i]); // item stored in vector
 				string s = current->objects[i]->name;
 				if (!current->objects[i]->_verb.size()) current->objects[i]->activate();
@@ -230,6 +230,10 @@ string Game::tryVerb(std::string verb, std::string param){
 	if (!targetObj)
 		return "";
 	
+    if(targetObj->dependentOn != 0 && !(targetObj->dependentOn->visible)) {
+        return targetObj->_hintResponse;
+    }
+    
 	string target = targetObj->target;
 	auto index = target.find('.');
 	string nodeName, subName = target;
@@ -410,17 +414,6 @@ void stripTrailingPeriod(string &s){
 }
 
 bool Game::buildGraph(){
-	/*
-	Demonstration for Pat 
-	
-	findFeature("Flotsam", findNode("Ocean"))->initialObjectName="Flashlight";
-	auto* flashlight = findObject("Flashlight", findNode("Ocean"));
-	flashlight->_verb = "light";
-	flashlight->_hintResponse = "The flashlight only lights at the beach";
-	flashlight->_response = "Now you can see in the dark";
-	flashlight->target = "beach.special";
-	findEdge("special", findNode("beach"))->visible = false;
-	*/
 
 	for (auto* n: allNodes){
 		stripTrailingPeriod(n->shortDescription);
@@ -448,6 +441,15 @@ bool Game::buildGraph(){
 			//o->edge = findEdge(o->initialEdgeName, n);
 			if(find(allObjects.begin(), allObjects.end(), o) == allObjects.end())
 				allObjects.push_back(o);
+            
+            if(o->dependentOnStr != "") {
+                for(auto* x: allNodes) {
+                    for(auto* f2: x->features) {
+                        if(f2->name == o->dependentOnStr)
+                            o->dependentOn = f2;
+                    }
+                }
+            }
 		}
 	}
 	//printDatabase();
