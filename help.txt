@@ -1,4 +1,4 @@
-Welcome to Cetus, a text-based adventure game where you are the hero! Well, more accurately, you're the poor guy who woke up in a spaceship, having no idea how he got there and suddenly having to figure out what the hell is going on. But really, what's the difference.
+Welcome to Cetus, a text-based adventure game where you are the hero! Well, more accurately, you're the poor guy who woke up in a spaceship, having no idea how he got there and suddenly having to figure out what the hell is going on. But really, what's the difference?
 
 ABOUT THE GAME
 
