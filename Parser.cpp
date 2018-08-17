@@ -3,7 +3,7 @@
  * can call getParsedCommand() and pass in a string and dictionary of
  * valid words and their Tag types and be returned a ParsedCommand object.
  *
- * Last modified: 2018-08-14
+ * Last modified: 2018-08-17
  */
 
 #include "Parser.hpp"
@@ -261,7 +261,7 @@ Parser::Parser()
 		{"grab", V},
 		{"help", V},
 		{"inventory", V},
-		{"kick", V},
+		//{"kick", V},
 		{"listen", V},
 		{"load", V},
 		{"loadgame", V},
