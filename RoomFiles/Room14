@@ -21,8 +21,8 @@
 [[EdgeName]] [START2]North/Ferry[END2]
 [[EdgeShortDescription]] [START2]A ferry sits waiting for you on the river Styx to the north.[END2]
 [[EdgeLongDescription]] [START2]The river Styx secretly twists its way beneath the battlefield to the north, a ferry bobbing on its waters.[END2]
-[[EdgeVisible]] [START2]1[END2]
-[[EdgePassable]] [START2]1[END2]
+[[EdgeVisible]] [START2]0[END2]
+[[EdgePassable]] [START2]0[END2]
 [[EdgeNode]] [START2]Olympus[END2]
 [END1]
 [END0]
@@ -91,7 +91,7 @@ You reach for your bag but remember that you dropped it during the madness on th
 
 You wait somewhat uneasily, still surrounded by quite a few more swords than you feel comfortable with. After what seems like far too long, the scout runs back into camp breathless. He nods. Suddenly, the blades are away and several officers are patting you on the back.
 
-After a quick conversation and several more runners to and from the battlefield, the commander motions you away from the crowd, and you join him a little way away from the crowd.
+After a quick conversation and several more runners to and from the battlefield, the commander motions you away from the crowd, and you move to join him.
 
 "I must say, I'm impressed," the commander says. You remind him that both your discovery and the death of the enemy general were complete accidents. He chuckles. "I'd rather have a half-dozen men as lucky as you are than half an army of brave idiots." Walking over to a small tent, he motions you to wait as he goes inside. Moments later, the commander emerges with a small box.
 

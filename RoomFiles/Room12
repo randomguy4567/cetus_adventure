@@ -74,7 +74,7 @@
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Use[END4]
-[[VerbResponse]] [START4]You take the small droid out of your pack and place it on the floor beside the broken hatch. It whirrs away towards the door and within minutes the hatch has been repaired and freshly polished. Pushing open the hatch, you find a small chamber off to the side of the spaceship's main deck, it seems entirely empty minus a small container at the center.[END4]
+[[VerbResponse]] [START4]You take the small droid out of your pack and place it on the floor beside the broken hatch. It whirrs away towards the door and within minutes the hatch has been repaired and freshly polished. Pushing open the hatch, you find that the 'time machine' consists of a small chamber off to the side of the spaceship's main deck, it seems entirely empty minus a small container at the center.[END4]
 [[VerbHint]] [START4]The droid's tools are whirring in anticipation. You better find it something to fix.[END4]
 [END3]
 [END2]

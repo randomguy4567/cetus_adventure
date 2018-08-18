@@ -36,8 +36,8 @@
 
 [[Feature]] [START1]
 [[FeatureName]] [START2]Machine[END2]
-[[FeatureShortDescription]] [START2]The time machine's chamber seems mostly empty, minus a canister in the center.[END2]
-[[FeatureLongDescription]] [START2]The machine on the other side of the repaired hatch seems to consist only of a large empty chamber with an open canister in the center.[END2]
+[[FeatureShortDescription]] [START2]The time machine seems to consist of a chamber that looks mostly empty minus a canister in the center.[END2]
+[[FeatureLongDescription]] [START2]The machine on the other side of the repaired hatch seems to consist only of a large empty chamber with an open canister in the center. Within the canister, you are surprised to find an outlet.[END2]
 [[FeatureVisible]] [START2]0[END2]
 [END1]
 
@@ -78,11 +78,11 @@
 [[ObjectVerbs]] [START2]
 [[Verb]] [START3]
 [[VerbName]] [START4]Press[END4]
-[[VerbResponse]] [START4]Slowly, you put your hand on the giant, glowing button. After a moment spent intensely watching the canister, you push down. A small whirring noise starts up and the canister starts to vibrate slowly... The whirring noise grows louder and louder until it is an ear-splitting noise that you imagine is what it sounds like to slam gears together at very high speeds. The entire room has started to shake and the lights begin to flicker.
+[[VerbResponse]] [START4]Slowly, you put your hand on the giant, glowing button. After a moment spent intensely watching the canister, you push down. A small whirring noise starts up and the canister starts to vibrate slowly... The whirring noise grows louder and louder until it is an ear-splitting shriek that you imagine is what it sounds like to slam gears together at very high speeds. The entire room has started to shake and the lights begin to flicker.
 
 You know... In retrospect, trying to use a piece of super-advanced, reality-distorting technology on a spaceship where everything else is broken probably wasn't the best idea. Maybe run. NOW!
 
-You sprint towards the exit, stumbling as the shaking reaches the intensity of a rather large earthquake. You throw yourself through the doors and put your hands over your head. As you are cowering in fear (sorry, but I call them as I see them), you realize that your nose is only a few inches away from the burnt gadget that you saw earlier. In spite of the fact that you might die at any moment, you are observant enough to notice a small hatch in the side of the gadget that you had previously missed. It might be something to investigate should you survive.
+You sprint towards the exit, stumbling as the shaking reaches the intensity of a rather large earthquake. You throw yourself through the doors and put your hands over your head. As you are cowering in fear (sorry, but that IS what you are doing), you realize that your nose is only a few inches away from the burnt gadget that you saw earlier. In spite of the fact that you might die at any moment, you are observant enough to notice a small compartment in the side of the gadget that you had previously missed. It might be something to investigate should you survive.
 
 Suddenly, the shaking stops. A friendly 'Ding!' comes from the time machine, sounding very much like a cooking timer you would find at an elderly relative's house. Hesitantly, you get up and peer through the still quite shiny door. The computer is gone, vanished into the distant past.[END4]
 [[VerbHint]] [START4]Press it![END4]
